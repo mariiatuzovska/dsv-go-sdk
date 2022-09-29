@@ -20,7 +20,7 @@ import "./swagger"
 1. Install [swagger-codegen](https://github.com/swagger-api/swagger-codegen).
 2. Move `swagger.json` to the current folder.
 3. Generate models: `swagger-codegen generate -i ./swagger.json -l go -o ./models --model-name-prefix DSV -Dmodels`.
-4. Generate API client: `swagger-codegen generate -i ./swagger.json -l go -o ./client -DdebugModels`.
+4. Generate API client: `swagger-codegen generate -i ./swagger.json -l go -o ./client`.
 
 ## Documentation for API Endpoints
 
