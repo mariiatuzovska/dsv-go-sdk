@@ -1,3 +1,5 @@
 {
-    "packageName" : "client"
+    "packageName" : "client",
+    "packageVersion": "1.0.1",
+    "hideGenerationTimestamp": false
 }
