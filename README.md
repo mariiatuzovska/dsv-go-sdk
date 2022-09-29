@@ -246,6 +246,4 @@ auth := context.WithValue(context.Background(), sw.ContextAPIKey, sw.APIKey{
 r, err := client.Service.Operation(auth, args)
 ```
 
-## Author
-
 
