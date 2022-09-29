@@ -1,4 +1,4 @@
-# DSV Go SDK
+# Go API client for swagger
 
 The purpose of this application is to provide a simple service for storing and getting secrets
 
@@ -14,13 +14,6 @@ Put the package under your project folder and add the following in import:
 ```golang
 import "./swagger"
 ```
-
-## Generate SDK
-
-1. Install [swagger-codegen](https://github.com/swagger-api/swagger-codegen).
-2. Move `swagger.json` to the current folder.
-3. Generate models: `swagger-codegen generate -i ./api/swagger.json -l go -o ./models --model-name-prefix DSV -Dmodels`.
-4. Generate API client: `swagger-codegen generate -i ./api/swagger.json -l go -o ./client -DdebugModels`.
 
 ## Documentation for API Endpoints
 
@@ -252,5 +245,7 @@ auth := context.WithValue(context.Background(), sw.ContextAPIKey, sw.APIKey{
 })
 r, err := client.Service.Operation(auth, args)
 ```
+
+## Author
 
 
