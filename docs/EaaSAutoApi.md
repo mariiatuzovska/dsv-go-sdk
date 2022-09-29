@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**RotationRequest**](EaaSAutoApi.md#RotationRequest) | **Post** /crypto/rotate | Rotate Data and Key
 
 # **CreateKey**
-> AutoKeyResponse CreateKey(ctx, path)
+> DsvAutoKeyResponse CreateKey(ctx, path)
 Create Key
 
 Create a new encryption/decryption key.
@@ -27,7 +27,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutoKeyResponse**](AutoKeyResponse.md)
+[**DsvAutoKeyResponse**](AutoKeyResponse.md)
 
 ### Authorization
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **Decrypt**
-> DecryptionResponse Decrypt(ctx, path, ciphertext, optional)
+> DsvDecryptionResponse Decrypt(ctx, path, ciphertext, optional)
 Decrypt
 
 Decrypt ciphertext with a key.
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DecryptionResponse**](DecryptionResponse.md)
+[**DsvDecryptionResponse**](DecryptionResponse.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteKey**
-> MessageResponse DeleteKey(ctx, path)
+> DsvMessageResponse DeleteKey(ctx, path)
 Delete Key
 
 Delete an existing encryption/decryption key.
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**DsvMessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **Encrypt**
-> EncryptionResponse Encrypt(ctx, path, plaintext, optional)
+> DsvEncryptionResponse Encrypt(ctx, path, plaintext, optional)
 Encrypt
 
 Encrypt plaintext with a key.
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EncryptionResponse**](EncryptionResponse.md)
+[**DsvEncryptionResponse**](EncryptionResponse.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetKeyMetadata**
-> AutoKeyResponse GetKeyMetadata(ctx, path)
+> DsvAutoKeyResponse GetKeyMetadata(ctx, path)
 Get Key Metadata
 
 Get metadata of an existing encryption/decryption key.
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutoKeyResponse**](AutoKeyResponse.md)
+[**DsvAutoKeyResponse**](AutoKeyResponse.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **RotationRequest**
-> EncryptionResponse RotationRequest(ctx, path, ciphertext, startingVersion, optional)
+> DsvEncryptionResponse RotationRequest(ctx, path, ciphertext, startingVersion, optional)
 Rotate Data and Key
 
 Rotate data and optionally an existing encryption/decryption key.  If the starting version is the current version of the key, then DSV will rotate the key (create a new version of it) and re-encrypt the data using this new version.  If the starting version is NOT the current version of the key, and the ending version is not provided, then DSV will only re-encrypt the data using the current latest version of the key.  The starting and ending versions can also be below the latest one, so long as the starting is below the ending. In this case, DSV will re-encrypt the data using the version of the key specified by the ending version.
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EncryptionResponse**](EncryptionResponse.md)
+[**DsvEncryptionResponse**](EncryptionResponse.md)
 
 ### Authorization
 

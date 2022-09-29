@@ -31,20 +31,20 @@ Get usage statistics for API calls and total number of secrets
  * @param startDate Start date to get usage statistics
  * @param optional nil or *UsageApiGetUsageOpts - Optional Parameters:
      * @param "EndDate" (optional.String) -  End date to get usage statistics, defaults to current date if not set
-@return UsageResponseGeneral
+@return DsvUsageResponseGeneral
 */
 
 type UsageApiGetUsageOpts struct {
     EndDate optional.String
 }
 
-func (a *UsageApiService) GetUsage(ctx context.Context, startDate string, localVarOptionals *UsageApiGetUsageOpts) (UsageResponseGeneral, *http.Response, error) {
+func (a *UsageApiService) GetUsage(ctx context.Context, startDate string, localVarOptionals *UsageApiGetUsageOpts) (DsvUsageResponseGeneral, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue UsageResponseGeneral
+		localVarReturnValue DsvUsageResponseGeneral
 	)
 
 	// create path and map variables
@@ -118,7 +118,7 @@ func (a *UsageApiService) GetUsage(ctx context.Context, startDate string, localV
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v UsageResponseGeneral
+			var v DsvUsageResponseGeneral
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -128,7 +128,7 @@ func (a *UsageApiService) GetUsage(ctx context.Context, startDate string, localV
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -138,7 +138,7 @@ func (a *UsageApiService) GetUsage(ctx context.Context, startDate string, localV
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -148,7 +148,7 @@ func (a *UsageApiService) GetUsage(ctx context.Context, startDate string, localV
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -158,7 +158,7 @@ func (a *UsageApiService) GetUsage(ctx context.Context, startDate string, localV
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

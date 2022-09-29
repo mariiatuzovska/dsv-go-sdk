@@ -30,15 +30,15 @@ PoliciesApiService Create Policy
 Creates new policy with permission document.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return PolicyResponse
+@return DsvPolicyResponse
 */
-func (a *PoliciesApiService) CreatePolicy(ctx context.Context, body PolicyCreate) (PolicyResponse, *http.Response, error) {
+func (a *PoliciesApiService) CreatePolicy(ctx context.Context, body DsvPolicyCreate) (DsvPolicyResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue PolicyResponse
+		localVarReturnValue DsvPolicyResponse
 	)
 
 	// create path and map variables
@@ -110,7 +110,7 @@ func (a *PoliciesApiService) CreatePolicy(ctx context.Context, body PolicyCreate
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v PolicyResponse
+			var v DsvPolicyResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -120,7 +120,7 @@ func (a *PoliciesApiService) CreatePolicy(ctx context.Context, body PolicyCreate
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -130,7 +130,7 @@ func (a *PoliciesApiService) CreatePolicy(ctx context.Context, body PolicyCreate
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -140,7 +140,7 @@ func (a *PoliciesApiService) CreatePolicy(ctx context.Context, body PolicyCreate
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -150,7 +150,7 @@ func (a *PoliciesApiService) CreatePolicy(ctx context.Context, body PolicyCreate
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -171,20 +171,20 @@ Remove an existing policy by path.
  * @param path Full path to lookup policy
  * @param optional nil or *PoliciesApiDeletePolicyOpts - Optional Parameters:
      * @param "Force" (optional.Bool) -  Delete immediately
-@return MessageResponse
+@return DsvMessageResponse
 */
 
 type PoliciesApiDeletePolicyOpts struct {
     Force optional.Bool
 }
 
-func (a *PoliciesApiService) DeletePolicy(ctx context.Context, path string, localVarOptionals *PoliciesApiDeletePolicyOpts) (MessageResponse, *http.Response, error) {
+func (a *PoliciesApiService) DeletePolicy(ctx context.Context, path string, localVarOptionals *PoliciesApiDeletePolicyOpts) (DsvMessageResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue MessageResponse
+		localVarReturnValue DsvMessageResponse
 	)
 
 	// create path and map variables
@@ -258,7 +258,7 @@ func (a *PoliciesApiService) DeletePolicy(ctx context.Context, path string, loca
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v MessageResponse
+			var v DsvMessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -268,7 +268,7 @@ func (a *PoliciesApiService) DeletePolicy(ctx context.Context, path string, loca
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -278,7 +278,7 @@ func (a *PoliciesApiService) DeletePolicy(ctx context.Context, path string, loca
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -288,7 +288,7 @@ func (a *PoliciesApiService) DeletePolicy(ctx context.Context, path string, loca
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -298,7 +298,7 @@ func (a *PoliciesApiService) DeletePolicy(ctx context.Context, path string, loca
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -308,7 +308,7 @@ func (a *PoliciesApiService) DeletePolicy(ctx context.Context, path string, loca
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -327,15 +327,15 @@ PoliciesApiService Get Policy
 Retrieve policy by path.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param path Full path to lookup policy
-@return PolicyResponse
+@return DsvPolicyResponse
 */
-func (a *PoliciesApiService) GetPolicy(ctx context.Context, path string) (PolicyResponse, *http.Response, error) {
+func (a *PoliciesApiService) GetPolicy(ctx context.Context, path string) (DsvPolicyResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue PolicyResponse
+		localVarReturnValue DsvPolicyResponse
 	)
 
 	// create path and map variables
@@ -406,7 +406,7 @@ func (a *PoliciesApiService) GetPolicy(ctx context.Context, path string) (Policy
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v PolicyResponse
+			var v DsvPolicyResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -416,7 +416,7 @@ func (a *PoliciesApiService) GetPolicy(ctx context.Context, path string) (Policy
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -426,7 +426,7 @@ func (a *PoliciesApiService) GetPolicy(ctx context.Context, path string) (Policy
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -436,7 +436,7 @@ func (a *PoliciesApiService) GetPolicy(ctx context.Context, path string) (Policy
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -446,7 +446,7 @@ func (a *PoliciesApiService) GetPolicy(ctx context.Context, path string) (Policy
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -456,7 +456,7 @@ func (a *PoliciesApiService) GetPolicy(ctx context.Context, path string) (Policy
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -476,15 +476,15 @@ Get a full policies by path and version in the query.Returns a list of zero up t
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param path Full path to lookup policy
  * @param version Versions to return
-@return PolicyVersionResponse
+@return DsvPolicyVersionResponse
 */
-func (a *PoliciesApiService) GetPolicyByVersion(ctx context.Context, path string, version int64) (PolicyVersionResponse, *http.Response, error) {
+func (a *PoliciesApiService) GetPolicyByVersion(ctx context.Context, path string, version int64) (DsvPolicyVersionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue PolicyVersionResponse
+		localVarReturnValue DsvPolicyVersionResponse
 	)
 
 	// create path and map variables
@@ -556,7 +556,7 @@ func (a *PoliciesApiService) GetPolicyByVersion(ctx context.Context, path string
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v PolicyVersionResponse
+			var v DsvPolicyVersionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -566,7 +566,7 @@ func (a *PoliciesApiService) GetPolicyByVersion(ctx context.Context, path string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -576,7 +576,7 @@ func (a *PoliciesApiService) GetPolicyByVersion(ctx context.Context, path string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -586,7 +586,7 @@ func (a *PoliciesApiService) GetPolicyByVersion(ctx context.Context, path string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -596,7 +596,7 @@ func (a *PoliciesApiService) GetPolicyByVersion(ctx context.Context, path string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -606,7 +606,7 @@ func (a *PoliciesApiService) GetPolicyByVersion(ctx context.Context, path string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -697,7 +697,7 @@ func (a *PoliciesApiService) RestorePolicy(ctx context.Context, path string) (*h
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -707,7 +707,7 @@ func (a *PoliciesApiService) RestorePolicy(ctx context.Context, path string) (*h
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -717,7 +717,7 @@ func (a *PoliciesApiService) RestorePolicy(ctx context.Context, path string) (*h
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -727,7 +727,7 @@ func (a *PoliciesApiService) RestorePolicy(ctx context.Context, path string) (*h
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -737,7 +737,7 @@ func (a *PoliciesApiService) RestorePolicy(ctx context.Context, path string) (*h
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -757,15 +757,15 @@ Overwrites an existing policy with its previous version.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param path Full path to lookup policy
  * @param version Versions to return
-@return PolicyResponse
+@return DsvPolicyResponse
 */
-func (a *PoliciesApiService) RollbackPolicy(ctx context.Context, path string, version int64) (PolicyResponse, *http.Response, error) {
+func (a *PoliciesApiService) RollbackPolicy(ctx context.Context, path string, version int64) (DsvPolicyResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue PolicyResponse
+		localVarReturnValue DsvPolicyResponse
 	)
 
 	// create path and map variables
@@ -824,7 +824,7 @@ func (a *PoliciesApiService) RollbackPolicy(ctx context.Context, path string, ve
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v PolicyResponse
+			var v DsvPolicyResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -834,7 +834,7 @@ func (a *PoliciesApiService) RollbackPolicy(ctx context.Context, path string, ve
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -844,7 +844,7 @@ func (a *PoliciesApiService) RollbackPolicy(ctx context.Context, path string, ve
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -854,7 +854,7 @@ func (a *PoliciesApiService) RollbackPolicy(ctx context.Context, path string, ve
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -864,7 +864,7 @@ func (a *PoliciesApiService) RollbackPolicy(ctx context.Context, path string, ve
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -886,7 +886,7 @@ Search permission policies by path.
      * @param "SearchTerm" (optional.String) -  Search term
      * @param "Limit" (optional.Int64) -  The maximum number of results per cursor
      * @param "Cursor" (optional.String) -  Cursor to next batch of results
-@return PolicySearchResponse
+@return DsvPolicySearchResponse
 */
 
 type PoliciesApiSearchFilterOpts struct {
@@ -895,13 +895,13 @@ type PoliciesApiSearchFilterOpts struct {
     Cursor optional.String
 }
 
-func (a *PoliciesApiService) SearchFilter(ctx context.Context, localVarOptionals *PoliciesApiSearchFilterOpts) (PolicySearchResponse, *http.Response, error) {
+func (a *PoliciesApiService) SearchFilter(ctx context.Context, localVarOptionals *PoliciesApiSearchFilterOpts) (DsvPolicySearchResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue PolicySearchResponse
+		localVarReturnValue DsvPolicySearchResponse
 	)
 
 	// create path and map variables
@@ -980,7 +980,7 @@ func (a *PoliciesApiService) SearchFilter(ctx context.Context, localVarOptionals
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v PolicySearchResponse
+			var v DsvPolicySearchResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -990,7 +990,7 @@ func (a *PoliciesApiService) SearchFilter(ctx context.Context, localVarOptionals
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1000,7 +1000,7 @@ func (a *PoliciesApiService) SearchFilter(ctx context.Context, localVarOptionals
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1010,7 +1010,7 @@ func (a *PoliciesApiService) SearchFilter(ctx context.Context, localVarOptionals
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1020,7 +1020,7 @@ func (a *PoliciesApiService) SearchFilter(ctx context.Context, localVarOptionals
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1030,7 +1030,7 @@ func (a *PoliciesApiService) SearchFilter(ctx context.Context, localVarOptionals
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1050,15 +1050,15 @@ Overwrites an existing policy with an updated permissions document.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
  * @param path Full path for policy
-@return PolicyResponse
+@return DsvPolicyResponse
 */
-func (a *PoliciesApiService) UpdatePolicy(ctx context.Context, body PolicyUpdate, path string) (PolicyResponse, *http.Response, error) {
+func (a *PoliciesApiService) UpdatePolicy(ctx context.Context, body DsvPolicyUpdate, path string) (DsvPolicyResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue PolicyResponse
+		localVarReturnValue DsvPolicyResponse
 	)
 
 	// create path and map variables
@@ -1131,7 +1131,7 @@ func (a *PoliciesApiService) UpdatePolicy(ctx context.Context, body PolicyUpdate
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v PolicyResponse
+			var v DsvPolicyResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1141,7 +1141,7 @@ func (a *PoliciesApiService) UpdatePolicy(ctx context.Context, body PolicyUpdate
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1151,7 +1151,7 @@ func (a *PoliciesApiService) UpdatePolicy(ctx context.Context, body PolicyUpdate
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1161,7 +1161,7 @@ func (a *PoliciesApiService) UpdatePolicy(ctx context.Context, body PolicyUpdate
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1171,7 +1171,7 @@ func (a *PoliciesApiService) UpdatePolicy(ctx context.Context, body PolicyUpdate
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

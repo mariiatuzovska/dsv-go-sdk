@@ -30,15 +30,15 @@ EnginesApiService Create Engine
 Registers a new engine and returns its key pair.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return EngineCreateResponse
+@return DsvEngineCreateResponse
 */
-func (a *EnginesApiService) CreateEngine(ctx context.Context, body EngineCreate) (EngineCreateResponse, *http.Response, error) {
+func (a *EnginesApiService) CreateEngine(ctx context.Context, body DsvEngineCreate) (DsvEngineCreateResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue EngineCreateResponse
+		localVarReturnValue DsvEngineCreateResponse
 	)
 
 	// create path and map variables
@@ -110,7 +110,7 @@ func (a *EnginesApiService) CreateEngine(ctx context.Context, body EngineCreate)
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v EngineCreateResponse
+			var v DsvEngineCreateResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -120,7 +120,7 @@ func (a *EnginesApiService) CreateEngine(ctx context.Context, body EngineCreate)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -130,7 +130,7 @@ func (a *EnginesApiService) CreateEngine(ctx context.Context, body EngineCreate)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -140,7 +140,7 @@ func (a *EnginesApiService) CreateEngine(ctx context.Context, body EngineCreate)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -150,7 +150,7 @@ func (a *EnginesApiService) CreateEngine(ctx context.Context, body EngineCreate)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -171,20 +171,20 @@ Delete an engine  by name.
  * @param path Name of engine
  * @param optional nil or *EnginesApiDeleteEngineOpts - Optional Parameters:
      * @param "Force" (optional.Bool) -  Delete immediately
-@return MessageResponse
+@return DsvMessageResponse
 */
 
 type EnginesApiDeleteEngineOpts struct {
     Force optional.Bool
 }
 
-func (a *EnginesApiService) DeleteEngine(ctx context.Context, path string, localVarOptionals *EnginesApiDeleteEngineOpts) (MessageResponse, *http.Response, error) {
+func (a *EnginesApiService) DeleteEngine(ctx context.Context, path string, localVarOptionals *EnginesApiDeleteEngineOpts) (DsvMessageResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue MessageResponse
+		localVarReturnValue DsvMessageResponse
 	)
 
 	// create path and map variables
@@ -258,7 +258,7 @@ func (a *EnginesApiService) DeleteEngine(ctx context.Context, path string, local
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v MessageResponse
+			var v DsvMessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -268,7 +268,7 @@ func (a *EnginesApiService) DeleteEngine(ctx context.Context, path string, local
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -278,7 +278,7 @@ func (a *EnginesApiService) DeleteEngine(ctx context.Context, path string, local
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -288,7 +288,7 @@ func (a *EnginesApiService) DeleteEngine(ctx context.Context, path string, local
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -298,7 +298,7 @@ func (a *EnginesApiService) DeleteEngine(ctx context.Context, path string, local
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -308,7 +308,7 @@ func (a *EnginesApiService) DeleteEngine(ctx context.Context, path string, local
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -327,15 +327,15 @@ EnginesApiService Get Engine
 Retrieve engine by name.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param path Name of engine
-@return EngineGetResponse
+@return DsvEngineGetResponse
 */
-func (a *EnginesApiService) GetEngine(ctx context.Context, path string) (EngineGetResponse, *http.Response, error) {
+func (a *EnginesApiService) GetEngine(ctx context.Context, path string) (DsvEngineGetResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue EngineGetResponse
+		localVarReturnValue DsvEngineGetResponse
 	)
 
 	// create path and map variables
@@ -406,7 +406,7 @@ func (a *EnginesApiService) GetEngine(ctx context.Context, path string) (EngineG
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v EngineGetResponse
+			var v DsvEngineGetResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -416,7 +416,7 @@ func (a *EnginesApiService) GetEngine(ctx context.Context, path string) (EngineG
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -426,7 +426,7 @@ func (a *EnginesApiService) GetEngine(ctx context.Context, path string) (EngineG
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -436,7 +436,7 @@ func (a *EnginesApiService) GetEngine(ctx context.Context, path string) (EngineG
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -446,7 +446,7 @@ func (a *EnginesApiService) GetEngine(ctx context.Context, path string) (EngineG
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -456,7 +456,7 @@ func (a *EnginesApiService) GetEngine(ctx context.Context, path string) (EngineG
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -474,15 +474,15 @@ func (a *EnginesApiService) GetEngine(ctx context.Context, path string) (EngineG
 EnginesApiService List Engines
 List all existing engines.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return EngineListResult
+@return DsvEngineListResult
 */
-func (a *EnginesApiService) ListEngines(ctx context.Context) (EngineListResult, *http.Response, error) {
+func (a *EnginesApiService) ListEngines(ctx context.Context) (DsvEngineListResult, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue EngineListResult
+		localVarReturnValue DsvEngineListResult
 	)
 
 	// create path and map variables
@@ -552,7 +552,7 @@ func (a *EnginesApiService) ListEngines(ctx context.Context) (EngineListResult, 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v EngineListResult
+			var v DsvEngineListResult
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -562,7 +562,7 @@ func (a *EnginesApiService) ListEngines(ctx context.Context) (EngineListResult, 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -572,7 +572,7 @@ func (a *EnginesApiService) ListEngines(ctx context.Context) (EngineListResult, 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -582,7 +582,7 @@ func (a *EnginesApiService) ListEngines(ctx context.Context) (EngineListResult, 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -592,7 +592,7 @@ func (a *EnginesApiService) ListEngines(ctx context.Context) (EngineListResult, 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -611,15 +611,15 @@ EnginesApiService Ping Engine
 Sends a message to the engine to validate connectivity.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param path Name of engine
-@return EnginePingResponse
+@return DsvEnginePingResponse
 */
-func (a *EnginesApiService) PingEngine(ctx context.Context, path string) (EnginePingResponse, *http.Response, error) {
+func (a *EnginesApiService) PingEngine(ctx context.Context, path string) (DsvEnginePingResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue EnginePingResponse
+		localVarReturnValue DsvEnginePingResponse
 	)
 
 	// create path and map variables
@@ -690,7 +690,7 @@ func (a *EnginesApiService) PingEngine(ctx context.Context, path string) (Engine
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v EnginePingResponse
+			var v DsvEnginePingResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -700,7 +700,7 @@ func (a *EnginesApiService) PingEngine(ctx context.Context, path string) (Engine
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -710,7 +710,7 @@ func (a *EnginesApiService) PingEngine(ctx context.Context, path string) (Engine
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -720,7 +720,7 @@ func (a *EnginesApiService) PingEngine(ctx context.Context, path string) (Engine
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -730,7 +730,7 @@ func (a *EnginesApiService) PingEngine(ctx context.Context, path string) (Engine
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

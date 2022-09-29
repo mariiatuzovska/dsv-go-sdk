@@ -31,15 +31,15 @@ Add one or more members to a group.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
  * @param name Group name
-@return AddMemberResponse
+@return DsvAddMemberResponse
 */
-func (a *GroupsApiService) AddMember(ctx context.Context, body MemberRequest, name string) (AddMemberResponse, *http.Response, error) {
+func (a *GroupsApiService) AddMember(ctx context.Context, body DsvMemberRequest, name string) (DsvAddMemberResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AddMemberResponse
+		localVarReturnValue DsvAddMemberResponse
 	)
 
 	// create path and map variables
@@ -112,7 +112,7 @@ func (a *GroupsApiService) AddMember(ctx context.Context, body MemberRequest, na
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AddMemberResponse
+			var v DsvAddMemberResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -122,7 +122,7 @@ func (a *GroupsApiService) AddMember(ctx context.Context, body MemberRequest, na
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -132,7 +132,7 @@ func (a *GroupsApiService) AddMember(ctx context.Context, body MemberRequest, na
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -142,7 +142,7 @@ func (a *GroupsApiService) AddMember(ctx context.Context, body MemberRequest, na
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -152,7 +152,7 @@ func (a *GroupsApiService) AddMember(ctx context.Context, body MemberRequest, na
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -171,15 +171,15 @@ GroupsApiService Create Group
 Create a new group.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return AddMemberResponse
+@return DsvAddMemberResponse
 */
-func (a *GroupsApiService) CreateGroup(ctx context.Context, body CreateGroup) (AddMemberResponse, *http.Response, error) {
+func (a *GroupsApiService) CreateGroup(ctx context.Context, body DsvCreateGroup) (DsvAddMemberResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AddMemberResponse
+		localVarReturnValue DsvAddMemberResponse
 	)
 
 	// create path and map variables
@@ -251,7 +251,7 @@ func (a *GroupsApiService) CreateGroup(ctx context.Context, body CreateGroup) (A
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v AddMemberResponse
+			var v DsvAddMemberResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -261,7 +261,7 @@ func (a *GroupsApiService) CreateGroup(ctx context.Context, body CreateGroup) (A
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -271,7 +271,7 @@ func (a *GroupsApiService) CreateGroup(ctx context.Context, body CreateGroup) (A
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -281,7 +281,7 @@ func (a *GroupsApiService) CreateGroup(ctx context.Context, body CreateGroup) (A
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -291,7 +291,7 @@ func (a *GroupsApiService) CreateGroup(ctx context.Context, body CreateGroup) (A
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -312,20 +312,20 @@ Delete Group if it exists.
  * @param name Group name
  * @param optional nil or *GroupsApiDeleteGroupOpts - Optional Parameters:
      * @param "Force" (optional.Bool) -  Delete immediately
-@return MessageResponse
+@return DsvMessageResponse
 */
 
 type GroupsApiDeleteGroupOpts struct {
     Force optional.Bool
 }
 
-func (a *GroupsApiService) DeleteGroup(ctx context.Context, name string, localVarOptionals *GroupsApiDeleteGroupOpts) (MessageResponse, *http.Response, error) {
+func (a *GroupsApiService) DeleteGroup(ctx context.Context, name string, localVarOptionals *GroupsApiDeleteGroupOpts) (DsvMessageResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue MessageResponse
+		localVarReturnValue DsvMessageResponse
 	)
 
 	// create path and map variables
@@ -399,7 +399,7 @@ func (a *GroupsApiService) DeleteGroup(ctx context.Context, name string, localVa
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v MessageResponse
+			var v DsvMessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -409,7 +409,7 @@ func (a *GroupsApiService) DeleteGroup(ctx context.Context, name string, localVa
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -419,7 +419,7 @@ func (a *GroupsApiService) DeleteGroup(ctx context.Context, name string, localVa
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -429,7 +429,7 @@ func (a *GroupsApiService) DeleteGroup(ctx context.Context, name string, localVa
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -439,7 +439,7 @@ func (a *GroupsApiService) DeleteGroup(ctx context.Context, name string, localVa
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -461,7 +461,7 @@ Delete one or more members from a group.
  * @param name Group name
 
 */
-func (a *GroupsApiService) DeleteMember(ctx context.Context, body MemberRequest, name string) (*http.Response, error) {
+func (a *GroupsApiService) DeleteMember(ctx context.Context, body DsvMemberRequest, name string) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -533,7 +533,7 @@ func (a *GroupsApiService) DeleteMember(ctx context.Context, body MemberRequest,
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -543,7 +543,7 @@ func (a *GroupsApiService) DeleteMember(ctx context.Context, body MemberRequest,
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -553,7 +553,7 @@ func (a *GroupsApiService) DeleteMember(ctx context.Context, body MemberRequest,
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -563,7 +563,7 @@ func (a *GroupsApiService) DeleteMember(ctx context.Context, body MemberRequest,
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -582,15 +582,15 @@ GroupsApiService Get Group
 Retrieve an existing group by name.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param name Group name
-@return GroupResponse
+@return DsvGroupResponse
 */
-func (a *GroupsApiService) GetGroup(ctx context.Context, name string) (GroupResponse, *http.Response, error) {
+func (a *GroupsApiService) GetGroup(ctx context.Context, name string) (DsvGroupResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue GroupResponse
+		localVarReturnValue DsvGroupResponse
 	)
 
 	// create path and map variables
@@ -661,7 +661,7 @@ func (a *GroupsApiService) GetGroup(ctx context.Context, name string) (GroupResp
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v GroupResponse
+			var v DsvGroupResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -671,7 +671,7 @@ func (a *GroupsApiService) GetGroup(ctx context.Context, name string) (GroupResp
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -681,7 +681,7 @@ func (a *GroupsApiService) GetGroup(ctx context.Context, name string) (GroupResp
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -691,7 +691,7 @@ func (a *GroupsApiService) GetGroup(ctx context.Context, name string) (GroupResp
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -701,7 +701,7 @@ func (a *GroupsApiService) GetGroup(ctx context.Context, name string) (GroupResp
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -711,7 +711,7 @@ func (a *GroupsApiService) GetGroup(ctx context.Context, name string) (GroupResp
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -802,7 +802,7 @@ func (a *GroupsApiService) RestoreGroup(ctx context.Context, name string) (*http
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -812,7 +812,7 @@ func (a *GroupsApiService) RestoreGroup(ctx context.Context, name string) (*http
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -822,7 +822,7 @@ func (a *GroupsApiService) RestoreGroup(ctx context.Context, name string) (*http
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -832,7 +832,7 @@ func (a *GroupsApiService) RestoreGroup(ctx context.Context, name string) (*http
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -842,7 +842,7 @@ func (a *GroupsApiService) RestoreGroup(ctx context.Context, name string) (*http
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -866,7 +866,7 @@ Search for one or more groups by name.
      * @param "Cursor" (optional.String) -  Cursor to next batch of results
      * @param "Sort" (optional.String) -  Sort results ascending (asc) or descending (desc) order by lastModified attribute on field search. Default is desc
      * @param "SortedBy" (optional.String) -  SortedBy order the result by name, created or lastModified attribute on field search. Default is lastModified
-@return GroupSearch
+@return DsvGroupSearch
 */
 
 type GroupsApiSearchGroupsOpts struct {
@@ -877,13 +877,13 @@ type GroupsApiSearchGroupsOpts struct {
     SortedBy optional.String
 }
 
-func (a *GroupsApiService) SearchGroups(ctx context.Context, localVarOptionals *GroupsApiSearchGroupsOpts) (GroupSearch, *http.Response, error) {
+func (a *GroupsApiService) SearchGroups(ctx context.Context, localVarOptionals *GroupsApiSearchGroupsOpts) (DsvGroupSearch, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue GroupSearch
+		localVarReturnValue DsvGroupSearch
 	)
 
 	// create path and map variables
@@ -968,7 +968,7 @@ func (a *GroupsApiService) SearchGroups(ctx context.Context, localVarOptionals *
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v GroupSearch
+			var v DsvGroupSearch
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -978,7 +978,7 @@ func (a *GroupsApiService) SearchGroups(ctx context.Context, localVarOptionals *
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -988,7 +988,7 @@ func (a *GroupsApiService) SearchGroups(ctx context.Context, localVarOptionals *
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -998,7 +998,7 @@ func (a *GroupsApiService) SearchGroups(ctx context.Context, localVarOptionals *
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1008,7 +1008,7 @@ func (a *GroupsApiService) SearchGroups(ctx context.Context, localVarOptionals *
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

@@ -30,15 +30,15 @@ RolesApiService Create a Role
 Creates a new role.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return RoleResponse
+@return DsvRoleResponse
 */
-func (a *RolesApiService) CreateRole(ctx context.Context, body RoleCreate) (RoleResponse, *http.Response, error) {
+func (a *RolesApiService) CreateRole(ctx context.Context, body DsvRoleCreate) (DsvRoleResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue RoleResponse
+		localVarReturnValue DsvRoleResponse
 	)
 
 	// create path and map variables
@@ -110,7 +110,7 @@ func (a *RolesApiService) CreateRole(ctx context.Context, body RoleCreate) (Role
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v RoleResponse
+			var v DsvRoleResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -120,7 +120,7 @@ func (a *RolesApiService) CreateRole(ctx context.Context, body RoleCreate) (Role
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -130,7 +130,7 @@ func (a *RolesApiService) CreateRole(ctx context.Context, body RoleCreate) (Role
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -140,7 +140,7 @@ func (a *RolesApiService) CreateRole(ctx context.Context, body RoleCreate) (Role
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -150,7 +150,7 @@ func (a *RolesApiService) CreateRole(ctx context.Context, body RoleCreate) (Role
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -171,20 +171,20 @@ Delete a role by the role name. For roles linked to 3rd party providers, such as
  * @param name Full role name to lookup role by
  * @param optional nil or *RolesApiDeleteRoleOpts - Optional Parameters:
      * @param "Force" (optional.Bool) -  Delete immediately
-@return MessageResponse
+@return DsvMessageResponse
 */
 
 type RolesApiDeleteRoleOpts struct {
     Force optional.Bool
 }
 
-func (a *RolesApiService) DeleteRole(ctx context.Context, name string, localVarOptionals *RolesApiDeleteRoleOpts) (MessageResponse, *http.Response, error) {
+func (a *RolesApiService) DeleteRole(ctx context.Context, name string, localVarOptionals *RolesApiDeleteRoleOpts) (DsvMessageResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue MessageResponse
+		localVarReturnValue DsvMessageResponse
 	)
 
 	// create path and map variables
@@ -258,7 +258,7 @@ func (a *RolesApiService) DeleteRole(ctx context.Context, name string, localVarO
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v MessageResponse
+			var v DsvMessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -268,7 +268,7 @@ func (a *RolesApiService) DeleteRole(ctx context.Context, name string, localVarO
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -278,7 +278,7 @@ func (a *RolesApiService) DeleteRole(ctx context.Context, name string, localVarO
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -288,7 +288,7 @@ func (a *RolesApiService) DeleteRole(ctx context.Context, name string, localVarO
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -298,7 +298,7 @@ func (a *RolesApiService) DeleteRole(ctx context.Context, name string, localVarO
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -308,7 +308,7 @@ func (a *RolesApiService) DeleteRole(ctx context.Context, name string, localVarO
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -327,15 +327,15 @@ RolesApiService Get a Role
 Retrieve an existing role by role name. For roles linked to 3rd party providers, such as AWS or Azure, the role name must be prefixed with the provider name from configuration in the format of &lt;providername&gt;:&lt;rolename&gt; i.e. aws-dev:db
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param name Full role name to lookup role by
-@return RoleResponse
+@return DsvRoleResponse
 */
-func (a *RolesApiService) GetRole(ctx context.Context, name string) (RoleResponse, *http.Response, error) {
+func (a *RolesApiService) GetRole(ctx context.Context, name string) (DsvRoleResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue RoleResponse
+		localVarReturnValue DsvRoleResponse
 	)
 
 	// create path and map variables
@@ -406,7 +406,7 @@ func (a *RolesApiService) GetRole(ctx context.Context, name string) (RoleRespons
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v RoleResponse
+			var v DsvRoleResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -416,7 +416,7 @@ func (a *RolesApiService) GetRole(ctx context.Context, name string) (RoleRespons
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -426,7 +426,7 @@ func (a *RolesApiService) GetRole(ctx context.Context, name string) (RoleRespons
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -436,7 +436,7 @@ func (a *RolesApiService) GetRole(ctx context.Context, name string) (RoleRespons
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -446,7 +446,7 @@ func (a *RolesApiService) GetRole(ctx context.Context, name string) (RoleRespons
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -456,7 +456,7 @@ func (a *RolesApiService) GetRole(ctx context.Context, name string) (RoleRespons
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -476,15 +476,15 @@ Retrieve an existing role by role name and versions. For roles linked to 3rd par
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param name Full name to lookup role by
  * @param version Versions to return
-@return RoleVersionResponse
+@return DsvRoleVersionResponse
 */
-func (a *RolesApiService) GetRoleByVersion(ctx context.Context, name string, version int64) (RoleVersionResponse, *http.Response, error) {
+func (a *RolesApiService) GetRoleByVersion(ctx context.Context, name string, version int64) (DsvRoleVersionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue RoleVersionResponse
+		localVarReturnValue DsvRoleVersionResponse
 	)
 
 	// create path and map variables
@@ -556,7 +556,7 @@ func (a *RolesApiService) GetRoleByVersion(ctx context.Context, name string, ver
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v RoleVersionResponse
+			var v DsvRoleVersionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -566,7 +566,7 @@ func (a *RolesApiService) GetRoleByVersion(ctx context.Context, name string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -576,7 +576,7 @@ func (a *RolesApiService) GetRoleByVersion(ctx context.Context, name string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -586,7 +586,7 @@ func (a *RolesApiService) GetRoleByVersion(ctx context.Context, name string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -596,7 +596,7 @@ func (a *RolesApiService) GetRoleByVersion(ctx context.Context, name string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -606,7 +606,7 @@ func (a *RolesApiService) GetRoleByVersion(ctx context.Context, name string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -697,7 +697,7 @@ func (a *RolesApiService) RestoreRole(ctx context.Context, name string) (*http.R
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -707,7 +707,7 @@ func (a *RolesApiService) RestoreRole(ctx context.Context, name string) (*http.R
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -717,7 +717,7 @@ func (a *RolesApiService) RestoreRole(ctx context.Context, name string) (*http.R
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -727,7 +727,7 @@ func (a *RolesApiService) RestoreRole(ctx context.Context, name string) (*http.R
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -737,7 +737,7 @@ func (a *RolesApiService) RestoreRole(ctx context.Context, name string) (*http.R
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -759,7 +759,7 @@ Search for one or more roles by role name.
      * @param "SearchTerm" (optional.String) -  Search pattern for names of roles to look up
      * @param "Limit" (optional.Int64) -  The maximum number of results per cursor
      * @param "Cursor" (optional.String) -  C ursor to next batch of results
-@return RoleSearchResponse
+@return DsvRoleSearchResponse
 */
 
 type RolesApiSearchRolesOpts struct {
@@ -768,13 +768,13 @@ type RolesApiSearchRolesOpts struct {
     Cursor optional.String
 }
 
-func (a *RolesApiService) SearchRoles(ctx context.Context, localVarOptionals *RolesApiSearchRolesOpts) (RoleSearchResponse, *http.Response, error) {
+func (a *RolesApiService) SearchRoles(ctx context.Context, localVarOptionals *RolesApiSearchRolesOpts) (DsvRoleSearchResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue RoleSearchResponse
+		localVarReturnValue DsvRoleSearchResponse
 	)
 
 	// create path and map variables
@@ -853,7 +853,7 @@ func (a *RolesApiService) SearchRoles(ctx context.Context, localVarOptionals *Ro
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v RoleSearchResponse
+			var v DsvRoleSearchResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -863,7 +863,7 @@ func (a *RolesApiService) SearchRoles(ctx context.Context, localVarOptionals *Ro
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -873,7 +873,7 @@ func (a *RolesApiService) SearchRoles(ctx context.Context, localVarOptionals *Ro
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -883,7 +883,7 @@ func (a *RolesApiService) SearchRoles(ctx context.Context, localVarOptionals *Ro
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -903,15 +903,15 @@ Update an existing role.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
  * @param name Full role name to lookup role by
-@return RoleResponse
+@return DsvRoleResponse
 */
-func (a *RolesApiService) UpdateRole(ctx context.Context, body RoleDetailsModel, name string) (RoleResponse, *http.Response, error) {
+func (a *RolesApiService) UpdateRole(ctx context.Context, body DsvRoleDetailsModel, name string) (DsvRoleResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue RoleResponse
+		localVarReturnValue DsvRoleResponse
 	)
 
 	// create path and map variables
@@ -984,7 +984,7 @@ func (a *RolesApiService) UpdateRole(ctx context.Context, body RoleDetailsModel,
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v RoleResponse
+			var v DsvRoleResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -994,7 +994,7 @@ func (a *RolesApiService) UpdateRole(ctx context.Context, body RoleDetailsModel,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1004,7 +1004,7 @@ func (a *RolesApiService) UpdateRole(ctx context.Context, body RoleDetailsModel,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1014,7 +1014,7 @@ func (a *RolesApiService) UpdateRole(ctx context.Context, body RoleDetailsModel,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1024,7 +1024,7 @@ func (a *RolesApiService) UpdateRole(ctx context.Context, body RoleDetailsModel,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

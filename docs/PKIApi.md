@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**SignCertificate**](PKIApi.md#SignCertificate) | **Post** /pki/sign | Create Signed Certificate
 
 # **LeafParams**
-> ResponseCertificate LeafParams(ctx, body)
+> DsvResponseCertificate LeafParams(ctx, body)
 Create Leaf Certificate and Private Key
 
 Create and return a signed certificate with a private key based on a registered root CA.
@@ -21,11 +21,11 @@ Create and return a signed certificate with a private key based on a registered 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**SigningRequestInformation**](SigningRequestInformation.md)|  | 
+  **body** | [**DsvSigningRequestInformation**](DsvSigningRequestInformation.md)|  | 
 
 ### Return type
 
-[**ResponseCertificate**](ResponseCertificate.md)
+[**DsvResponseCertificate**](ResponseCertificate.md)
 
 ### Authorization
 
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **RegisterRoot**
-> ResponseRootCertificate RegisterRoot(ctx, body)
+> DsvResponseRootCertificate RegisterRoot(ctx, body)
 Register Root CA
 
 Register a root CA as a secret.
@@ -49,11 +49,11 @@ Register a root CA as a secret.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RootCaSecret**](RootCaSecret.md)|  | 
+  **body** | [**DsvRootCaSecret**](DsvRootCaSecret.md)|  | 
 
 ### Return type
 
-[**ResponseRootCertificate**](ResponseRootCertificate.md)
+[**DsvResponseRootCertificate**](ResponseRootCertificate.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **RootCARegistration**
-> ResponseCertificate RootCARegistration(ctx, body)
+> DsvResponseCertificate RootCARegistration(ctx, body)
 Generate Root Certificate
 
 Create and return a new root certificate.
@@ -77,11 +77,11 @@ Create and return a new root certificate.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RootCaRegistration**](RootCaRegistration.md)|  | 
+  **body** | [**DsvRootCaRegistration**](DsvRootCaRegistration.md)|  | 
 
 ### Return type
 
-[**ResponseCertificate**](ResponseCertificate.md)
+[**DsvResponseCertificate**](ResponseCertificate.md)
 
 ### Authorization
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SSHCertParams**
-> ResponseSshCertificate SSHCertParams(ctx, body)
+> DsvResponseSshCertificate SSHCertParams(ctx, body)
 Create SSH Certificate
 
 Create, store and return a signed SSH certificate using a root private key and SHH-compatible leaf public key.
@@ -105,11 +105,11 @@ Create, store and return a signed SSH certificate using a root private key and S
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**SshCertInformation**](SshCertInformation.md)|  | 
+  **body** | [**DsvSshCertInformation**](DsvSshCertInformation.md)|  | 
 
 ### Return type
 
-[**ResponseSshCertificate**](ResponseSSHCertificate.md)
+[**DsvResponseSshCertificate**](ResponseSSHCertificate.md)
 
 ### Authorization
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SignCertificate**
-> SignedLeafCertificate SignCertificate(ctx, body)
+> DsvSignedLeafCertificate SignCertificate(ctx, body)
 Create Signed Certificate
 
 Create and return a signed certificate based on a registered root CA with a given CSR.
@@ -133,11 +133,11 @@ Create and return a signed certificate based on a registered root CA with a give
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**SigningRequest**](SigningRequest.md)|  | 
+  **body** | [**DsvSigningRequest**](DsvSigningRequest.md)|  | 
 
 ### Return type
 
-[**SignedLeafCertificate**](SignedLeafCertificate.md)
+[**DsvSignedLeafCertificate**](SignedLeafCertificate.md)
 
 ### Authorization
 

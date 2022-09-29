@@ -31,15 +31,15 @@ Creates a new secret.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
  * @param path The full secret path i.e. servers/prod/webserver-01
-@return SecretResponse
+@return DsvSecretResponse
 */
-func (a *SecretsApiService) CreateSecret(ctx context.Context, body SecretCreate, path string) (SecretResponse, *http.Response, error) {
+func (a *SecretsApiService) CreateSecret(ctx context.Context, body DsvSecretCreate, path string) (DsvSecretResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SecretResponse
+		localVarReturnValue DsvSecretResponse
 	)
 
 	// create path and map variables
@@ -112,7 +112,7 @@ func (a *SecretsApiService) CreateSecret(ctx context.Context, body SecretCreate,
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v SecretResponse
+			var v DsvSecretResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -122,7 +122,7 @@ func (a *SecretsApiService) CreateSecret(ctx context.Context, body SecretCreate,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -132,7 +132,7 @@ func (a *SecretsApiService) CreateSecret(ctx context.Context, body SecretCreate,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -142,7 +142,7 @@ func (a *SecretsApiService) CreateSecret(ctx context.Context, body SecretCreate,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -152,7 +152,7 @@ func (a *SecretsApiService) CreateSecret(ctx context.Context, body SecretCreate,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -174,7 +174,7 @@ Deletes a secret by path or by id in the query.
  * @param optional nil or *SecretsApiDeleteSecretOpts - Optional Parameters:
      * @param "Force" (optional.Bool) -  Delete immediately
      * @param "Id" (optional.String) -  Unique uuid identifying a secret
-@return MessageResponse
+@return DsvMessageResponse
 */
 
 type SecretsApiDeleteSecretOpts struct {
@@ -182,13 +182,13 @@ type SecretsApiDeleteSecretOpts struct {
     Id optional.String
 }
 
-func (a *SecretsApiService) DeleteSecret(ctx context.Context, path string, localVarOptionals *SecretsApiDeleteSecretOpts) (MessageResponse, *http.Response, error) {
+func (a *SecretsApiService) DeleteSecret(ctx context.Context, path string, localVarOptionals *SecretsApiDeleteSecretOpts) (DsvMessageResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue MessageResponse
+		localVarReturnValue DsvMessageResponse
 	)
 
 	// create path and map variables
@@ -265,7 +265,7 @@ func (a *SecretsApiService) DeleteSecret(ctx context.Context, path string, local
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v MessageResponse
+			var v DsvMessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -275,7 +275,7 @@ func (a *SecretsApiService) DeleteSecret(ctx context.Context, path string, local
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -285,7 +285,7 @@ func (a *SecretsApiService) DeleteSecret(ctx context.Context, path string, local
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -295,7 +295,7 @@ func (a *SecretsApiService) DeleteSecret(ctx context.Context, path string, local
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -305,7 +305,7 @@ func (a *SecretsApiService) DeleteSecret(ctx context.Context, path string, local
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -315,7 +315,7 @@ func (a *SecretsApiService) DeleteSecret(ctx context.Context, path string, local
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -336,20 +336,20 @@ Gets a full secret by path or by id in the query.
  * @param path The full secret path i.e. servers/prod/webserver-01
  * @param optional nil or *SecretsApiGetSecretOpts - Optional Parameters:
      * @param "Id" (optional.String) -  Unique uuid identifying a secret
-@return SecretResponse
+@return DsvSecretResponse
 */
 
 type SecretsApiGetSecretOpts struct {
     Id optional.String
 }
 
-func (a *SecretsApiService) GetSecret(ctx context.Context, path string, localVarOptionals *SecretsApiGetSecretOpts) (SecretResponse, *http.Response, error) {
+func (a *SecretsApiService) GetSecret(ctx context.Context, path string, localVarOptionals *SecretsApiGetSecretOpts) (DsvSecretResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SecretResponse
+		localVarReturnValue DsvSecretResponse
 	)
 
 	// create path and map variables
@@ -423,7 +423,7 @@ func (a *SecretsApiService) GetSecret(ctx context.Context, path string, localVar
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v SecretResponse
+			var v DsvSecretResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -433,7 +433,7 @@ func (a *SecretsApiService) GetSecret(ctx context.Context, path string, localVar
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -443,7 +443,7 @@ func (a *SecretsApiService) GetSecret(ctx context.Context, path string, localVar
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -453,7 +453,7 @@ func (a *SecretsApiService) GetSecret(ctx context.Context, path string, localVar
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -463,7 +463,7 @@ func (a *SecretsApiService) GetSecret(ctx context.Context, path string, localVar
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -473,7 +473,7 @@ func (a *SecretsApiService) GetSecret(ctx context.Context, path string, localVar
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -493,15 +493,15 @@ Gets a full secret by path and version in the query.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param path The full secret path i.e. servers/prod/webserver-01
  * @param version Versions to return
-@return SecretVersionResponse
+@return DsvSecretVersionResponse
 */
-func (a *SecretsApiService) GetSecretByVersion(ctx context.Context, path string, version int64) (SecretVersionResponse, *http.Response, error) {
+func (a *SecretsApiService) GetSecretByVersion(ctx context.Context, path string, version int64) (DsvSecretVersionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SecretVersionResponse
+		localVarReturnValue DsvSecretVersionResponse
 	)
 
 	// create path and map variables
@@ -573,7 +573,7 @@ func (a *SecretsApiService) GetSecretByVersion(ctx context.Context, path string,
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v SecretVersionResponse
+			var v DsvSecretVersionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -583,7 +583,7 @@ func (a *SecretsApiService) GetSecretByVersion(ctx context.Context, path string,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -593,7 +593,7 @@ func (a *SecretsApiService) GetSecretByVersion(ctx context.Context, path string,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -603,7 +603,7 @@ func (a *SecretsApiService) GetSecretByVersion(ctx context.Context, path string,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -613,7 +613,7 @@ func (a *SecretsApiService) GetSecretByVersion(ctx context.Context, path string,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -623,7 +623,7 @@ func (a *SecretsApiService) GetSecretByVersion(ctx context.Context, path string,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -644,20 +644,20 @@ Gets a secret&#x27;s metadata without returning the sensitive data.
  * @param path The full secret path i.e. servers/prod/webserver-01
  * @param optional nil or *SecretsApiGetSecretDescriptionOpts - Optional Parameters:
      * @param "Id" (optional.String) -  Unique uuid identifying a secret
-@return SecretDescription
+@return DsvSecretDescription
 */
 
 type SecretsApiGetSecretDescriptionOpts struct {
     Id optional.String
 }
 
-func (a *SecretsApiService) GetSecretDescription(ctx context.Context, path string, localVarOptionals *SecretsApiGetSecretDescriptionOpts) (SecretDescription, *http.Response, error) {
+func (a *SecretsApiService) GetSecretDescription(ctx context.Context, path string, localVarOptionals *SecretsApiGetSecretDescriptionOpts) (DsvSecretDescription, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SecretDescription
+		localVarReturnValue DsvSecretDescription
 	)
 
 	// create path and map variables
@@ -731,7 +731,7 @@ func (a *SecretsApiService) GetSecretDescription(ctx context.Context, path strin
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v SecretDescription
+			var v DsvSecretDescription
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -741,7 +741,7 @@ func (a *SecretsApiService) GetSecretDescription(ctx context.Context, path strin
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -751,7 +751,7 @@ func (a *SecretsApiService) GetSecretDescription(ctx context.Context, path strin
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -761,7 +761,7 @@ func (a *SecretsApiService) GetSecretDescription(ctx context.Context, path strin
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -771,7 +771,7 @@ func (a *SecretsApiService) GetSecretDescription(ctx context.Context, path strin
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -781,7 +781,7 @@ func (a *SecretsApiService) GetSecretDescription(ctx context.Context, path strin
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -802,20 +802,20 @@ Lists secret paths that start with the path parameter.
  * @param path The secret path to match on
  * @param optional nil or *SecretsApiListSecretPathsOpts - Optional Parameters:
      * @param "Limit" (optional.Int64) -  The maximum number of path matches to return
-@return SecretListPathsResponse
+@return DsvSecretListPathsResponse
 */
 
 type SecretsApiListSecretPathsOpts struct {
     Limit optional.Int64
 }
 
-func (a *SecretsApiService) ListSecretPaths(ctx context.Context, path string, localVarOptionals *SecretsApiListSecretPathsOpts) (SecretListPathsResponse, *http.Response, error) {
+func (a *SecretsApiService) ListSecretPaths(ctx context.Context, path string, localVarOptionals *SecretsApiListSecretPathsOpts) (DsvSecretListPathsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SecretListPathsResponse
+		localVarReturnValue DsvSecretListPathsResponse
 	)
 
 	// create path and map variables
@@ -889,7 +889,7 @@ func (a *SecretsApiService) ListSecretPaths(ctx context.Context, path string, lo
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v SecretListPathsResponse
+			var v DsvSecretListPathsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -899,7 +899,7 @@ func (a *SecretsApiService) ListSecretPaths(ctx context.Context, path string, lo
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -909,7 +909,7 @@ func (a *SecretsApiService) ListSecretPaths(ctx context.Context, path string, lo
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -919,7 +919,7 @@ func (a *SecretsApiService) ListSecretPaths(ctx context.Context, path string, lo
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -929,7 +929,7 @@ func (a *SecretsApiService) ListSecretPaths(ctx context.Context, path string, lo
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -939,7 +939,7 @@ func (a *SecretsApiService) ListSecretPaths(ctx context.Context, path string, lo
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -959,15 +959,15 @@ Rollbacks a Secret to a previous version.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param path The full secret path i.e. servers/prod/webserver-01
  * @param version Versions to return
-@return SecretVersionResponse
+@return DsvSecretVersionResponse
 */
-func (a *SecretsApiService) RollbackSecret(ctx context.Context, path string, version int64) (SecretVersionResponse, *http.Response, error) {
+func (a *SecretsApiService) RollbackSecret(ctx context.Context, path string, version int64) (DsvSecretVersionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SecretVersionResponse
+		localVarReturnValue DsvSecretVersionResponse
 	)
 
 	// create path and map variables
@@ -1026,7 +1026,7 @@ func (a *SecretsApiService) RollbackSecret(ctx context.Context, path string, ver
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v SecretVersionResponse
+			var v DsvSecretVersionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1036,7 +1036,7 @@ func (a *SecretsApiService) RollbackSecret(ctx context.Context, path string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1046,7 +1046,7 @@ func (a *SecretsApiService) RollbackSecret(ctx context.Context, path string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1056,7 +1056,7 @@ func (a *SecretsApiService) RollbackSecret(ctx context.Context, path string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1066,7 +1066,7 @@ func (a *SecretsApiService) RollbackSecret(ctx context.Context, path string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1076,7 +1076,7 @@ func (a *SecretsApiService) RollbackSecret(ctx context.Context, path string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1103,7 +1103,7 @@ Lists secret paths that start with the path parameter.
      * @param "Limit" (optional.Int64) -  Limit for the number of results per page (cursor)
      * @param "Cursor" (optional.String) -  Cursor to next batch of results
      * @param "Sort" (optional.String) -  Sort results ascending (asc) or descending (desc) order by lastModified attribute on field search. Default is desc
-@return SecretSearch
+@return DsvSecretSearch
 */
 
 type SecretsApiSearchSecretsOpts struct {
@@ -1117,13 +1117,13 @@ type SecretsApiSearchSecretsOpts struct {
     Sort optional.String
 }
 
-func (a *SecretsApiService) SearchSecrets(ctx context.Context, localVarOptionals *SecretsApiSearchSecretsOpts) (SecretSearch, *http.Response, error) {
+func (a *SecretsApiService) SearchSecrets(ctx context.Context, localVarOptionals *SecretsApiSearchSecretsOpts) (DsvSecretSearch, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SecretSearch
+		localVarReturnValue DsvSecretSearch
 	)
 
 	// create path and map variables
@@ -1217,7 +1217,7 @@ func (a *SecretsApiService) SearchSecrets(ctx context.Context, localVarOptionals
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v SecretSearch
+			var v DsvSecretSearch
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1227,7 +1227,7 @@ func (a *SecretsApiService) SearchSecrets(ctx context.Context, localVarOptionals
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1237,7 +1237,7 @@ func (a *SecretsApiService) SearchSecrets(ctx context.Context, localVarOptionals
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1247,7 +1247,7 @@ func (a *SecretsApiService) SearchSecrets(ctx context.Context, localVarOptionals
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1257,7 +1257,7 @@ func (a *SecretsApiService) SearchSecrets(ctx context.Context, localVarOptionals
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1267,7 +1267,7 @@ func (a *SecretsApiService) SearchSecrets(ctx context.Context, localVarOptionals
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1287,15 +1287,15 @@ Updates an existing secret.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
  * @param path The full secret path i.e. servers/prod/webserver-01
-@return SecretResponse
+@return DsvSecretResponse
 */
-func (a *SecretsApiService) UpdateSecret(ctx context.Context, body SecretUpdate, path string) (SecretResponse, *http.Response, error) {
+func (a *SecretsApiService) UpdateSecret(ctx context.Context, body DsvSecretUpdate, path string) (DsvSecretResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SecretResponse
+		localVarReturnValue DsvSecretResponse
 	)
 
 	// create path and map variables
@@ -1368,7 +1368,7 @@ func (a *SecretsApiService) UpdateSecret(ctx context.Context, body SecretUpdate,
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v SecretResponse
+			var v DsvSecretResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1378,7 +1378,7 @@ func (a *SecretsApiService) UpdateSecret(ctx context.Context, body SecretUpdate,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1388,7 +1388,7 @@ func (a *SecretsApiService) UpdateSecret(ctx context.Context, body SecretUpdate,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1398,7 +1398,7 @@ func (a *SecretsApiService) UpdateSecret(ctx context.Context, body SecretUpdate,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1408,7 +1408,7 @@ func (a *SecretsApiService) UpdateSecret(ctx context.Context, body SecretUpdate,
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

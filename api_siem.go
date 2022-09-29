@@ -34,7 +34,7 @@ Search SIEM Endpoints by name.
      * @param "Limit" (optional.Int64) -  Limit for the number of results per page (cursor)
      * @param "Cursor" (optional.String) -  Cursor to next batch of results
      * @param "Sort" (optional.String) -  Sort results ascending (asc) or descending (desc) order by name. Default is asc
-@return SiemSearchResponse
+@return DsvSiemSearchResponse
 */
 
 type SIEMApiSearchSiemsOpts struct {
@@ -44,13 +44,13 @@ type SIEMApiSearchSiemsOpts struct {
     Sort optional.String
 }
 
-func (a *SIEMApiService) SearchSiems(ctx context.Context, localVarOptionals *SIEMApiSearchSiemsOpts) (SiemSearchResponse, *http.Response, error) {
+func (a *SIEMApiService) SearchSiems(ctx context.Context, localVarOptionals *SIEMApiSearchSiemsOpts) (DsvSiemSearchResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SiemSearchResponse
+		localVarReturnValue DsvSiemSearchResponse
 	)
 
 	// create path and map variables
@@ -132,7 +132,7 @@ func (a *SIEMApiService) SearchSiems(ctx context.Context, localVarOptionals *SIE
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v SiemSearchResponse
+			var v DsvSiemSearchResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -142,7 +142,7 @@ func (a *SIEMApiService) SearchSiems(ctx context.Context, localVarOptionals *SIE
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -152,7 +152,7 @@ func (a *SIEMApiService) SearchSiems(ctx context.Context, localVarOptionals *SIE
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -162,7 +162,7 @@ func (a *SIEMApiService) SearchSiems(ctx context.Context, localVarOptionals *SIE
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -172,7 +172,7 @@ func (a *SIEMApiService) SearchSiems(ctx context.Context, localVarOptionals *SIE
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -182,7 +182,7 @@ func (a *SIEMApiService) SearchSiems(ctx context.Context, localVarOptionals *SIE
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -201,15 +201,15 @@ SIEMApiService Create SIEM Endpoint
 Creates a new SIEM endpoint.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return SiemResponse
+@return DsvSiemResponse
 */
-func (a *SIEMApiService) SiemCreate(ctx context.Context, body SiemCreateUpdateRequestModel) (SiemResponse, *http.Response, error) {
+func (a *SIEMApiService) SiemCreate(ctx context.Context, body DsvSiemCreateUpdateRequestModel) (DsvSiemResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SiemResponse
+		localVarReturnValue DsvSiemResponse
 	)
 
 	// create path and map variables
@@ -281,7 +281,7 @@ func (a *SIEMApiService) SiemCreate(ctx context.Context, body SiemCreateUpdateRe
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v SiemResponse
+			var v DsvSiemResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -291,7 +291,7 @@ func (a *SIEMApiService) SiemCreate(ctx context.Context, body SiemCreateUpdateRe
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -301,7 +301,7 @@ func (a *SIEMApiService) SiemCreate(ctx context.Context, body SiemCreateUpdateRe
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -311,7 +311,7 @@ func (a *SIEMApiService) SiemCreate(ctx context.Context, body SiemCreateUpdateRe
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -321,7 +321,7 @@ func (a *SIEMApiService) SiemCreate(ctx context.Context, body SiemCreateUpdateRe
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -412,7 +412,7 @@ func (a *SIEMApiService) SiemDelete(ctx context.Context, name string) (*http.Res
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -422,7 +422,7 @@ func (a *SIEMApiService) SiemDelete(ctx context.Context, name string) (*http.Res
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -432,7 +432,7 @@ func (a *SIEMApiService) SiemDelete(ctx context.Context, name string) (*http.Res
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -442,7 +442,7 @@ func (a *SIEMApiService) SiemDelete(ctx context.Context, name string) (*http.Res
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -461,15 +461,15 @@ SIEMApiService Get SIEM Endpoint
 Retrieve an existing SIEM endpoint.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param name
-@return SiemResponse
+@return DsvSiemResponse
 */
-func (a *SIEMApiService) SiemGet(ctx context.Context, name string) (SiemResponse, *http.Response, error) {
+func (a *SIEMApiService) SiemGet(ctx context.Context, name string) (DsvSiemResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SiemResponse
+		localVarReturnValue DsvSiemResponse
 	)
 
 	// create path and map variables
@@ -540,7 +540,7 @@ func (a *SIEMApiService) SiemGet(ctx context.Context, name string) (SiemResponse
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v SiemResponse
+			var v DsvSiemResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -550,7 +550,7 @@ func (a *SIEMApiService) SiemGet(ctx context.Context, name string) (SiemResponse
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -560,7 +560,7 @@ func (a *SIEMApiService) SiemGet(ctx context.Context, name string) (SiemResponse
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -570,7 +570,7 @@ func (a *SIEMApiService) SiemGet(ctx context.Context, name string) (SiemResponse
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -580,7 +580,7 @@ func (a *SIEMApiService) SiemGet(ctx context.Context, name string) (SiemResponse
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -600,15 +600,15 @@ Update an existing SIEM endpoint. Update sets \&quot;failed\&quot; to \&quot;fal
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
  * @param name
-@return SiemResponse
+@return DsvSiemResponse
 */
-func (a *SIEMApiService) SiemUpdate(ctx context.Context, body SiemCreateUpdateRequestModel, name string) (SiemResponse, *http.Response, error) {
+func (a *SIEMApiService) SiemUpdate(ctx context.Context, body DsvSiemCreateUpdateRequestModel, name string) (DsvSiemResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SiemResponse
+		localVarReturnValue DsvSiemResponse
 	)
 
 	// create path and map variables
@@ -681,7 +681,7 @@ func (a *SIEMApiService) SiemUpdate(ctx context.Context, body SiemCreateUpdateRe
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v SiemResponse
+			var v DsvSiemResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -691,7 +691,7 @@ func (a *SIEMApiService) SiemUpdate(ctx context.Context, body SiemCreateUpdateRe
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -701,7 +701,7 @@ func (a *SIEMApiService) SiemUpdate(ctx context.Context, body SiemCreateUpdateRe
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -711,7 +711,7 @@ func (a *SIEMApiService) SiemUpdate(ctx context.Context, body SiemCreateUpdateRe
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -721,7 +721,7 @@ func (a *SIEMApiService) SiemUpdate(ctx context.Context, body SiemCreateUpdateRe
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

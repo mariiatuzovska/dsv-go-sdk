@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**PingEngine**](EnginesApi.md#PingEngine) | **Post** /engines/{name}/ping | Ping Engine
 
 # **CreateEngine**
-> EngineCreateResponse CreateEngine(ctx, body)
+> DsvEngineCreateResponse CreateEngine(ctx, body)
 Create Engine
 
 Registers a new engine and returns its key pair.
@@ -21,11 +21,11 @@ Registers a new engine and returns its key pair.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**EngineCreate**](EngineCreate.md)|  | 
+  **body** | [**DsvEngineCreate**](DsvEngineCreate.md)|  | 
 
 ### Return type
 
-[**EngineCreateResponse**](EngineCreateResponse.md)
+[**DsvEngineCreateResponse**](EngineCreateResponse.md)
 
 ### Authorization
 
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteEngine**
-> MessageResponse DeleteEngine(ctx, path, optional)
+> DsvMessageResponse DeleteEngine(ctx, path, optional)
 Delete Engine
 
 Delete an engine  by name.
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**DsvMessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetEngine**
-> EngineGetResponse GetEngine(ctx, path)
+> DsvEngineGetResponse GetEngine(ctx, path)
 Get Engine
 
 Retrieve engine by name.
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EngineGetResponse**](EngineGetResponse.md)
+[**DsvEngineGetResponse**](EngineGetResponse.md)
 
 ### Authorization
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ListEngines**
-> EngineListResult ListEngines(ctx, )
+> DsvEngineListResult ListEngines(ctx, )
 List Engines
 
 List all existing engines.
@@ -113,7 +113,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**EngineListResult**](EngineListResult.md)
+[**DsvEngineListResult**](EngineListResult.md)
 
 ### Authorization
 
@@ -127,7 +127,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PingEngine**
-> EnginePingResponse PingEngine(ctx, path)
+> DsvEnginePingResponse PingEngine(ctx, path)
 Ping Engine
 
 Sends a message to the engine to validate connectivity.
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EnginePingResponse**](EnginePingResponse.md)
+[**DsvEnginePingResponse**](EnginePingResponse.md)
 
 ### Authorization
 

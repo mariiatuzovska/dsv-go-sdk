@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**GetUsage**](UsageApi.md#GetUsage) | **Get** /usage | Get Usage
 
 # **GetUsage**
-> UsageResponseGeneral GetUsage(ctx, startDate, optional)
+> DsvUsageResponseGeneral GetUsage(ctx, startDate, optional)
 Get Usage
 
 Get usage statistics for API calls and total number of secrets
@@ -29,7 +29,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsageResponseGeneral**](UsageResponseGeneral.md)
+[**DsvUsageResponseGeneral**](UsageResponseGeneral.md)
 
 ### Authorization
 

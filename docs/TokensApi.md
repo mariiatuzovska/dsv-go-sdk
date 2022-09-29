@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**Token**](TokensApi.md#Token) | **Post** /token | Authenticate
 
 # **InitCertAuth**
-> InitiateCertAuthResponse InitCertAuth(ctx, clientCertificate)
+> DsvInitiateCertAuthResponse InitCertAuth(ctx, clientCertificate)
 Initiate authentication by certificate
 
 Request a challenge to decrypt to prove ownership of the private key for authentication by certificate flow. Challenge id returned in response is only valid for 5 minutes.
@@ -23,7 +23,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InitiateCertAuthResponse**](InitiateCertAuthResponse.md)
+[**DsvInitiateCertAuthResponse**](InitiateCertAuthResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **Token**
-> AccessTokenResponse Token(ctx, grantType, username, password, provider, awsBody, awsHeaders, jwt, clientId, clientSecret, refreshToken, certChallengeId, decryptedChallenge)
+> DsvAccessTokenResponse Token(ctx, grantType, username, password, provider, awsBody, awsHeaders, jwt, clientId, clientSecret, refreshToken, certChallengeId, decryptedChallenge)
 Authenticate
 
 Submit parameters to get a new access token for use on protected endpoints
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccessTokenResponse**](AccessTokenResponse.md)
+[**DsvAccessTokenResponse**](AccessTokenResponse.md)
 
 ### Authorization
 

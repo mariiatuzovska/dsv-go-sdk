@@ -28,15 +28,15 @@ PKIApiService Create Leaf Certificate and Private Key
 Create and return a signed certificate with a private key based on a registered root CA.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return ResponseCertificate
+@return DsvResponseCertificate
 */
-func (a *PKIApiService) LeafParams(ctx context.Context, body SigningRequestInformation) (ResponseCertificate, *http.Response, error) {
+func (a *PKIApiService) LeafParams(ctx context.Context, body DsvSigningRequestInformation) (DsvResponseCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ResponseCertificate
+		localVarReturnValue DsvResponseCertificate
 	)
 
 	// create path and map variables
@@ -108,7 +108,7 @@ func (a *PKIApiService) LeafParams(ctx context.Context, body SigningRequestInfor
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ResponseCertificate
+			var v DsvResponseCertificate
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -118,7 +118,7 @@ func (a *PKIApiService) LeafParams(ctx context.Context, body SigningRequestInfor
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -128,7 +128,7 @@ func (a *PKIApiService) LeafParams(ctx context.Context, body SigningRequestInfor
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -138,7 +138,7 @@ func (a *PKIApiService) LeafParams(ctx context.Context, body SigningRequestInfor
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -148,7 +148,7 @@ func (a *PKIApiService) LeafParams(ctx context.Context, body SigningRequestInfor
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -167,15 +167,15 @@ PKIApiService Register Root CA
 Register a root CA as a secret.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return ResponseRootCertificate
+@return DsvResponseRootCertificate
 */
-func (a *PKIApiService) RegisterRoot(ctx context.Context, body RootCaSecret) (ResponseRootCertificate, *http.Response, error) {
+func (a *PKIApiService) RegisterRoot(ctx context.Context, body DsvRootCaSecret) (DsvResponseRootCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ResponseRootCertificate
+		localVarReturnValue DsvResponseRootCertificate
 	)
 
 	// create path and map variables
@@ -247,7 +247,7 @@ func (a *PKIApiService) RegisterRoot(ctx context.Context, body RootCaSecret) (Re
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v ResponseRootCertificate
+			var v DsvResponseRootCertificate
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -257,7 +257,7 @@ func (a *PKIApiService) RegisterRoot(ctx context.Context, body RootCaSecret) (Re
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -267,7 +267,7 @@ func (a *PKIApiService) RegisterRoot(ctx context.Context, body RootCaSecret) (Re
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -277,7 +277,7 @@ func (a *PKIApiService) RegisterRoot(ctx context.Context, body RootCaSecret) (Re
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -287,7 +287,7 @@ func (a *PKIApiService) RegisterRoot(ctx context.Context, body RootCaSecret) (Re
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -306,15 +306,15 @@ PKIApiService Generate Root Certificate
 Create and return a new root certificate.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return ResponseCertificate
+@return DsvResponseCertificate
 */
-func (a *PKIApiService) RootCARegistration(ctx context.Context, body RootCaRegistration) (ResponseCertificate, *http.Response, error) {
+func (a *PKIApiService) RootCARegistration(ctx context.Context, body DsvRootCaRegistration) (DsvResponseCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ResponseCertificate
+		localVarReturnValue DsvResponseCertificate
 	)
 
 	// create path and map variables
@@ -386,7 +386,7 @@ func (a *PKIApiService) RootCARegistration(ctx context.Context, body RootCaRegis
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ResponseCertificate
+			var v DsvResponseCertificate
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -396,7 +396,7 @@ func (a *PKIApiService) RootCARegistration(ctx context.Context, body RootCaRegis
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -406,7 +406,7 @@ func (a *PKIApiService) RootCARegistration(ctx context.Context, body RootCaRegis
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -416,7 +416,7 @@ func (a *PKIApiService) RootCARegistration(ctx context.Context, body RootCaRegis
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -426,7 +426,7 @@ func (a *PKIApiService) RootCARegistration(ctx context.Context, body RootCaRegis
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -445,15 +445,15 @@ PKIApiService Create SSH Certificate
 Create, store and return a signed SSH certificate using a root private key and SHH-compatible leaf public key.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return ResponseSshCertificate
+@return DsvResponseSshCertificate
 */
-func (a *PKIApiService) SSHCertParams(ctx context.Context, body SshCertInformation) (ResponseSshCertificate, *http.Response, error) {
+func (a *PKIApiService) SSHCertParams(ctx context.Context, body DsvSshCertInformation) (DsvResponseSshCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ResponseSshCertificate
+		localVarReturnValue DsvResponseSshCertificate
 	)
 
 	// create path and map variables
@@ -525,7 +525,7 @@ func (a *PKIApiService) SSHCertParams(ctx context.Context, body SshCertInformati
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ResponseSshCertificate
+			var v DsvResponseSshCertificate
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -535,7 +535,7 @@ func (a *PKIApiService) SSHCertParams(ctx context.Context, body SshCertInformati
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -545,7 +545,7 @@ func (a *PKIApiService) SSHCertParams(ctx context.Context, body SshCertInformati
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -555,7 +555,7 @@ func (a *PKIApiService) SSHCertParams(ctx context.Context, body SshCertInformati
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -565,7 +565,7 @@ func (a *PKIApiService) SSHCertParams(ctx context.Context, body SshCertInformati
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -584,15 +584,15 @@ PKIApiService Create Signed Certificate
 Create and return a signed certificate based on a registered root CA with a given CSR.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return SignedLeafCertificate
+@return DsvSignedLeafCertificate
 */
-func (a *PKIApiService) SignCertificate(ctx context.Context, body SigningRequest) (SignedLeafCertificate, *http.Response, error) {
+func (a *PKIApiService) SignCertificate(ctx context.Context, body DsvSigningRequest) (DsvSignedLeafCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SignedLeafCertificate
+		localVarReturnValue DsvSignedLeafCertificate
 	)
 
 	// create path and map variables
@@ -664,7 +664,7 @@ func (a *PKIApiService) SignCertificate(ctx context.Context, body SigningRequest
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v SignedLeafCertificate
+			var v DsvSignedLeafCertificate
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -674,7 +674,7 @@ func (a *PKIApiService) SignCertificate(ctx context.Context, body SigningRequest
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -684,7 +684,7 @@ func (a *PKIApiService) SignCertificate(ctx context.Context, body SigningRequest
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -694,7 +694,7 @@ func (a *PKIApiService) SignCertificate(ctx context.Context, body SigningRequest
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -704,7 +704,7 @@ func (a *PKIApiService) SignCertificate(ctx context.Context, body SigningRequest
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

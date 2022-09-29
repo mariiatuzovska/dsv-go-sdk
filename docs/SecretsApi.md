@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**UpdateSecret**](SecretsApi.md#UpdateSecret) | **Put** /secrets/{path} | Update Secret
 
 # **CreateSecret**
-> SecretResponse CreateSecret(ctx, body, path)
+> DsvSecretResponse CreateSecret(ctx, body, path)
 Create Secret
 
 Creates a new secret.
@@ -25,12 +25,12 @@ Creates a new secret.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**SecretCreate**](SecretCreate.md)|  | 
+  **body** | [**DsvSecretCreate**](DsvSecretCreate.md)|  | 
   **path** | **string**| The full secret path i.e. servers/prod/webserver-01 | 
 
 ### Return type
 
-[**SecretResponse**](SecretResponse.md)
+[**DsvSecretResponse**](SecretResponse.md)
 
 ### Authorization
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteSecret**
-> MessageResponse DeleteSecret(ctx, path, optional)
+> DsvMessageResponse DeleteSecret(ctx, path, optional)
 Delete Secret
 
 Deletes a secret by path or by id in the query.
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**DsvMessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetSecret**
-> SecretResponse GetSecret(ctx, path, optional)
+> DsvSecretResponse GetSecret(ctx, path, optional)
 Get Secret
 
 Gets a full secret by path or by id in the query.
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecretResponse**](SecretResponse.md)
+[**DsvSecretResponse**](SecretResponse.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetSecretByVersion**
-> SecretVersionResponse GetSecretByVersion(ctx, path, version)
+> DsvSecretVersionResponse GetSecretByVersion(ctx, path, version)
 Get Secret By Version
 
 Gets a full secret by path and version in the query.
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecretVersionResponse**](SecretVersionResponse.md)
+[**DsvSecretVersionResponse**](SecretVersionResponse.md)
 
 ### Authorization
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetSecretDescription**
-> SecretDescription GetSecretDescription(ctx, path, optional)
+> DsvSecretDescription GetSecretDescription(ctx, path, optional)
 Get Secret Description
 
 Gets a secret's metadata without returning the sensitive data.
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecretDescription**](SecretDescription.md)
+[**DsvSecretDescription**](SecretDescription.md)
 
 ### Authorization
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ListSecretPaths**
-> SecretListPathsResponse ListSecretPaths(ctx, path, optional)
+> DsvSecretListPathsResponse ListSecretPaths(ctx, path, optional)
 List Secret Paths
 
 Lists secret paths that start with the path parameter.
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecretListPathsResponse**](SecretListPathsResponse.md)
+[**DsvSecretListPathsResponse**](SecretListPathsResponse.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **RollbackSecret**
-> SecretVersionResponse RollbackSecret(ctx, path, version)
+> DsvSecretVersionResponse RollbackSecret(ctx, path, version)
 Rollback a Secret
 
 Rollbacks a Secret to a previous version.
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecretVersionResponse**](SecretVersionResponse.md)
+[**DsvSecretVersionResponse**](SecretVersionResponse.md)
 
 ### Authorization
 
@@ -247,7 +247,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SearchSecrets**
-> SecretSearch SearchSecrets(ctx, optional)
+> DsvSecretSearch SearchSecrets(ctx, optional)
 Search for Secrets
 
 Lists secret paths that start with the path parameter.
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecretSearch**](SecretSearch.md)
+[**DsvSecretSearch**](SecretSearch.md)
 
 ### Authorization
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdateSecret**
-> SecretResponse UpdateSecret(ctx, body, path)
+> DsvSecretResponse UpdateSecret(ctx, body, path)
 Update Secret
 
 Updates an existing secret.
@@ -298,12 +298,12 @@ Updates an existing secret.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**SecretUpdate**](SecretUpdate.md)|  | 
+  **body** | [**DsvSecretUpdate**](DsvSecretUpdate.md)|  | 
   **path** | **string**| The full secret path i.e. servers/prod/webserver-01 | 
 
 ### Return type
 
-[**SecretResponse**](SecretResponse.md)
+[**DsvSecretResponse**](SecretResponse.md)
 
 ### Authorization
 

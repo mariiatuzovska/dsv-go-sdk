@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**SiemUpdate**](SIEMApi.md#SiemUpdate) | **Put** /config/siem/{name} | Update SIEM Endpoint
 
 # **SearchSiems**
-> SiemSearchResponse SearchSiems(ctx, optional)
+> DsvSiemSearchResponse SearchSiems(ctx, optional)
 Search SIEM Endpoints
 
 Search SIEM Endpoints by name.
@@ -34,7 +34,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SiemSearchResponse**](SiemSearchResponse.md)
+[**DsvSiemSearchResponse**](SiemSearchResponse.md)
 
 ### Authorization
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SiemCreate**
-> SiemResponse SiemCreate(ctx, body)
+> DsvSiemResponse SiemCreate(ctx, body)
 Create SIEM Endpoint
 
 Creates a new SIEM endpoint.
@@ -58,11 +58,11 @@ Creates a new SIEM endpoint.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**SiemCreateUpdateRequestModel**](SiemCreateUpdateRequestModel.md)|  | 
+  **body** | [**DsvSiemCreateUpdateRequestModel**](DsvSiemCreateUpdateRequestModel.md)|  | 
 
 ### Return type
 
-[**SiemResponse**](SiemResponse.md)
+[**DsvSiemResponse**](SiemResponse.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SiemGet**
-> SiemResponse SiemGet(ctx, name)
+> DsvSiemResponse SiemGet(ctx, name)
 Get SIEM Endpoint
 
 Retrieve an existing SIEM endpoint.
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SiemResponse**](SiemResponse.md)
+[**DsvSiemResponse**](SiemResponse.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SiemUpdate**
-> SiemResponse SiemUpdate(ctx, body, name)
+> DsvSiemResponse SiemUpdate(ctx, body, name)
 Update SIEM Endpoint
 
 Update an existing SIEM endpoint. Update sets \"failed\" to \"false\" and \"failedEvents\" to \"0\" automatically.
@@ -142,12 +142,12 @@ Update an existing SIEM endpoint. Update sets \"failed\" to \"false\" and \"fail
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**SiemCreateUpdateRequestModel**](SiemCreateUpdateRequestModel.md)|  | 
+  **body** | [**DsvSiemCreateUpdateRequestModel**](DsvSiemCreateUpdateRequestModel.md)|  | 
   **name** | **string**|  | 
 
 ### Return type
 
-[**SiemResponse**](SiemResponse.md)
+[**DsvSiemResponse**](SiemResponse.md)
 
 ### Authorization
 

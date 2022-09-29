@@ -29,15 +29,15 @@ TasksApiService Get background task status
 Get background task status by task uuid
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id Task status uuid
-@return TaskState
+@return DsvTaskState
 */
-func (a *TasksApiService) GetTaskStatus(ctx context.Context, id string) (TaskState, *http.Response, error) {
+func (a *TasksApiService) GetTaskStatus(ctx context.Context, id string) (DsvTaskState, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue TaskState
+		localVarReturnValue DsvTaskState
 	)
 
 	// create path and map variables
@@ -108,7 +108,7 @@ func (a *TasksApiService) GetTaskStatus(ctx context.Context, id string) (TaskSta
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v TaskState
+			var v DsvTaskState
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -118,7 +118,7 @@ func (a *TasksApiService) GetTaskStatus(ctx context.Context, id string) (TaskSta
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -128,7 +128,7 @@ func (a *TasksApiService) GetTaskStatus(ctx context.Context, id string) (TaskSta
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -138,7 +138,7 @@ func (a *TasksApiService) GetTaskStatus(ctx context.Context, id string) (TaskSta
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -148,7 +148,7 @@ func (a *TasksApiService) GetTaskStatus(ctx context.Context, id string) (TaskSta
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

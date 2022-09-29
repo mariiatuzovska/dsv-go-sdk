@@ -30,15 +30,15 @@ ClientsApiService Create a Client Credential
 Request a new client credential for a role and get back the client id and secret key.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return ClientCredentialsResponse
+@return DsvClientCredentialsResponse
 */
-func (a *ClientsApiService) CreateClientCredential(ctx context.Context, body ClientCreate) (ClientCredentialsResponse, *http.Response, error) {
+func (a *ClientsApiService) CreateClientCredential(ctx context.Context, body DsvClientCreate) (DsvClientCredentialsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ClientCredentialsResponse
+		localVarReturnValue DsvClientCredentialsResponse
 	)
 
 	// create path and map variables
@@ -110,7 +110,7 @@ func (a *ClientsApiService) CreateClientCredential(ctx context.Context, body Cli
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v ClientCredentialsResponse
+			var v DsvClientCredentialsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -120,7 +120,7 @@ func (a *ClientsApiService) CreateClientCredential(ctx context.Context, body Cli
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -130,7 +130,7 @@ func (a *ClientsApiService) CreateClientCredential(ctx context.Context, body Cli
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -140,7 +140,7 @@ func (a *ClientsApiService) CreateClientCredential(ctx context.Context, body Cli
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -150,7 +150,7 @@ func (a *ClientsApiService) CreateClientCredential(ctx context.Context, body Cli
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -171,20 +171,20 @@ Delete a client credential by its unique client id.
  * @param clientId ClientId property of the client credentials
  * @param optional nil or *ClientsApiDeleteClientCredentialOpts - Optional Parameters:
      * @param "Force" (optional.Bool) -  Delete immediately
-@return MessageResponse
+@return DsvMessageResponse
 */
 
 type ClientsApiDeleteClientCredentialOpts struct {
     Force optional.Bool
 }
 
-func (a *ClientsApiService) DeleteClientCredential(ctx context.Context, clientId string, localVarOptionals *ClientsApiDeleteClientCredentialOpts) (MessageResponse, *http.Response, error) {
+func (a *ClientsApiService) DeleteClientCredential(ctx context.Context, clientId string, localVarOptionals *ClientsApiDeleteClientCredentialOpts) (DsvMessageResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue MessageResponse
+		localVarReturnValue DsvMessageResponse
 	)
 
 	// create path and map variables
@@ -258,7 +258,7 @@ func (a *ClientsApiService) DeleteClientCredential(ctx context.Context, clientId
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v MessageResponse
+			var v DsvMessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -268,7 +268,7 @@ func (a *ClientsApiService) DeleteClientCredential(ctx context.Context, clientId
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -278,7 +278,7 @@ func (a *ClientsApiService) DeleteClientCredential(ctx context.Context, clientId
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -288,7 +288,7 @@ func (a *ClientsApiService) DeleteClientCredential(ctx context.Context, clientId
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -298,7 +298,7 @@ func (a *ClientsApiService) DeleteClientCredential(ctx context.Context, clientId
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -308,7 +308,7 @@ func (a *ClientsApiService) DeleteClientCredential(ctx context.Context, clientId
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -326,15 +326,15 @@ func (a *ClientsApiService) DeleteClientCredential(ctx context.Context, clientId
 ClientsApiService Get a Client Bootstrap Credential including secret
 Get a client credential by url.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return ClientCredentialsResponse
+@return DsvClientCredentialsResponse
 */
-func (a *ClientsApiService) GetBootstrapClientCredential(ctx context.Context) (ClientCredentialsResponse, *http.Response, error) {
+func (a *ClientsApiService) GetBootstrapClientCredential(ctx context.Context) (DsvClientCredentialsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ClientCredentialsResponse
+		localVarReturnValue DsvClientCredentialsResponse
 	)
 
 	// create path and map variables
@@ -404,7 +404,7 @@ func (a *ClientsApiService) GetBootstrapClientCredential(ctx context.Context) (C
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ClientCredentialsResponse
+			var v DsvClientCredentialsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -414,7 +414,7 @@ func (a *ClientsApiService) GetBootstrapClientCredential(ctx context.Context) (C
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -424,7 +424,7 @@ func (a *ClientsApiService) GetBootstrapClientCredential(ctx context.Context) (C
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -434,7 +434,7 @@ func (a *ClientsApiService) GetBootstrapClientCredential(ctx context.Context) (C
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -444,7 +444,7 @@ func (a *ClientsApiService) GetBootstrapClientCredential(ctx context.Context) (C
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -454,7 +454,7 @@ func (a *ClientsApiService) GetBootstrapClientCredential(ctx context.Context) (C
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -473,15 +473,15 @@ ClientsApiService Get a Client Credential
 Get a client credential by client id. The secret key is omitted.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param clientId ClientId property of the client credentials
-@return ClientCredentialsResponse
+@return DsvClientCredentialsResponse
 */
-func (a *ClientsApiService) GetClientCredential(ctx context.Context, clientId string) (ClientCredentialsResponse, *http.Response, error) {
+func (a *ClientsApiService) GetClientCredential(ctx context.Context, clientId string) (DsvClientCredentialsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ClientCredentialsResponse
+		localVarReturnValue DsvClientCredentialsResponse
 	)
 
 	// create path and map variables
@@ -552,7 +552,7 @@ func (a *ClientsApiService) GetClientCredential(ctx context.Context, clientId st
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ClientCredentialsResponse
+			var v DsvClientCredentialsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -562,7 +562,7 @@ func (a *ClientsApiService) GetClientCredential(ctx context.Context, clientId st
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -572,7 +572,7 @@ func (a *ClientsApiService) GetClientCredential(ctx context.Context, clientId st
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -582,7 +582,7 @@ func (a *ClientsApiService) GetClientCredential(ctx context.Context, clientId st
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -592,7 +592,7 @@ func (a *ClientsApiService) GetClientCredential(ctx context.Context, clientId st
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -602,7 +602,7 @@ func (a *ClientsApiService) GetClientCredential(ctx context.Context, clientId st
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -693,7 +693,7 @@ func (a *ClientsApiService) RestoreClient(ctx context.Context, clientId string) 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -703,7 +703,7 @@ func (a *ClientsApiService) RestoreClient(ctx context.Context, clientId string) 
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -713,7 +713,7 @@ func (a *ClientsApiService) RestoreClient(ctx context.Context, clientId string) 
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -723,7 +723,7 @@ func (a *ClientsApiService) RestoreClient(ctx context.Context, clientId string) 
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -733,7 +733,7 @@ func (a *ClientsApiService) RestoreClient(ctx context.Context, clientId string) 
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -755,7 +755,7 @@ Search for one or more client credentials associated with a particular role.
  * @param optional nil or *ClientsApiSearchClientsOpts - Optional Parameters:
      * @param "Limit" (optional.Int64) -  The maximum number of results per cursor
      * @param "Cursor" (optional.String) -  Cursor to next batch of results
-@return ClientSearchModel
+@return DsvClientSearchModel
 */
 
 type ClientsApiSearchClientsOpts struct {
@@ -763,13 +763,13 @@ type ClientsApiSearchClientsOpts struct {
     Cursor optional.String
 }
 
-func (a *ClientsApiService) SearchClients(ctx context.Context, role string, localVarOptionals *ClientsApiSearchClientsOpts) (ClientSearchModel, *http.Response, error) {
+func (a *ClientsApiService) SearchClients(ctx context.Context, role string, localVarOptionals *ClientsApiSearchClientsOpts) (DsvClientSearchModel, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ClientSearchModel
+		localVarReturnValue DsvClientSearchModel
 	)
 
 	// create path and map variables
@@ -846,7 +846,7 @@ func (a *ClientsApiService) SearchClients(ctx context.Context, role string, loca
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ClientSearchModel
+			var v DsvClientSearchModel
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -856,7 +856,7 @@ func (a *ClientsApiService) SearchClients(ctx context.Context, role string, loca
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -866,7 +866,7 @@ func (a *ClientsApiService) SearchClients(ctx context.Context, role string, loca
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -876,7 +876,7 @@ func (a *ClientsApiService) SearchClients(ctx context.Context, role string, loca
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

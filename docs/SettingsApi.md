@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**UpdateAuthSettings**](SettingsApi.md#UpdateAuthSettings) | **Put** /config/auth/{name} | Update Authentication Provider
 
 # **CreateAuthSettings**
-> AuthenticationSettingsResponse CreateAuthSettings(ctx, body)
+> DsvAuthenticationSettingsResponse CreateAuthSettings(ctx, body)
 Create Authentication Provider
 
 Creates new authentication provider settings.
@@ -24,11 +24,11 @@ Creates new authentication provider settings.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**AuthenticationSettingsCreateModel**](AuthenticationSettingsCreateModel.md)|  | 
+  **body** | [**DsvAuthenticationSettingsCreateModel**](DsvAuthenticationSettingsCreateModel.md)|  | 
 
 ### Return type
 
-[**AuthenticationSettingsResponse**](AuthenticationSettingsResponse.md)
+[**DsvAuthenticationSettingsResponse**](AuthenticationSettingsResponse.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteAuthSettings**
-> MessageResponse DeleteAuthSettings(ctx, name, optional)
+> DsvMessageResponse DeleteAuthSettings(ctx, name, optional)
 Delete Authentication Provider
 
 Remove authentication provider settings from the system.
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**DsvMessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAuthSettings**
-> AuthenticationSettingsResponse GetAuthSettings(ctx, name)
+> DsvAuthenticationSettingsResponse GetAuthSettings(ctx, name)
 Get Authentication Provider
 
 Retrieve authentication providers by name.
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AuthenticationSettingsResponse**](AuthenticationSettingsResponse.md)
+[**DsvAuthenticationSettingsResponse**](AuthenticationSettingsResponse.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAuthSettingsByVersion**
-> AuthenticationSettingsVersionResponse GetAuthSettingsByVersion(ctx, name, version)
+> DsvAuthenticationSettingsVersionResponse GetAuthSettingsByVersion(ctx, name, version)
 Get a list of Authentication Settings by version
 
 Get a full Settings by name and version in the query. Returns a list of zero up to n versions of an item.
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AuthenticationSettingsVersionResponse**](AuthenticationSettingsVersionResponse.md)
+[**DsvAuthenticationSettingsVersionResponse**](AuthenticationSettingsVersionResponse.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **RollbackAuthSettings**
-> AuthenticationSettingsResponse RollbackAuthSettings(ctx, name, version)
+> DsvAuthenticationSettingsResponse RollbackAuthSettings(ctx, name, version)
 Rollback Authentication Provider
 
 Rollback authentication provider to a previous version.
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AuthenticationSettingsResponse**](AuthenticationSettingsResponse.md)
+[**DsvAuthenticationSettingsResponse**](AuthenticationSettingsResponse.md)
 
 ### Authorization
 
@@ -192,7 +192,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SearchSettings**
-> AuthenticationSettingsSearchResponse SearchSettings(ctx, optional)
+> DsvAuthenticationSettingsSearchResponse SearchSettings(ctx, optional)
 Search Authentication Providers
 
 Search authentication providers by name.
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AuthenticationSettingsSearchResponse**](AuthenticationSettingsSearchResponse.md)
+[**DsvAuthenticationSettingsSearchResponse**](AuthenticationSettingsSearchResponse.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdateAuthSettings**
-> AuthenticationSettingsResponse UpdateAuthSettings(ctx, body, name)
+> DsvAuthenticationSettingsResponse UpdateAuthSettings(ctx, body, name)
 Update Authentication Provider
 
 Updates all fields on an existing authentication provider.
@@ -238,12 +238,12 @@ Updates all fields on an existing authentication provider.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**AuthenticationDetailsModel**](AuthenticationDetailsModel.md)|  | 
+  **body** | [**DsvAuthenticationDetailsModel**](DsvAuthenticationDetailsModel.md)|  | 
   **name** | **string**| Full name to lookup authentication settings by. | 
 
 ### Return type
 
-[**AuthenticationSettingsResponse**](AuthenticationSettingsResponse.md)
+[**DsvAuthenticationSettingsResponse**](AuthenticationSettingsResponse.md)
 
 ### Authorization
 

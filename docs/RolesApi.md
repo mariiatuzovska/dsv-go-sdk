@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**UpdateRole**](RolesApi.md#UpdateRole) | **Put** /roles/{name} | Update a Role
 
 # **CreateRole**
-> RoleResponse CreateRole(ctx, body)
+> DsvRoleResponse CreateRole(ctx, body)
 Create a Role
 
 Creates a new role.
@@ -23,11 +23,11 @@ Creates a new role.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RoleCreate**](RoleCreate.md)|  | 
+  **body** | [**DsvRoleCreate**](DsvRoleCreate.md)|  | 
 
 ### Return type
 
-[**RoleResponse**](RoleResponse.md)
+[**DsvRoleResponse**](RoleResponse.md)
 
 ### Authorization
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteRole**
-> MessageResponse DeleteRole(ctx, name, optional)
+> DsvMessageResponse DeleteRole(ctx, name, optional)
 Delete a Role
 
 Delete a role by the role name. For roles linked to 3rd party providers, such as AWS or Azure, the role name must be prefixed with the provider name from configuration in the format of <providername>:<rolename> i.e. aws-dev:db
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**DsvMessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRole**
-> RoleResponse GetRole(ctx, name)
+> DsvRoleResponse GetRole(ctx, name)
 Get a Role
 
 Retrieve an existing role by role name. For roles linked to 3rd party providers, such as AWS or Azure, the role name must be prefixed with the provider name from configuration in the format of <providername>:<rolename> i.e. aws-dev:db
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoleResponse**](RoleResponse.md)
+[**DsvRoleResponse**](RoleResponse.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRoleByVersion**
-> RoleVersionResponse GetRoleByVersion(ctx, name, version)
+> DsvRoleVersionResponse GetRoleByVersion(ctx, name, version)
 Get a Role By Version
 
 Retrieve an existing role by role name and versions. For roles linked to 3rd party providers, such as AWS or Azure, the role name must be prefixed with the provider name from configuration in the format of <providername>:<rolename> i.e. aws-dev:db
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoleVersionResponse**](RoleVersionResponse.md)
+[**DsvRoleVersionResponse**](RoleVersionResponse.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SearchRoles**
-> RoleSearchResponse SearchRoles(ctx, optional)
+> DsvRoleSearchResponse SearchRoles(ctx, optional)
 Search for Roles
 
 Search for one or more roles by role name.
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoleSearchResponse**](RoleSearchResponse.md)
+[**DsvRoleSearchResponse**](RoleSearchResponse.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdateRole**
-> RoleResponse UpdateRole(ctx, body, name)
+> DsvRoleResponse UpdateRole(ctx, body, name)
 Update a Role
 
 Update an existing role.
@@ -208,12 +208,12 @@ Update an existing role.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RoleDetailsModel**](RoleDetailsModel.md)|  | 
+  **body** | [**DsvRoleDetailsModel**](DsvRoleDetailsModel.md)|  | 
   **name** | **string**| Full role name to lookup role by | 
 
 ### Return type
 
-[**RoleResponse**](RoleResponse.md)
+[**DsvRoleResponse**](RoleResponse.md)
 
 ### Authorization
 

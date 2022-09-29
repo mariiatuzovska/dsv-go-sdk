@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**PostConfig**](ConfigApi.md#PostConfig) | **Post** /config | Create Config
 
 # **GetConfig**
-> ConfigResponse GetConfig(ctx, )
+> DsvConfigResponse GetConfig(ctx, )
 Get Config
 
 Get config data.
@@ -19,7 +19,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ConfigResponse**](ConfigResponse.md)
+[**DsvConfigResponse**](ConfigResponse.md)
 
 ### Authorization
 
@@ -33,7 +33,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetConfigByVersion**
-> ConfigVersionResponse GetConfigByVersion(ctx, version)
+> DsvConfigVersionResponse GetConfigByVersion(ctx, version)
 Get Config By Version
 
 Get zero or more representations of config specified by version number.
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConfigVersionResponse**](ConfigVersionResponse.md)
+[**DsvConfigVersionResponse**](ConfigVersionResponse.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **PostConfig**
-> ConfigResponse PostConfig(ctx, body)
+> DsvConfigResponse PostConfig(ctx, body)
 Create Config
 
 Create or update config.
@@ -71,11 +71,11 @@ Create or update config.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**PostConfigModel**](PostConfigModel.md)|  | 
+  **body** | [**DsvPostConfigModel**](DsvPostConfigModel.md)|  | 
 
 ### Return type
 
-[**ConfigResponse**](ConfigResponse.md)
+[**DsvConfigResponse**](ConfigResponse.md)
 
 ### Authorization
 

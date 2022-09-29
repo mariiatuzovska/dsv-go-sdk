@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**SearchClients**](ClientsApi.md#SearchClients) | **Get** /clients | Search for Client Credentials
 
 # **CreateClientCredential**
-> ClientCredentialsResponse CreateClientCredential(ctx, body)
+> DsvClientCredentialsResponse CreateClientCredential(ctx, body)
 Create a Client Credential
 
 Request a new client credential for a role and get back the client id and secret key.
@@ -22,11 +22,11 @@ Request a new client credential for a role and get back the client id and secret
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**ClientCreate**](ClientCreate.md)|  | 
+  **body** | [**DsvClientCreate**](DsvClientCreate.md)|  | 
 
 ### Return type
 
-[**ClientCredentialsResponse**](ClientCredentialsResponse.md)
+[**DsvClientCredentialsResponse**](ClientCredentialsResponse.md)
 
 ### Authorization
 
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteClientCredential**
-> MessageResponse DeleteClientCredential(ctx, clientId, optional)
+> DsvMessageResponse DeleteClientCredential(ctx, clientId, optional)
 Delete a Client Credential
 
 Delete a client credential by its unique client id.
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**DsvMessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBootstrapClientCredential**
-> ClientCredentialsResponse GetBootstrapClientCredential(ctx, )
+> DsvClientCredentialsResponse GetBootstrapClientCredential(ctx, )
 Get a Client Bootstrap Credential including secret
 
 Get a client credential by url.
@@ -86,7 +86,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ClientCredentialsResponse**](ClientCredentialsResponse.md)
+[**DsvClientCredentialsResponse**](ClientCredentialsResponse.md)
 
 ### Authorization
 
@@ -100,7 +100,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetClientCredential**
-> ClientCredentialsResponse GetClientCredential(ctx, clientId)
+> DsvClientCredentialsResponse GetClientCredential(ctx, clientId)
 Get a Client Credential
 
 Get a client credential by client id. The secret key is omitted.
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClientCredentialsResponse**](ClientCredentialsResponse.md)
+[**DsvClientCredentialsResponse**](ClientCredentialsResponse.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SearchClients**
-> ClientSearchModel SearchClients(ctx, role, optional)
+> DsvClientSearchModel SearchClients(ctx, role, optional)
 Search for Client Credentials
 
 Search for one or more client credentials associated with a particular role.
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClientSearchModel**](ClientSearchModel.md)
+[**DsvClientSearchModel**](ClientSearchModel.md)
 
 ### Authorization
 

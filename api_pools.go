@@ -29,15 +29,15 @@ PoolsApiService Create Pool
 Create an engine pool.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return Pool
+@return DsvPool
 */
-func (a *PoolsApiService) CreatePool(ctx context.Context, body PoolCreate) (Pool, *http.Response, error) {
+func (a *PoolsApiService) CreatePool(ctx context.Context, body DsvPoolCreate) (DsvPool, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue Pool
+		localVarReturnValue DsvPool
 	)
 
 	// create path and map variables
@@ -109,7 +109,7 @@ func (a *PoolsApiService) CreatePool(ctx context.Context, body PoolCreate) (Pool
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v Pool
+			var v DsvPool
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -119,7 +119,7 @@ func (a *PoolsApiService) CreatePool(ctx context.Context, body PoolCreate) (Pool
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -129,7 +129,7 @@ func (a *PoolsApiService) CreatePool(ctx context.Context, body PoolCreate) (Pool
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -139,7 +139,7 @@ func (a *PoolsApiService) CreatePool(ctx context.Context, body PoolCreate) (Pool
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -149,7 +149,7 @@ func (a *PoolsApiService) CreatePool(ctx context.Context, body PoolCreate) (Pool
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -159,7 +159,7 @@ func (a *PoolsApiService) CreatePool(ctx context.Context, body PoolCreate) (Pool
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -178,15 +178,15 @@ PoolsApiService Delete Pool
 Delete an engine pool by name.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param name Name to lookup path by
-@return MessageResponse
+@return DsvMessageResponse
 */
-func (a *PoolsApiService) DeletePool(ctx context.Context, name string) (MessageResponse, *http.Response, error) {
+func (a *PoolsApiService) DeletePool(ctx context.Context, name string) (DsvMessageResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue MessageResponse
+		localVarReturnValue DsvMessageResponse
 	)
 
 	// create path and map variables
@@ -257,7 +257,7 @@ func (a *PoolsApiService) DeletePool(ctx context.Context, name string) (MessageR
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v MessageResponse
+			var v DsvMessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -267,7 +267,7 @@ func (a *PoolsApiService) DeletePool(ctx context.Context, name string) (MessageR
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -277,7 +277,7 @@ func (a *PoolsApiService) DeletePool(ctx context.Context, name string) (MessageR
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -287,7 +287,7 @@ func (a *PoolsApiService) DeletePool(ctx context.Context, name string) (MessageR
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -297,7 +297,7 @@ func (a *PoolsApiService) DeletePool(ctx context.Context, name string) (MessageR
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -307,7 +307,7 @@ func (a *PoolsApiService) DeletePool(ctx context.Context, name string) (MessageR
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -326,15 +326,15 @@ PoolsApiService Get Pool
 Retrieve pool by name.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param name Name to lookup path by
-@return Pool
+@return DsvPool
 */
-func (a *PoolsApiService) GetPool(ctx context.Context, name string) (Pool, *http.Response, error) {
+func (a *PoolsApiService) GetPool(ctx context.Context, name string) (DsvPool, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue Pool
+		localVarReturnValue DsvPool
 	)
 
 	// create path and map variables
@@ -405,7 +405,7 @@ func (a *PoolsApiService) GetPool(ctx context.Context, name string) (Pool, *http
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v Pool
+			var v DsvPool
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -415,7 +415,7 @@ func (a *PoolsApiService) GetPool(ctx context.Context, name string) (Pool, *http
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -425,7 +425,7 @@ func (a *PoolsApiService) GetPool(ctx context.Context, name string) (Pool, *http
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -435,7 +435,7 @@ func (a *PoolsApiService) GetPool(ctx context.Context, name string) (Pool, *http
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -445,7 +445,7 @@ func (a *PoolsApiService) GetPool(ctx context.Context, name string) (Pool, *http
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -455,7 +455,7 @@ func (a *PoolsApiService) GetPool(ctx context.Context, name string) (Pool, *http
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -473,15 +473,15 @@ func (a *PoolsApiService) GetPool(ctx context.Context, name string) (Pool, *http
 PoolsApiService List Pools
 List all existing pools.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return PoolListResult
+@return DsvPoolListResult
 */
-func (a *PoolsApiService) ListPools(ctx context.Context) (PoolListResult, *http.Response, error) {
+func (a *PoolsApiService) ListPools(ctx context.Context) (DsvPoolListResult, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue PoolListResult
+		localVarReturnValue DsvPoolListResult
 	)
 
 	// create path and map variables
@@ -551,7 +551,7 @@ func (a *PoolsApiService) ListPools(ctx context.Context) (PoolListResult, *http.
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v PoolListResult
+			var v DsvPoolListResult
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -561,7 +561,7 @@ func (a *PoolsApiService) ListPools(ctx context.Context) (PoolListResult, *http.
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -571,7 +571,7 @@ func (a *PoolsApiService) ListPools(ctx context.Context) (PoolListResult, *http.
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -581,7 +581,7 @@ func (a *PoolsApiService) ListPools(ctx context.Context) (PoolListResult, *http.
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -591,7 +591,7 @@ func (a *PoolsApiService) ListPools(ctx context.Context) (PoolListResult, *http.
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -601,7 +601,7 @@ func (a *PoolsApiService) ListPools(ctx context.Context) (PoolListResult, *http.
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

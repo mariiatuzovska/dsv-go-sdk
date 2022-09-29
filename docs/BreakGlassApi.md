@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**GetStatus**](BreakGlassApi.md#GetStatus) | **Get** /breakglass | Get Status
 
 # **ApplyRequest**
-> ApplyResponse ApplyRequest(ctx, shares)
+> DsvApplyResponse ApplyRequest(ctx, shares)
 Apply
 
 Apply secret shares to break glass and give users admin rights
@@ -23,7 +23,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplyResponse**](ApplyResponse.md)
+[**DsvApplyResponse**](ApplyResponse.md)
 
 ### Authorization
 
@@ -37,7 +37,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GenerateRequest**
-> GenerateResponse GenerateRequest(ctx, newAdmins, minNumberOfShares)
+> DsvGenerateResponse GenerateRequest(ctx, newAdmins, minNumberOfShares)
 Generate
 
 Generate a new break glass secret and shares
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenerateResponse**](GenerateResponse.md)
+[**DsvGenerateResponse**](GenerateResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetStatus**
-> StatusResponse GetStatus(ctx, )
+> DsvStatusResponse GetStatus(ctx, )
 Get Status
 
 Get break glass status
@@ -76,7 +76,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**StatusResponse**](StatusResponse.md)
+[**DsvStatusResponse**](StatusResponse.md)
 
 ### Authorization
 

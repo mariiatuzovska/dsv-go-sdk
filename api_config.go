@@ -28,15 +28,15 @@ type ConfigApiService service
 ConfigApiService Get Config
 Get config data.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return ConfigResponse
+@return DsvConfigResponse
 */
-func (a *ConfigApiService) GetConfig(ctx context.Context) (ConfigResponse, *http.Response, error) {
+func (a *ConfigApiService) GetConfig(ctx context.Context) (DsvConfigResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ConfigResponse
+		localVarReturnValue DsvConfigResponse
 	)
 
 	// create path and map variables
@@ -106,7 +106,7 @@ func (a *ConfigApiService) GetConfig(ctx context.Context) (ConfigResponse, *http
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ConfigResponse
+			var v DsvConfigResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -116,7 +116,7 @@ func (a *ConfigApiService) GetConfig(ctx context.Context) (ConfigResponse, *http
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -126,7 +126,7 @@ func (a *ConfigApiService) GetConfig(ctx context.Context) (ConfigResponse, *http
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -136,7 +136,7 @@ func (a *ConfigApiService) GetConfig(ctx context.Context) (ConfigResponse, *http
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -146,7 +146,7 @@ func (a *ConfigApiService) GetConfig(ctx context.Context) (ConfigResponse, *http
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -156,7 +156,7 @@ func (a *ConfigApiService) GetConfig(ctx context.Context) (ConfigResponse, *http
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -175,15 +175,15 @@ ConfigApiService Get Config By Version
 Get zero or more representations of config specified by version number.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param version Versions to return
-@return ConfigVersionResponse
+@return DsvConfigVersionResponse
 */
-func (a *ConfigApiService) GetConfigByVersion(ctx context.Context, version int64) (ConfigVersionResponse, *http.Response, error) {
+func (a *ConfigApiService) GetConfigByVersion(ctx context.Context, version int64) (DsvConfigVersionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ConfigVersionResponse
+		localVarReturnValue DsvConfigVersionResponse
 	)
 
 	// create path and map variables
@@ -254,7 +254,7 @@ func (a *ConfigApiService) GetConfigByVersion(ctx context.Context, version int64
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ConfigVersionResponse
+			var v DsvConfigVersionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -264,7 +264,7 @@ func (a *ConfigApiService) GetConfigByVersion(ctx context.Context, version int64
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -274,7 +274,7 @@ func (a *ConfigApiService) GetConfigByVersion(ctx context.Context, version int64
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -284,7 +284,7 @@ func (a *ConfigApiService) GetConfigByVersion(ctx context.Context, version int64
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -294,7 +294,7 @@ func (a *ConfigApiService) GetConfigByVersion(ctx context.Context, version int64
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -304,7 +304,7 @@ func (a *ConfigApiService) GetConfigByVersion(ctx context.Context, version int64
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -323,15 +323,15 @@ ConfigApiService Create Config
 Create or update config.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return ConfigResponse
+@return DsvConfigResponse
 */
-func (a *ConfigApiService) PostConfig(ctx context.Context, body PostConfigModel) (ConfigResponse, *http.Response, error) {
+func (a *ConfigApiService) PostConfig(ctx context.Context, body DsvPostConfigModel) (DsvConfigResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ConfigResponse
+		localVarReturnValue DsvConfigResponse
 	)
 
 	// create path and map variables
@@ -403,7 +403,7 @@ func (a *ConfigApiService) PostConfig(ctx context.Context, body PostConfigModel)
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ConfigResponse
+			var v DsvConfigResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -413,7 +413,7 @@ func (a *ConfigApiService) PostConfig(ctx context.Context, body PostConfigModel)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v ConfigResponse
+			var v DsvConfigResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -423,7 +423,7 @@ func (a *ConfigApiService) PostConfig(ctx context.Context, body PostConfigModel)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -433,7 +433,7 @@ func (a *ConfigApiService) PostConfig(ctx context.Context, body PostConfigModel)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -443,7 +443,7 @@ func (a *ConfigApiService) PostConfig(ctx context.Context, body PostConfigModel)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -453,7 +453,7 @@ func (a *ConfigApiService) PostConfig(ctx context.Context, body PostConfigModel)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -463,7 +463,7 @@ func (a *ConfigApiService) PostConfig(ctx context.Context, body PostConfigModel)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

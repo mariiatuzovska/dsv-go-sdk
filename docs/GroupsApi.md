@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**SearchGroups**](GroupsApi.md#SearchGroups) | **Get** /groups | Search Groups
 
 # **AddMember**
-> AddMemberResponse AddMember(ctx, body, name)
+> DsvAddMemberResponse AddMember(ctx, body, name)
 Add Members To Group
 
 Add one or more members to a group.
@@ -23,12 +23,12 @@ Add one or more members to a group.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**MemberRequest**](MemberRequest.md)|  | 
+  **body** | [**DsvMemberRequest**](DsvMemberRequest.md)|  | 
   **name** | **string**| Group name | 
 
 ### Return type
 
-[**AddMemberResponse**](AddMemberResponse.md)
+[**DsvAddMemberResponse**](AddMemberResponse.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateGroup**
-> AddMemberResponse CreateGroup(ctx, body)
+> DsvAddMemberResponse CreateGroup(ctx, body)
 Create Group
 
 Create a new group.
@@ -52,11 +52,11 @@ Create a new group.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**CreateGroup**](CreateGroup.md)|  | 
+  **body** | [**DsvCreateGroup**](DsvCreateGroup.md)|  | 
 
 ### Return type
 
-[**AddMemberResponse**](AddMemberResponse.md)
+[**DsvAddMemberResponse**](AddMemberResponse.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteGroup**
-> MessageResponse DeleteGroup(ctx, name, optional)
+> DsvMessageResponse DeleteGroup(ctx, name, optional)
 Delete Group
 
 Delete Group if it exists.
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**DsvMessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -116,7 +116,7 @@ Delete one or more members from a group.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**MemberRequest**](MemberRequest.md)|  | 
+  **body** | [**DsvMemberRequest**](DsvMemberRequest.md)|  | 
   **name** | **string**| Group name | 
 
 ### Return type
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetGroup**
-> GroupResponse GetGroup(ctx, name)
+> DsvGroupResponse GetGroup(ctx, name)
 Get Group
 
 Retrieve an existing group by name.
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GroupResponse**](GroupResponse.md)
+[**DsvGroupResponse**](GroupResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SearchGroups**
-> GroupSearch SearchGroups(ctx, optional)
+> DsvGroupSearch SearchGroups(ctx, optional)
 Search Groups
 
 Search for one or more groups by name.
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GroupSearch**](GroupSearch.md)
+[**DsvGroupSearch**](GroupSearch.md)
 
 ### Authorization
 

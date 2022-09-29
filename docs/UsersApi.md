@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**UpdateUser**](UsersApi.md#UpdateUser) | **Put** /users/{name} | Update a User
 
 # **AddToGroups**
-> AddToGroupsResponse AddToGroups(ctx, body, name)
+> DsvAddToGroupsResponse AddToGroups(ctx, body, name)
 Add Member To Groups
 
 Add a user to one or more groups.
@@ -26,12 +26,12 @@ Add a user to one or more groups.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**AddToGroupsRequest**](AddToGroupsRequest.md)|  | 
+  **body** | [**DsvAddToGroupsRequest**](DsvAddToGroupsRequest.md)|  | 
   **name** | **string**| Full user name to lookup user by | 
 
 ### Return type
 
-[**AddToGroupsResponse**](AddToGroupsResponse.md)
+[**DsvAddToGroupsResponse**](AddToGroupsResponse.md)
 
 ### Authorization
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ChangePassword**
-> MessageResponse ChangePassword(ctx, body, name)
+> DsvMessageResponse ChangePassword(ctx, body, name)
 Change Password
 
 Allows the user to change their own password.
@@ -55,12 +55,12 @@ Allows the user to change their own password.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**PasswordChangeModel**](PasswordChangeModel.md)|  | 
+  **body** | [**DsvPasswordChangeModel**](DsvPasswordChangeModel.md)|  | 
   **name** | **string**| Full user name to lookup user by | 
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**DsvMessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateUser**
-> UserResponse CreateUser(ctx, body)
+> DsvUserResponse CreateUser(ctx, body)
 Create a User
 
 Create a new user.
@@ -84,11 +84,11 @@ Create a new user.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**UserCreateModel**](UserCreateModel.md)|  | 
+  **body** | [**DsvUserCreateModel**](DsvUserCreateModel.md)|  | 
 
 ### Return type
 
-[**UserResponse**](UserResponse.md)
+[**DsvUserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteUser**
-> MessageResponse DeleteUser(ctx, name, optional)
+> DsvMessageResponse DeleteUser(ctx, name, optional)
 Delete a User
 
 Retrieve an existing user by user name. For users linked to 3rd party providers, such as AWS or Azure, the user name must be prefixed with the provider name from configuration in the format of <providername>:<username> i.e. aws-dev:db
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**DsvMessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMember**
-> MemberResponse GetMember(ctx, name)
+> DsvMemberResponse GetMember(ctx, name)
 Get Member Group
 
 Retrieve a member's group by member name.
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MemberResponse**](MemberResponse.md)
+[**DsvMemberResponse**](MemberResponse.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUser**
-> UserResponse GetUser(ctx, name)
+> DsvUserResponse GetUser(ctx, name)
 Get a User
 
 Retrieve an existing user by user name. For users linked to 3rd party providers, such as AWS or Azure, the user name must be prefixed with the provider name from configuration in the format of <providername>:<username> i.e. aws-dev:db
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserResponse**](UserResponse.md)
+[**DsvUserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetUserByVersion**
-> UserVersionResponse GetUserByVersion(ctx, name, version)
+> DsvUserVersionResponse GetUserByVersion(ctx, name, version)
 Get a User By Version
 
 Retrieve an existing user by user name and version. For users linked to 3rd party providers, such as AWS or Azure, the user name must be prefixed with the provider name from configuration in the format of <providername>:<username> i.e. aws-dev:db
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserVersionResponse**](UserVersionResponse.md)
+[**DsvUserVersionResponse**](UserVersionResponse.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SearchUsers**
-> UserSearch SearchUsers(ctx, optional)
+> DsvUserSearch SearchUsers(ctx, optional)
 Search for Users
 
 Search for one or more users by their name.
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserSearch**](UserSearch.md)
+[**DsvUserSearch**](UserSearch.md)
 
 ### Authorization
 
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdateUser**
-> UserResponse UpdateUser(ctx, body, name)
+> DsvUserResponse UpdateUser(ctx, body, name)
 Update a User
 
 Update an existing user.
@@ -302,12 +302,12 @@ Update an existing user.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**UserUpdateModel**](UserUpdateModel.md)|  | 
+  **body** | [**DsvUserUpdateModel**](DsvUserUpdateModel.md)|  | 
   **name** | **string**| Full user name to lookup user by | 
 
 ### Return type
 
-[**UserResponse**](UserResponse.md)
+[**DsvUserResponse**](UserResponse.md)
 
 ### Authorization
 

@@ -28,15 +28,15 @@ BreakGlassApiService Apply
 Apply secret shares to break glass and give users admin rights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param shares
-@return ApplyResponse
+@return DsvApplyResponse
 */
-func (a *BreakGlassApiService) ApplyRequest(ctx context.Context, shares []string) (ApplyResponse, *http.Response, error) {
+func (a *BreakGlassApiService) ApplyRequest(ctx context.Context, shares []string) (DsvApplyResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ApplyResponse
+		localVarReturnValue DsvApplyResponse
 	)
 
 	// create path and map variables
@@ -107,7 +107,7 @@ func (a *BreakGlassApiService) ApplyRequest(ctx context.Context, shares []string
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v ApplyResponse
+			var v DsvApplyResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -117,7 +117,7 @@ func (a *BreakGlassApiService) ApplyRequest(ctx context.Context, shares []string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -127,7 +127,7 @@ func (a *BreakGlassApiService) ApplyRequest(ctx context.Context, shares []string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -137,7 +137,7 @@ func (a *BreakGlassApiService) ApplyRequest(ctx context.Context, shares []string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -147,7 +147,7 @@ func (a *BreakGlassApiService) ApplyRequest(ctx context.Context, shares []string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -167,15 +167,15 @@ Generate a new break glass secret and shares
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param newAdmins
  * @param minNumberOfShares
-@return GenerateResponse
+@return DsvGenerateResponse
 */
-func (a *BreakGlassApiService) GenerateRequest(ctx context.Context, newAdmins []string, minNumberOfShares int64) (GenerateResponse, *http.Response, error) {
+func (a *BreakGlassApiService) GenerateRequest(ctx context.Context, newAdmins []string, minNumberOfShares int64) (DsvGenerateResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue GenerateResponse
+		localVarReturnValue DsvGenerateResponse
 	)
 
 	// create path and map variables
@@ -250,7 +250,7 @@ func (a *BreakGlassApiService) GenerateRequest(ctx context.Context, newAdmins []
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v GenerateResponse
+			var v DsvGenerateResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -260,7 +260,7 @@ func (a *BreakGlassApiService) GenerateRequest(ctx context.Context, newAdmins []
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -270,7 +270,7 @@ func (a *BreakGlassApiService) GenerateRequest(ctx context.Context, newAdmins []
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -280,7 +280,7 @@ func (a *BreakGlassApiService) GenerateRequest(ctx context.Context, newAdmins []
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -290,7 +290,7 @@ func (a *BreakGlassApiService) GenerateRequest(ctx context.Context, newAdmins []
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -308,15 +308,15 @@ func (a *BreakGlassApiService) GenerateRequest(ctx context.Context, newAdmins []
 BreakGlassApiService Get Status
 Get break glass status
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return StatusResponse
+@return DsvStatusResponse
 */
-func (a *BreakGlassApiService) GetStatus(ctx context.Context) (StatusResponse, *http.Response, error) {
+func (a *BreakGlassApiService) GetStatus(ctx context.Context) (DsvStatusResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue StatusResponse
+		localVarReturnValue DsvStatusResponse
 	)
 
 	// create path and map variables
@@ -386,7 +386,7 @@ func (a *BreakGlassApiService) GetStatus(ctx context.Context) (StatusResponse, *
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v StatusResponse
+			var v DsvStatusResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -396,7 +396,7 @@ func (a *BreakGlassApiService) GetStatus(ctx context.Context) (StatusResponse, *
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -406,7 +406,7 @@ func (a *BreakGlassApiService) GetStatus(ctx context.Context) (StatusResponse, *
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -416,7 +416,7 @@ func (a *BreakGlassApiService) GetStatus(ctx context.Context) (StatusResponse, *
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

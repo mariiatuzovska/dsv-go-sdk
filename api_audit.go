@@ -123,7 +123,7 @@ func (a *AuditApiService) DownloadAudit(ctx context.Context, startDate string, e
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -133,7 +133,7 @@ func (a *AuditApiService) DownloadAudit(ctx context.Context, startDate string, e
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -143,7 +143,7 @@ func (a *AuditApiService) DownloadAudit(ctx context.Context, startDate string, e
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -153,7 +153,7 @@ func (a *AuditApiService) DownloadAudit(ctx context.Context, startDate string, e
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -181,7 +181,7 @@ Find audit records based on search critera.
      * @param "Cursor" (optional.String) -  The cursor for pagination
      * @param "Limit" (optional.Int64) -  The number of results to return
      * @param "Sort" (optional.String) -  Sort results ascending (asc) or descending (desc) order. Default is desc
-@return LogSearchResponse
+@return DsvLogSearchResponse
 */
 
 type AuditApiFindAuditOpts struct {
@@ -195,13 +195,13 @@ type AuditApiFindAuditOpts struct {
 	Sort      optional.String
 }
 
-func (a *AuditApiService) FindAudit(ctx context.Context, localVarOptionals *AuditApiFindAuditOpts) (LogSearchResponse, *http.Response, error) {
+func (a *AuditApiService) FindAudit(ctx context.Context, localVarOptionals *AuditApiFindAuditOpts) (DsvLogSearchResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue LogSearchResponse
+		localVarReturnValue DsvLogSearchResponse
 	)
 
 	// create path and map variables
@@ -295,7 +295,7 @@ func (a *AuditApiService) FindAudit(ctx context.Context, localVarOptionals *Audi
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v LogSearchResponse
+			var v DsvLogSearchResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -305,7 +305,7 @@ func (a *AuditApiService) FindAudit(ctx context.Context, localVarOptionals *Audi
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -315,7 +315,7 @@ func (a *AuditApiService) FindAudit(ctx context.Context, localVarOptionals *Audi
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -325,7 +325,7 @@ func (a *AuditApiService) FindAudit(ctx context.Context, localVarOptionals *Audi
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -335,7 +335,7 @@ func (a *AuditApiService) FindAudit(ctx context.Context, localVarOptionals *Audi
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

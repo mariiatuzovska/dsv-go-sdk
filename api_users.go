@@ -31,15 +31,15 @@ Add a user to one or more groups.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
  * @param name Full user name to lookup user by
-@return AddToGroupsResponse
+@return DsvAddToGroupsResponse
 */
-func (a *UsersApiService) AddToGroups(ctx context.Context, body AddToGroupsRequest, name string) (AddToGroupsResponse, *http.Response, error) {
+func (a *UsersApiService) AddToGroups(ctx context.Context, body DsvAddToGroupsRequest, name string) (DsvAddToGroupsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AddToGroupsResponse
+		localVarReturnValue DsvAddToGroupsResponse
 	)
 
 	// create path and map variables
@@ -112,7 +112,7 @@ func (a *UsersApiService) AddToGroups(ctx context.Context, body AddToGroupsReque
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AddToGroupsResponse
+			var v DsvAddToGroupsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -122,7 +122,7 @@ func (a *UsersApiService) AddToGroups(ctx context.Context, body AddToGroupsReque
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -132,7 +132,7 @@ func (a *UsersApiService) AddToGroups(ctx context.Context, body AddToGroupsReque
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -142,7 +142,7 @@ func (a *UsersApiService) AddToGroups(ctx context.Context, body AddToGroupsReque
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -152,7 +152,7 @@ func (a *UsersApiService) AddToGroups(ctx context.Context, body AddToGroupsReque
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -162,7 +162,7 @@ func (a *UsersApiService) AddToGroups(ctx context.Context, body AddToGroupsReque
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -182,15 +182,15 @@ Allows the user to change their own password.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
  * @param name Full user name to lookup user by
-@return MessageResponse
+@return DsvMessageResponse
 */
-func (a *UsersApiService) ChangePassword(ctx context.Context, body PasswordChangeModel, name string) (MessageResponse, *http.Response, error) {
+func (a *UsersApiService) ChangePassword(ctx context.Context, body DsvPasswordChangeModel, name string) (DsvMessageResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue MessageResponse
+		localVarReturnValue DsvMessageResponse
 	)
 
 	// create path and map variables
@@ -263,7 +263,7 @@ func (a *UsersApiService) ChangePassword(ctx context.Context, body PasswordChang
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v MessageResponse
+			var v DsvMessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -273,7 +273,7 @@ func (a *UsersApiService) ChangePassword(ctx context.Context, body PasswordChang
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -283,7 +283,7 @@ func (a *UsersApiService) ChangePassword(ctx context.Context, body PasswordChang
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -293,7 +293,7 @@ func (a *UsersApiService) ChangePassword(ctx context.Context, body PasswordChang
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -303,7 +303,7 @@ func (a *UsersApiService) ChangePassword(ctx context.Context, body PasswordChang
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -322,15 +322,15 @@ UsersApiService Create a User
 Create a new user.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return UserResponse
+@return DsvUserResponse
 */
-func (a *UsersApiService) CreateUser(ctx context.Context, body UserCreateModel) (UserResponse, *http.Response, error) {
+func (a *UsersApiService) CreateUser(ctx context.Context, body DsvUserCreateModel) (DsvUserResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue UserResponse
+		localVarReturnValue DsvUserResponse
 	)
 
 	// create path and map variables
@@ -402,7 +402,7 @@ func (a *UsersApiService) CreateUser(ctx context.Context, body UserCreateModel) 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v UserResponse
+			var v DsvUserResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -412,7 +412,7 @@ func (a *UsersApiService) CreateUser(ctx context.Context, body UserCreateModel) 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -422,7 +422,7 @@ func (a *UsersApiService) CreateUser(ctx context.Context, body UserCreateModel) 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -432,7 +432,7 @@ func (a *UsersApiService) CreateUser(ctx context.Context, body UserCreateModel) 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -442,7 +442,7 @@ func (a *UsersApiService) CreateUser(ctx context.Context, body UserCreateModel) 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -463,20 +463,20 @@ Retrieve an existing user by user name. For users linked to 3rd party providers,
  * @param name Full user name to lookup user by
  * @param optional nil or *UsersApiDeleteUserOpts - Optional Parameters:
      * @param "Force" (optional.Bool) -  Delete immediately
-@return MessageResponse
+@return DsvMessageResponse
 */
 
 type UsersApiDeleteUserOpts struct {
     Force optional.Bool
 }
 
-func (a *UsersApiService) DeleteUser(ctx context.Context, name string, localVarOptionals *UsersApiDeleteUserOpts) (MessageResponse, *http.Response, error) {
+func (a *UsersApiService) DeleteUser(ctx context.Context, name string, localVarOptionals *UsersApiDeleteUserOpts) (DsvMessageResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue MessageResponse
+		localVarReturnValue DsvMessageResponse
 	)
 
 	// create path and map variables
@@ -550,7 +550,7 @@ func (a *UsersApiService) DeleteUser(ctx context.Context, name string, localVarO
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v MessageResponse
+			var v DsvMessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -560,7 +560,7 @@ func (a *UsersApiService) DeleteUser(ctx context.Context, name string, localVarO
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -570,7 +570,7 @@ func (a *UsersApiService) DeleteUser(ctx context.Context, name string, localVarO
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -580,7 +580,7 @@ func (a *UsersApiService) DeleteUser(ctx context.Context, name string, localVarO
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -590,7 +590,7 @@ func (a *UsersApiService) DeleteUser(ctx context.Context, name string, localVarO
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -600,7 +600,7 @@ func (a *UsersApiService) DeleteUser(ctx context.Context, name string, localVarO
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -619,15 +619,15 @@ UsersApiService Get Member Group
 Retrieve a member&#x27;s group by member name.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param name Member name to lookup member
-@return MemberResponse
+@return DsvMemberResponse
 */
-func (a *UsersApiService) GetMember(ctx context.Context, name string) (MemberResponse, *http.Response, error) {
+func (a *UsersApiService) GetMember(ctx context.Context, name string) (DsvMemberResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue MemberResponse
+		localVarReturnValue DsvMemberResponse
 	)
 
 	// create path and map variables
@@ -698,7 +698,7 @@ func (a *UsersApiService) GetMember(ctx context.Context, name string) (MemberRes
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v MemberResponse
+			var v DsvMemberResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -708,7 +708,7 @@ func (a *UsersApiService) GetMember(ctx context.Context, name string) (MemberRes
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -718,7 +718,7 @@ func (a *UsersApiService) GetMember(ctx context.Context, name string) (MemberRes
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -728,7 +728,7 @@ func (a *UsersApiService) GetMember(ctx context.Context, name string) (MemberRes
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -738,7 +738,7 @@ func (a *UsersApiService) GetMember(ctx context.Context, name string) (MemberRes
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -748,7 +748,7 @@ func (a *UsersApiService) GetMember(ctx context.Context, name string) (MemberRes
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -767,15 +767,15 @@ UsersApiService Get a User
 Retrieve an existing user by user name. For users linked to 3rd party providers, such as AWS or Azure, the user name must be prefixed with the provider name from configuration in the format of &lt;providername&gt;:&lt;username&gt; i.e. aws-dev:db
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param name Full user name to lookup user by
-@return UserResponse
+@return DsvUserResponse
 */
-func (a *UsersApiService) GetUser(ctx context.Context, name string) (UserResponse, *http.Response, error) {
+func (a *UsersApiService) GetUser(ctx context.Context, name string) (DsvUserResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue UserResponse
+		localVarReturnValue DsvUserResponse
 	)
 
 	// create path and map variables
@@ -846,7 +846,7 @@ func (a *UsersApiService) GetUser(ctx context.Context, name string) (UserRespons
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v UserResponse
+			var v DsvUserResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -856,7 +856,7 @@ func (a *UsersApiService) GetUser(ctx context.Context, name string) (UserRespons
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -866,7 +866,7 @@ func (a *UsersApiService) GetUser(ctx context.Context, name string) (UserRespons
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -876,7 +876,7 @@ func (a *UsersApiService) GetUser(ctx context.Context, name string) (UserRespons
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -886,7 +886,7 @@ func (a *UsersApiService) GetUser(ctx context.Context, name string) (UserRespons
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -896,7 +896,7 @@ func (a *UsersApiService) GetUser(ctx context.Context, name string) (UserRespons
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -916,15 +916,15 @@ Retrieve an existing user by user name and version. For users linked to 3rd part
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param name Full user name to lookup user by
  * @param version Versions to return
-@return UserVersionResponse
+@return DsvUserVersionResponse
 */
-func (a *UsersApiService) GetUserByVersion(ctx context.Context, name string, version int64) (UserVersionResponse, *http.Response, error) {
+func (a *UsersApiService) GetUserByVersion(ctx context.Context, name string, version int64) (DsvUserVersionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue UserVersionResponse
+		localVarReturnValue DsvUserVersionResponse
 	)
 
 	// create path and map variables
@@ -996,7 +996,7 @@ func (a *UsersApiService) GetUserByVersion(ctx context.Context, name string, ver
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v UserVersionResponse
+			var v DsvUserVersionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1006,7 +1006,7 @@ func (a *UsersApiService) GetUserByVersion(ctx context.Context, name string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1016,7 +1016,7 @@ func (a *UsersApiService) GetUserByVersion(ctx context.Context, name string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1026,7 +1026,7 @@ func (a *UsersApiService) GetUserByVersion(ctx context.Context, name string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1036,7 +1036,7 @@ func (a *UsersApiService) GetUserByVersion(ctx context.Context, name string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1046,7 +1046,7 @@ func (a *UsersApiService) GetUserByVersion(ctx context.Context, name string, ver
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1137,7 +1137,7 @@ func (a *UsersApiService) RestoreUser(ctx context.Context, name string) (*http.R
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1147,7 +1147,7 @@ func (a *UsersApiService) RestoreUser(ctx context.Context, name string) (*http.R
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1157,7 +1157,7 @@ func (a *UsersApiService) RestoreUser(ctx context.Context, name string) (*http.R
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1167,7 +1167,7 @@ func (a *UsersApiService) RestoreUser(ctx context.Context, name string) (*http.R
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1177,7 +1177,7 @@ func (a *UsersApiService) RestoreUser(ctx context.Context, name string) (*http.R
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1204,7 +1204,7 @@ Search for one or more users by their name.
      * @param "SearchTerm" (optional.String) -  Search pattern for names of users to look up
      * @param "Limit" (optional.Int64) -  The maximum number of results per cursor
      * @param "Cursor" (optional.String) -  Cursor to next batch of results
-@return UserSearch
+@return DsvUserSearch
 */
 
 type UsersApiSearchUsersOpts struct {
@@ -1218,13 +1218,13 @@ type UsersApiSearchUsersOpts struct {
     Cursor optional.String
 }
 
-func (a *UsersApiService) SearchUsers(ctx context.Context, localVarOptionals *UsersApiSearchUsersOpts) (UserSearch, *http.Response, error) {
+func (a *UsersApiService) SearchUsers(ctx context.Context, localVarOptionals *UsersApiSearchUsersOpts) (DsvUserSearch, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue UserSearch
+		localVarReturnValue DsvUserSearch
 	)
 
 	// create path and map variables
@@ -1318,7 +1318,7 @@ func (a *UsersApiService) SearchUsers(ctx context.Context, localVarOptionals *Us
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v UserSearch
+			var v DsvUserSearch
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1328,7 +1328,7 @@ func (a *UsersApiService) SearchUsers(ctx context.Context, localVarOptionals *Us
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1338,7 +1338,7 @@ func (a *UsersApiService) SearchUsers(ctx context.Context, localVarOptionals *Us
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1348,7 +1348,7 @@ func (a *UsersApiService) SearchUsers(ctx context.Context, localVarOptionals *Us
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1358,7 +1358,7 @@ func (a *UsersApiService) SearchUsers(ctx context.Context, localVarOptionals *Us
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1378,15 +1378,15 @@ Update an existing user.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
  * @param name Full user name to lookup user by
-@return UserResponse
+@return DsvUserResponse
 */
-func (a *UsersApiService) UpdateUser(ctx context.Context, body UserUpdateModel, name string) (UserResponse, *http.Response, error) {
+func (a *UsersApiService) UpdateUser(ctx context.Context, body DsvUserUpdateModel, name string) (DsvUserResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue UserResponse
+		localVarReturnValue DsvUserResponse
 	)
 
 	// create path and map variables
@@ -1459,7 +1459,7 @@ func (a *UsersApiService) UpdateUser(ctx context.Context, body UserUpdateModel, 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v UserResponse
+			var v DsvUserResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1469,7 +1469,7 @@ func (a *UsersApiService) UpdateUser(ctx context.Context, body UserUpdateModel, 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1479,7 +1479,7 @@ func (a *UsersApiService) UpdateUser(ctx context.Context, body UserUpdateModel, 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1489,7 +1489,7 @@ func (a *UsersApiService) UpdateUser(ctx context.Context, body UserUpdateModel, 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1499,7 +1499,7 @@ func (a *UsersApiService) UpdateUser(ctx context.Context, body UserUpdateModel, 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

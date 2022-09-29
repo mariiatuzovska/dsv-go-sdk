@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**UpdatePolicy**](PoliciesApi.md#UpdatePolicy) | **Put** /config/policies/{path} | Update Policy
 
 # **CreatePolicy**
-> PolicyResponse CreatePolicy(ctx, body)
+> DsvPolicyResponse CreatePolicy(ctx, body)
 Create Policy
 
 Creates new policy with permission document.
@@ -24,11 +24,11 @@ Creates new policy with permission document.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**PolicyCreate**](PolicyCreate.md)|  | 
+  **body** | [**DsvPolicyCreate**](DsvPolicyCreate.md)|  | 
 
 ### Return type
 
-[**PolicyResponse**](PolicyResponse.md)
+[**DsvPolicyResponse**](PolicyResponse.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeletePolicy**
-> MessageResponse DeletePolicy(ctx, path, optional)
+> DsvMessageResponse DeletePolicy(ctx, path, optional)
 Delete Policy
 
 Remove an existing policy by path.
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**DsvMessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetPolicy**
-> PolicyResponse GetPolicy(ctx, path)
+> DsvPolicyResponse GetPolicy(ctx, path)
 Get Policy
 
 Retrieve policy by path.
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PolicyResponse**](PolicyResponse.md)
+[**DsvPolicyResponse**](PolicyResponse.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetPolicyByVersion**
-> PolicyVersionResponse GetPolicyByVersion(ctx, path, version)
+> DsvPolicyVersionResponse GetPolicyByVersion(ctx, path, version)
 Get a list of policies by version
 
 Get a full policies by path and version in the query.Returns a list of zero up to n versions of an item.
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PolicyVersionResponse**](PolicyVersionResponse.md)
+[**DsvPolicyVersionResponse**](PolicyVersionResponse.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **RollbackPolicy**
-> PolicyResponse RollbackPolicy(ctx, path, version)
+> DsvPolicyResponse RollbackPolicy(ctx, path, version)
 Rollback Policy
 
 Overwrites an existing policy with its previous version.
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PolicyResponse**](PolicyResponse.md)
+[**DsvPolicyResponse**](PolicyResponse.md)
 
 ### Authorization
 
@@ -192,7 +192,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SearchFilter**
-> PolicySearchResponse SearchFilter(ctx, optional)
+> DsvPolicySearchResponse SearchFilter(ctx, optional)
 Search Policies
 
 Search permission policies by path.
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PolicySearchResponse**](PolicySearchResponse.md)
+[**DsvPolicySearchResponse**](PolicySearchResponse.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdatePolicy**
-> PolicyResponse UpdatePolicy(ctx, body, path)
+> DsvPolicyResponse UpdatePolicy(ctx, body, path)
 Update Policy
 
 Overwrites an existing policy with an updated permissions document.
@@ -238,12 +238,12 @@ Overwrites an existing policy with an updated permissions document.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**PolicyUpdate**](PolicyUpdate.md)|  | 
+  **body** | [**DsvPolicyUpdate**](DsvPolicyUpdate.md)|  | 
   **path** | **string**| Full path for policy | 
 
 ### Return type
 
-[**PolicyResponse**](PolicyResponse.md)
+[**DsvPolicyResponse**](PolicyResponse.md)
 
 ### Authorization
 

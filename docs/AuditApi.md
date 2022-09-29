@@ -37,7 +37,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **FindAudit**
-> LogSearchResponse FindAudit(ctx, optional)
+> DsvLogSearchResponse FindAudit(ctx, optional)
 Find Audit Records
 
 Find audit records based on search critera.
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LogSearchResponse**](LogSearchResponse.md)
+[**DsvLogSearchResponse**](LogSearchResponse.md)
 
 ### Authorization
 

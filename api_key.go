@@ -30,7 +30,7 @@ Update Master Encryption key.
  * @param body
 
 */
-func (a *KeyApiService) Masterkeys(ctx context.Context, body Masterkey) (*http.Response, error) {
+func (a *KeyApiService) Masterkeys(ctx context.Context, body DsvMasterkey) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -101,7 +101,7 @@ func (a *KeyApiService) Masterkeys(ctx context.Context, body Masterkey) (*http.R
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -111,7 +111,7 @@ func (a *KeyApiService) Masterkeys(ctx context.Context, body Masterkey) (*http.R
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -121,7 +121,7 @@ func (a *KeyApiService) Masterkeys(ctx context.Context, body Masterkey) (*http.R
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -131,7 +131,7 @@ func (a *KeyApiService) Masterkeys(ctx context.Context, body Masterkey) (*http.R
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

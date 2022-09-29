@@ -30,15 +30,15 @@ SettingsApiService Create Authentication Provider
 Creates new authentication provider settings.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
-@return AuthenticationSettingsResponse
+@return DsvAuthenticationSettingsResponse
 */
-func (a *SettingsApiService) CreateAuthSettings(ctx context.Context, body AuthenticationSettingsCreateModel) (AuthenticationSettingsResponse, *http.Response, error) {
+func (a *SettingsApiService) CreateAuthSettings(ctx context.Context, body DsvAuthenticationSettingsCreateModel) (DsvAuthenticationSettingsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AuthenticationSettingsResponse
+		localVarReturnValue DsvAuthenticationSettingsResponse
 	)
 
 	// create path and map variables
@@ -110,7 +110,7 @@ func (a *SettingsApiService) CreateAuthSettings(ctx context.Context, body Authen
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v AuthenticationSettingsResponse
+			var v DsvAuthenticationSettingsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -120,7 +120,7 @@ func (a *SettingsApiService) CreateAuthSettings(ctx context.Context, body Authen
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -130,7 +130,7 @@ func (a *SettingsApiService) CreateAuthSettings(ctx context.Context, body Authen
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -140,7 +140,7 @@ func (a *SettingsApiService) CreateAuthSettings(ctx context.Context, body Authen
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -150,7 +150,7 @@ func (a *SettingsApiService) CreateAuthSettings(ctx context.Context, body Authen
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -171,20 +171,20 @@ Remove authentication provider settings from the system.
  * @param name Full name to lookup authentication settings by.
  * @param optional nil or *SettingsApiDeleteAuthSettingsOpts - Optional Parameters:
      * @param "Force" (optional.Bool) -  Delete immediately
-@return MessageResponse
+@return DsvMessageResponse
 */
 
 type SettingsApiDeleteAuthSettingsOpts struct {
     Force optional.Bool
 }
 
-func (a *SettingsApiService) DeleteAuthSettings(ctx context.Context, name string, localVarOptionals *SettingsApiDeleteAuthSettingsOpts) (MessageResponse, *http.Response, error) {
+func (a *SettingsApiService) DeleteAuthSettings(ctx context.Context, name string, localVarOptionals *SettingsApiDeleteAuthSettingsOpts) (DsvMessageResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue MessageResponse
+		localVarReturnValue DsvMessageResponse
 	)
 
 	// create path and map variables
@@ -258,7 +258,7 @@ func (a *SettingsApiService) DeleteAuthSettings(ctx context.Context, name string
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v MessageResponse
+			var v DsvMessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -268,7 +268,7 @@ func (a *SettingsApiService) DeleteAuthSettings(ctx context.Context, name string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -278,7 +278,7 @@ func (a *SettingsApiService) DeleteAuthSettings(ctx context.Context, name string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -288,7 +288,7 @@ func (a *SettingsApiService) DeleteAuthSettings(ctx context.Context, name string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -298,7 +298,7 @@ func (a *SettingsApiService) DeleteAuthSettings(ctx context.Context, name string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -308,7 +308,7 @@ func (a *SettingsApiService) DeleteAuthSettings(ctx context.Context, name string
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -327,15 +327,15 @@ SettingsApiService Get Authentication Provider
 Retrieve authentication providers by name.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param name Full name to lookup authentication settings by.
-@return AuthenticationSettingsResponse
+@return DsvAuthenticationSettingsResponse
 */
-func (a *SettingsApiService) GetAuthSettings(ctx context.Context, name string) (AuthenticationSettingsResponse, *http.Response, error) {
+func (a *SettingsApiService) GetAuthSettings(ctx context.Context, name string) (DsvAuthenticationSettingsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AuthenticationSettingsResponse
+		localVarReturnValue DsvAuthenticationSettingsResponse
 	)
 
 	// create path and map variables
@@ -406,7 +406,7 @@ func (a *SettingsApiService) GetAuthSettings(ctx context.Context, name string) (
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AuthenticationSettingsResponse
+			var v DsvAuthenticationSettingsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -416,7 +416,7 @@ func (a *SettingsApiService) GetAuthSettings(ctx context.Context, name string) (
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -426,7 +426,7 @@ func (a *SettingsApiService) GetAuthSettings(ctx context.Context, name string) (
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -436,7 +436,7 @@ func (a *SettingsApiService) GetAuthSettings(ctx context.Context, name string) (
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -446,7 +446,7 @@ func (a *SettingsApiService) GetAuthSettings(ctx context.Context, name string) (
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -456,7 +456,7 @@ func (a *SettingsApiService) GetAuthSettings(ctx context.Context, name string) (
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -476,15 +476,15 @@ Get a full Settings by name and version in the query. Returns a list of zero up 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param name Full name to lookup authentication settings by.
  * @param version Versions to return.
-@return AuthenticationSettingsVersionResponse
+@return DsvAuthenticationSettingsVersionResponse
 */
-func (a *SettingsApiService) GetAuthSettingsByVersion(ctx context.Context, name string, version int64) (AuthenticationSettingsVersionResponse, *http.Response, error) {
+func (a *SettingsApiService) GetAuthSettingsByVersion(ctx context.Context, name string, version int64) (DsvAuthenticationSettingsVersionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AuthenticationSettingsVersionResponse
+		localVarReturnValue DsvAuthenticationSettingsVersionResponse
 	)
 
 	// create path and map variables
@@ -556,7 +556,7 @@ func (a *SettingsApiService) GetAuthSettingsByVersion(ctx context.Context, name 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AuthenticationSettingsVersionResponse
+			var v DsvAuthenticationSettingsVersionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -566,7 +566,7 @@ func (a *SettingsApiService) GetAuthSettingsByVersion(ctx context.Context, name 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -576,7 +576,7 @@ func (a *SettingsApiService) GetAuthSettingsByVersion(ctx context.Context, name 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -586,7 +586,7 @@ func (a *SettingsApiService) GetAuthSettingsByVersion(ctx context.Context, name 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -596,7 +596,7 @@ func (a *SettingsApiService) GetAuthSettingsByVersion(ctx context.Context, name 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -606,7 +606,7 @@ func (a *SettingsApiService) GetAuthSettingsByVersion(ctx context.Context, name 
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -697,7 +697,7 @@ func (a *SettingsApiService) RestoreAuthSettings(ctx context.Context, name strin
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -707,7 +707,7 @@ func (a *SettingsApiService) RestoreAuthSettings(ctx context.Context, name strin
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -717,7 +717,7 @@ func (a *SettingsApiService) RestoreAuthSettings(ctx context.Context, name strin
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -727,7 +727,7 @@ func (a *SettingsApiService) RestoreAuthSettings(ctx context.Context, name strin
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -737,7 +737,7 @@ func (a *SettingsApiService) RestoreAuthSettings(ctx context.Context, name strin
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -757,15 +757,15 @@ Rollback authentication provider to a previous version.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param name Full name to lookup authentication settings by.
  * @param version Versions to return.
-@return AuthenticationSettingsResponse
+@return DsvAuthenticationSettingsResponse
 */
-func (a *SettingsApiService) RollbackAuthSettings(ctx context.Context, name string, version int64) (AuthenticationSettingsResponse, *http.Response, error) {
+func (a *SettingsApiService) RollbackAuthSettings(ctx context.Context, name string, version int64) (DsvAuthenticationSettingsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AuthenticationSettingsResponse
+		localVarReturnValue DsvAuthenticationSettingsResponse
 	)
 
 	// create path and map variables
@@ -824,7 +824,7 @@ func (a *SettingsApiService) RollbackAuthSettings(ctx context.Context, name stri
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AuthenticationSettingsResponse
+			var v DsvAuthenticationSettingsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -834,7 +834,7 @@ func (a *SettingsApiService) RollbackAuthSettings(ctx context.Context, name stri
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -844,7 +844,7 @@ func (a *SettingsApiService) RollbackAuthSettings(ctx context.Context, name stri
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -854,7 +854,7 @@ func (a *SettingsApiService) RollbackAuthSettings(ctx context.Context, name stri
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -864,7 +864,7 @@ func (a *SettingsApiService) RollbackAuthSettings(ctx context.Context, name stri
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -874,7 +874,7 @@ func (a *SettingsApiService) RollbackAuthSettings(ctx context.Context, name stri
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -896,7 +896,7 @@ Search authentication providers by name.
      * @param "SearchTerm" (optional.String) -  Search pattern for setting name.
      * @param "Limit" (optional.Int64) -  The maximum number of results per cursor.
      * @param "Cursor" (optional.String) -  Cursor to next batch of results.
-@return AuthenticationSettingsSearchResponse
+@return DsvAuthenticationSettingsSearchResponse
 */
 
 type SettingsApiSearchSettingsOpts struct {
@@ -905,13 +905,13 @@ type SettingsApiSearchSettingsOpts struct {
     Cursor optional.String
 }
 
-func (a *SettingsApiService) SearchSettings(ctx context.Context, localVarOptionals *SettingsApiSearchSettingsOpts) (AuthenticationSettingsSearchResponse, *http.Response, error) {
+func (a *SettingsApiService) SearchSettings(ctx context.Context, localVarOptionals *SettingsApiSearchSettingsOpts) (DsvAuthenticationSettingsSearchResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AuthenticationSettingsSearchResponse
+		localVarReturnValue DsvAuthenticationSettingsSearchResponse
 	)
 
 	// create path and map variables
@@ -990,7 +990,7 @@ func (a *SettingsApiService) SearchSettings(ctx context.Context, localVarOptiona
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AuthenticationSettingsSearchResponse
+			var v DsvAuthenticationSettingsSearchResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1000,7 +1000,7 @@ func (a *SettingsApiService) SearchSettings(ctx context.Context, localVarOptiona
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1010,7 +1010,7 @@ func (a *SettingsApiService) SearchSettings(ctx context.Context, localVarOptiona
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1020,7 +1020,7 @@ func (a *SettingsApiService) SearchSettings(ctx context.Context, localVarOptiona
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1030,7 +1030,7 @@ func (a *SettingsApiService) SearchSettings(ctx context.Context, localVarOptiona
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 404 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1040,7 +1040,7 @@ func (a *SettingsApiService) SearchSettings(ctx context.Context, localVarOptiona
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1060,15 +1060,15 @@ Updates all fields on an existing authentication provider.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
  * @param name Full name to lookup authentication settings by.
-@return AuthenticationSettingsResponse
+@return DsvAuthenticationSettingsResponse
 */
-func (a *SettingsApiService) UpdateAuthSettings(ctx context.Context, body AuthenticationDetailsModel, name string) (AuthenticationSettingsResponse, *http.Response, error) {
+func (a *SettingsApiService) UpdateAuthSettings(ctx context.Context, body DsvAuthenticationDetailsModel, name string) (DsvAuthenticationSettingsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AuthenticationSettingsResponse
+		localVarReturnValue DsvAuthenticationSettingsResponse
 	)
 
 	// create path and map variables
@@ -1141,7 +1141,7 @@ func (a *SettingsApiService) UpdateAuthSettings(ctx context.Context, body Authen
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AuthenticationSettingsResponse
+			var v DsvAuthenticationSettingsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1151,7 +1151,7 @@ func (a *SettingsApiService) UpdateAuthSettings(ctx context.Context, body Authen
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1161,7 +1161,7 @@ func (a *SettingsApiService) UpdateAuthSettings(ctx context.Context, body Authen
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1171,7 +1171,7 @@ func (a *SettingsApiService) UpdateAuthSettings(ctx context.Context, body Authen
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1181,7 +1181,7 @@ func (a *SettingsApiService) UpdateAuthSettings(ctx context.Context, body Authen
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**UploadKey**](EaaSManualApi.md#UploadKey) | **Post** /crypto/manual/key/{path} | Upload Key
 
 # **DecryptWithManualKey**
-> DecryptionResponse DecryptWithManualKey(ctx, path, ciphertext, optional)
+> DsvDecryptionResponse DecryptWithManualKey(ctx, path, ciphertext, optional)
 Decrypt
 
 Decrypt ciphertext with a key.
@@ -37,7 +37,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DecryptionResponse**](DecryptionResponse.md)
+[**DsvDecryptionResponse**](DecryptionResponse.md)
 
 ### Authorization
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteManualKey**
-> MessageResponse DeleteManualKey(ctx, path)
+> DsvMessageResponse DeleteManualKey(ctx, path)
 Delete Key
 
 Delete an existing encryption/decryption key.
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**DsvMessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **EncryptWithManualKey**
-> EncryptionResponse EncryptWithManualKey(ctx, path, plaintext, optional)
+> DsvEncryptionResponse EncryptWithManualKey(ctx, path, plaintext, optional)
 Encrypt
 
 Encrypt plaintext with a key.
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EncryptionResponse**](EncryptionResponse.md)
+[**DsvEncryptionResponse**](EncryptionResponse.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ReadManualKey**
-> SecretResponse ReadManualKey(ctx, path)
+> DsvSecretResponse ReadManualKey(ctx, path)
 Read Key
 
 Read existing encryption/decryption key.
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecretResponse**](SecretResponse.md)
+[**DsvSecretResponse**](SecretResponse.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdateKey**
-> SecretResponse UpdateKey(ctx, body, path)
+> DsvSecretResponse UpdateKey(ctx, body, path)
 Update Key
 
 Update an existing encryption/decryption key.
@@ -183,12 +183,12 @@ Update an existing encryption/decryption key.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**UpdateKeyRequest**](UpdateKeyRequest.md)|  | 
+  **body** | [**DsvUpdateKeyRequest**](DsvUpdateKeyRequest.md)|  | 
   **path** | **string**| The full key path, for example, mykeys/key01 | 
 
 ### Return type
 
-[**SecretResponse**](SecretResponse.md)
+[**DsvSecretResponse**](SecretResponse.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UploadKey**
-> SecretResponse UploadKey(ctx, body, path)
+> DsvSecretResponse UploadKey(ctx, body, path)
 Upload Key
 
 Upload a new encryption/decryption key.
@@ -212,12 +212,12 @@ Upload a new encryption/decryption key.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**ManualKeyData**](ManualKeyData.md)|  | 
+  **body** | [**DsvManualKeyData**](DsvManualKeyData.md)|  | 
   **path** | **string**| The full key path, for example, mykeys/key01 | 
 
 ### Return type
 
-[**SecretResponse**](SecretResponse.md)
+[**DsvSecretResponse**](SecretResponse.md)
 
 ### Authorization
 

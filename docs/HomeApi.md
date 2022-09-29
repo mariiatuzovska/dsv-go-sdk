@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**UpdateHomeSecret**](HomeApi.md#UpdateHomeSecret) | **Put** /home/{principalName}/{path} | Update home Secret
 
 # **CreateHomeSecret**
-> SecretResponse CreateHomeSecret(ctx, body, path)
+> DsvSecretResponse CreateHomeSecret(ctx, body, path)
 Create home secrets
 
 Creates a new home secret.
@@ -25,12 +25,12 @@ Creates a new home secret.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**SecretCreate**](SecretCreate.md)|  | 
+  **body** | [**DsvSecretCreate**](DsvSecretCreate.md)|  | 
   **path** | **string**| The full secret path i.e. servers/prod/webserver-01 | 
 
 ### Return type
 
-[**SecretResponse**](SecretResponse.md)
+[**DsvSecretResponse**](SecretResponse.md)
 
 ### Authorization
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteHomeSecret**
-> MessageResponse DeleteHomeSecret(ctx, path, optional)
+> DsvMessageResponse DeleteHomeSecret(ctx, path, optional)
 Delete Home Secret
 
 Deletes a home secret by path or by id in the query.
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**DsvMessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetHomeSecret**
-> SecretResponse GetHomeSecret(ctx, path, optional)
+> DsvSecretResponse GetHomeSecret(ctx, path, optional)
 Get Home
 
 Gets a full home secret by path or by id in the query.
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecretResponse**](SecretResponse.md)
+[**DsvSecretResponse**](SecretResponse.md)
 
 ### Authorization
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetHomeSecretByVersion**
-> SecretVersionResponse GetHomeSecretByVersion(ctx, path, version)
+> DsvSecretVersionResponse GetHomeSecretByVersion(ctx, path, version)
 Get Home Secret By Version
 
 Gets a full home secret by path and version in the query.
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecretVersionResponse**](SecretVersionResponse.md)
+[**DsvSecretVersionResponse**](SecretVersionResponse.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetHomeSecretDescription**
-> SecretDescription GetHomeSecretDescription(ctx, path, optional)
+> DsvSecretDescription GetHomeSecretDescription(ctx, path, optional)
 Get home Secret Description
 
 Gets a home secret's metadata without returning the sensitive data.
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecretDescription**](SecretDescription.md)
+[**DsvSecretDescription**](SecretDescription.md)
 
 ### Authorization
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **RollbackHomeSecret**
-> SecretVersionResponse RollbackHomeSecret(ctx, path, version)
+> DsvSecretVersionResponse RollbackHomeSecret(ctx, path, version)
 Rollback a Home Secret
 
 Rollbacks a Home Secret to a previous version.
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecretVersionResponse**](SecretVersionResponse.md)
+[**DsvSecretVersionResponse**](SecretVersionResponse.md)
 
 ### Authorization
 
@@ -246,7 +246,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SearchHomeSecrets**
-> SecretSearch SearchHomeSecrets(ctx, optional)
+> DsvSecretSearch SearchHomeSecrets(ctx, optional)
 Search for Home Secrets
 
 Lists home secret paths that start with the path parameter.
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecretSearch**](SecretSearch.md)
+[**DsvSecretSearch**](SecretSearch.md)
 
 ### Authorization
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdateHomeSecret**
-> SecretResponse UpdateHomeSecret(ctx, body, path)
+> DsvSecretResponse UpdateHomeSecret(ctx, body, path)
 Update home Secret
 
 Updates an existing home secret.
@@ -297,12 +297,12 @@ Updates an existing home secret.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**SecretUpdate**](SecretUpdate.md)|  | 
+  **body** | [**DsvSecretUpdate**](DsvSecretUpdate.md)|  | 
   **path** | **string**| The full secret path i.e. servers/prod/webserver-01 | 
 
 ### Return type
 
-[**SecretResponse**](SecretResponse.md)
+[**DsvSecretResponse**](SecretResponse.md)
 
 ### Authorization
 

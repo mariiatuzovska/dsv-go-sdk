@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**ListPools**](PoolsApi.md#ListPools) | **Get** /pools | List Pools
 
 # **CreatePool**
-> Pool CreatePool(ctx, body)
+> DsvPool CreatePool(ctx, body)
 Create Pool
 
 Create an engine pool.
@@ -20,11 +20,11 @@ Create an engine pool.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**PoolCreate**](PoolCreate.md)|  | 
+  **body** | [**DsvPoolCreate**](DsvPoolCreate.md)|  | 
 
 ### Return type
 
-[**Pool**](Pool.md)
+[**DsvPool**](Pool.md)
 
 ### Authorization
 
@@ -38,7 +38,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeletePool**
-> MessageResponse DeletePool(ctx, name)
+> DsvMessageResponse DeletePool(ctx, name)
 Delete Pool
 
 Delete an engine pool by name.
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**DsvMessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetPool**
-> Pool GetPool(ctx, name)
+> DsvPool GetPool(ctx, name)
 Get Pool
 
 Retrieve pool by name.
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Pool**](Pool.md)
+[**DsvPool**](Pool.md)
 
 ### Authorization
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ListPools**
-> PoolListResult ListPools(ctx, )
+> DsvPoolListResult ListPools(ctx, )
 List Pools
 
 List all existing pools.
@@ -104,7 +104,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**PoolListResult**](PoolListResult.md)
+[**DsvPoolListResult**](PoolListResult.md)
 
 ### Authorization
 

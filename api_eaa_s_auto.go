@@ -30,15 +30,15 @@ EaaSAutoApiService Create Key
 Create a new encryption/decryption key.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param path The full key path, for example, mykeys/key01
-@return AutoKeyResponse
+@return DsvAutoKeyResponse
 */
-func (a *EaaSAutoApiService) CreateKey(ctx context.Context, path string) (AutoKeyResponse, *http.Response, error) {
+func (a *EaaSAutoApiService) CreateKey(ctx context.Context, path string) (DsvAutoKeyResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AutoKeyResponse
+		localVarReturnValue DsvAutoKeyResponse
 	)
 
 	// create path and map variables
@@ -109,7 +109,7 @@ func (a *EaaSAutoApiService) CreateKey(ctx context.Context, path string) (AutoKe
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v AutoKeyResponse
+			var v DsvAutoKeyResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -119,7 +119,7 @@ func (a *EaaSAutoApiService) CreateKey(ctx context.Context, path string) (AutoKe
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -129,7 +129,7 @@ func (a *EaaSAutoApiService) CreateKey(ctx context.Context, path string) (AutoKe
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -139,7 +139,7 @@ func (a *EaaSAutoApiService) CreateKey(ctx context.Context, path string) (AutoKe
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -149,7 +149,7 @@ func (a *EaaSAutoApiService) CreateKey(ctx context.Context, path string) (AutoKe
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -171,20 +171,20 @@ Decrypt ciphertext with a key.
  * @param ciphertext A value to be decrypted
  * @param optional nil or *EaaSAutoApiDecryptOpts - Optional Parameters:
      * @param "Version" (optional.String) -  The version of the key with which to decrypt data
-@return DecryptionResponse
+@return DsvDecryptionResponse
 */
 
 type EaaSAutoApiDecryptOpts struct {
     Version optional.String
 }
 
-func (a *EaaSAutoApiService) Decrypt(ctx context.Context, path string, ciphertext []int32, localVarOptionals *EaaSAutoApiDecryptOpts) (DecryptionResponse, *http.Response, error) {
+func (a *EaaSAutoApiService) Decrypt(ctx context.Context, path string, ciphertext []int32, localVarOptionals *EaaSAutoApiDecryptOpts) (DsvDecryptionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue DecryptionResponse
+		localVarReturnValue DsvDecryptionResponse
 	)
 
 	// create path and map variables
@@ -259,7 +259,7 @@ func (a *EaaSAutoApiService) Decrypt(ctx context.Context, path string, ciphertex
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v DecryptionResponse
+			var v DsvDecryptionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -269,7 +269,7 @@ func (a *EaaSAutoApiService) Decrypt(ctx context.Context, path string, ciphertex
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -279,7 +279,7 @@ func (a *EaaSAutoApiService) Decrypt(ctx context.Context, path string, ciphertex
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -289,7 +289,7 @@ func (a *EaaSAutoApiService) Decrypt(ctx context.Context, path string, ciphertex
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -299,7 +299,7 @@ func (a *EaaSAutoApiService) Decrypt(ctx context.Context, path string, ciphertex
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -318,15 +318,15 @@ EaaSAutoApiService Delete Key
 Delete an existing encryption/decryption key.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param path The full key path, for example, mykeys/key01
-@return MessageResponse
+@return DsvMessageResponse
 */
-func (a *EaaSAutoApiService) DeleteKey(ctx context.Context, path string) (MessageResponse, *http.Response, error) {
+func (a *EaaSAutoApiService) DeleteKey(ctx context.Context, path string) (DsvMessageResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue MessageResponse
+		localVarReturnValue DsvMessageResponse
 	)
 
 	// create path and map variables
@@ -397,7 +397,7 @@ func (a *EaaSAutoApiService) DeleteKey(ctx context.Context, path string) (Messag
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v MessageResponse
+			var v DsvMessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -407,7 +407,7 @@ func (a *EaaSAutoApiService) DeleteKey(ctx context.Context, path string) (Messag
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -417,7 +417,7 @@ func (a *EaaSAutoApiService) DeleteKey(ctx context.Context, path string) (Messag
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -427,7 +427,7 @@ func (a *EaaSAutoApiService) DeleteKey(ctx context.Context, path string) (Messag
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -437,7 +437,7 @@ func (a *EaaSAutoApiService) DeleteKey(ctx context.Context, path string) (Messag
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -459,20 +459,20 @@ Encrypt plaintext with a key.
  * @param plaintext A value to be encrypted
  * @param optional nil or *EaaSAutoApiEncryptOpts - Optional Parameters:
      * @param "Version" (optional.String) -  The version of the key with which to encrypt data
-@return EncryptionResponse
+@return DsvEncryptionResponse
 */
 
 type EaaSAutoApiEncryptOpts struct {
     Version optional.String
 }
 
-func (a *EaaSAutoApiService) Encrypt(ctx context.Context, path string, plaintext string, localVarOptionals *EaaSAutoApiEncryptOpts) (EncryptionResponse, *http.Response, error) {
+func (a *EaaSAutoApiService) Encrypt(ctx context.Context, path string, plaintext string, localVarOptionals *EaaSAutoApiEncryptOpts) (DsvEncryptionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue EncryptionResponse
+		localVarReturnValue DsvEncryptionResponse
 	)
 
 	// create path and map variables
@@ -547,7 +547,7 @@ func (a *EaaSAutoApiService) Encrypt(ctx context.Context, path string, plaintext
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v EncryptionResponse
+			var v DsvEncryptionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -557,7 +557,7 @@ func (a *EaaSAutoApiService) Encrypt(ctx context.Context, path string, plaintext
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -567,7 +567,7 @@ func (a *EaaSAutoApiService) Encrypt(ctx context.Context, path string, plaintext
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -577,7 +577,7 @@ func (a *EaaSAutoApiService) Encrypt(ctx context.Context, path string, plaintext
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -587,7 +587,7 @@ func (a *EaaSAutoApiService) Encrypt(ctx context.Context, path string, plaintext
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -606,15 +606,15 @@ EaaSAutoApiService Get Key Metadata
 Get metadata of an existing encryption/decryption key.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param path The full key path, for example, mykeys/key01
-@return AutoKeyResponse
+@return DsvAutoKeyResponse
 */
-func (a *EaaSAutoApiService) GetKeyMetadata(ctx context.Context, path string) (AutoKeyResponse, *http.Response, error) {
+func (a *EaaSAutoApiService) GetKeyMetadata(ctx context.Context, path string) (DsvAutoKeyResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AutoKeyResponse
+		localVarReturnValue DsvAutoKeyResponse
 	)
 
 	// create path and map variables
@@ -685,7 +685,7 @@ func (a *EaaSAutoApiService) GetKeyMetadata(ctx context.Context, path string) (A
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AutoKeyResponse
+			var v DsvAutoKeyResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -695,7 +695,7 @@ func (a *EaaSAutoApiService) GetKeyMetadata(ctx context.Context, path string) (A
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -705,7 +705,7 @@ func (a *EaaSAutoApiService) GetKeyMetadata(ctx context.Context, path string) (A
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -715,7 +715,7 @@ func (a *EaaSAutoApiService) GetKeyMetadata(ctx context.Context, path string) (A
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -725,7 +725,7 @@ func (a *EaaSAutoApiService) GetKeyMetadata(ctx context.Context, path string) (A
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -816,7 +816,7 @@ func (a *EaaSAutoApiService) RestoreKey(ctx context.Context, path string) (*http
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -826,7 +826,7 @@ func (a *EaaSAutoApiService) RestoreKey(ctx context.Context, path string) (*http
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -836,7 +836,7 @@ func (a *EaaSAutoApiService) RestoreKey(ctx context.Context, path string) (*http
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -846,7 +846,7 @@ func (a *EaaSAutoApiService) RestoreKey(ctx context.Context, path string) (*http
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -869,20 +869,20 @@ Rotate data and optionally an existing encryption/decryption key.  If the starti
  * @param startingVersion The starting version of the key with which to re-encrypt data
  * @param optional nil or *EaaSAutoApiRotationRequestOpts - Optional Parameters:
      * @param "EndingVersion" (optional.String) -  The ending version of the key with which to re-encrypt data
-@return EncryptionResponse
+@return DsvEncryptionResponse
 */
 
 type EaaSAutoApiRotationRequestOpts struct {
     EndingVersion optional.String
 }
 
-func (a *EaaSAutoApiService) RotationRequest(ctx context.Context, path string, ciphertext []int32, startingVersion string, localVarOptionals *EaaSAutoApiRotationRequestOpts) (EncryptionResponse, *http.Response, error) {
+func (a *EaaSAutoApiService) RotationRequest(ctx context.Context, path string, ciphertext []int32, startingVersion string, localVarOptionals *EaaSAutoApiRotationRequestOpts) (DsvEncryptionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue EncryptionResponse
+		localVarReturnValue DsvEncryptionResponse
 	)
 
 	// create path and map variables
@@ -958,7 +958,7 @@ func (a *EaaSAutoApiService) RotationRequest(ctx context.Context, path string, c
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v EncryptionResponse
+			var v DsvEncryptionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -968,7 +968,7 @@ func (a *EaaSAutoApiService) RotationRequest(ctx context.Context, path string, c
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -978,7 +978,7 @@ func (a *EaaSAutoApiService) RotationRequest(ctx context.Context, path string, c
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -988,7 +988,7 @@ func (a *EaaSAutoApiService) RotationRequest(ctx context.Context, path string, c
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -998,7 +998,7 @@ func (a *EaaSAutoApiService) RotationRequest(ctx context.Context, path string, c
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

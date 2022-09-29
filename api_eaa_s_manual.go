@@ -33,20 +33,20 @@ Decrypt ciphertext with a key.
  * @param ciphertext A value to be decrypted
  * @param optional nil or *EaaSManualApiDecryptWithManualKeyOpts - Optional Parameters:
      * @param "Version" (optional.String) -  The version of the key with which to decrypt data
-@return DecryptionResponse
+@return DsvDecryptionResponse
 */
 
 type EaaSManualApiDecryptWithManualKeyOpts struct {
     Version optional.String
 }
 
-func (a *EaaSManualApiService) DecryptWithManualKey(ctx context.Context, path string, ciphertext []int32, localVarOptionals *EaaSManualApiDecryptWithManualKeyOpts) (DecryptionResponse, *http.Response, error) {
+func (a *EaaSManualApiService) DecryptWithManualKey(ctx context.Context, path string, ciphertext []int32, localVarOptionals *EaaSManualApiDecryptWithManualKeyOpts) (DsvDecryptionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue DecryptionResponse
+		localVarReturnValue DsvDecryptionResponse
 	)
 
 	// create path and map variables
@@ -121,7 +121,7 @@ func (a *EaaSManualApiService) DecryptWithManualKey(ctx context.Context, path st
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v DecryptionResponse
+			var v DsvDecryptionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -131,7 +131,7 @@ func (a *EaaSManualApiService) DecryptWithManualKey(ctx context.Context, path st
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -141,7 +141,7 @@ func (a *EaaSManualApiService) DecryptWithManualKey(ctx context.Context, path st
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -151,7 +151,7 @@ func (a *EaaSManualApiService) DecryptWithManualKey(ctx context.Context, path st
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -161,7 +161,7 @@ func (a *EaaSManualApiService) DecryptWithManualKey(ctx context.Context, path st
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -180,15 +180,15 @@ EaaSManualApiService Delete Key
 Delete an existing encryption/decryption key.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param path The full key path, for example, mykeys/key01
-@return MessageResponse
+@return DsvMessageResponse
 */
-func (a *EaaSManualApiService) DeleteManualKey(ctx context.Context, path string) (MessageResponse, *http.Response, error) {
+func (a *EaaSManualApiService) DeleteManualKey(ctx context.Context, path string) (DsvMessageResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue MessageResponse
+		localVarReturnValue DsvMessageResponse
 	)
 
 	// create path and map variables
@@ -259,7 +259,7 @@ func (a *EaaSManualApiService) DeleteManualKey(ctx context.Context, path string)
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v MessageResponse
+			var v DsvMessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -269,7 +269,7 @@ func (a *EaaSManualApiService) DeleteManualKey(ctx context.Context, path string)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -279,7 +279,7 @@ func (a *EaaSManualApiService) DeleteManualKey(ctx context.Context, path string)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -289,7 +289,7 @@ func (a *EaaSManualApiService) DeleteManualKey(ctx context.Context, path string)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -299,7 +299,7 @@ func (a *EaaSManualApiService) DeleteManualKey(ctx context.Context, path string)
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -321,20 +321,20 @@ Encrypt plaintext with a key.
  * @param plaintext A value to be encrypted
  * @param optional nil or *EaaSManualApiEncryptWithManualKeyOpts - Optional Parameters:
      * @param "Version" (optional.String) -  The version of the key with which to encrypt data
-@return EncryptionResponse
+@return DsvEncryptionResponse
 */
 
 type EaaSManualApiEncryptWithManualKeyOpts struct {
     Version optional.String
 }
 
-func (a *EaaSManualApiService) EncryptWithManualKey(ctx context.Context, path string, plaintext string, localVarOptionals *EaaSManualApiEncryptWithManualKeyOpts) (EncryptionResponse, *http.Response, error) {
+func (a *EaaSManualApiService) EncryptWithManualKey(ctx context.Context, path string, plaintext string, localVarOptionals *EaaSManualApiEncryptWithManualKeyOpts) (DsvEncryptionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue EncryptionResponse
+		localVarReturnValue DsvEncryptionResponse
 	)
 
 	// create path and map variables
@@ -409,7 +409,7 @@ func (a *EaaSManualApiService) EncryptWithManualKey(ctx context.Context, path st
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v EncryptionResponse
+			var v DsvEncryptionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -419,7 +419,7 @@ func (a *EaaSManualApiService) EncryptWithManualKey(ctx context.Context, path st
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -429,7 +429,7 @@ func (a *EaaSManualApiService) EncryptWithManualKey(ctx context.Context, path st
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -439,7 +439,7 @@ func (a *EaaSManualApiService) EncryptWithManualKey(ctx context.Context, path st
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -449,7 +449,7 @@ func (a *EaaSManualApiService) EncryptWithManualKey(ctx context.Context, path st
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -468,15 +468,15 @@ EaaSManualApiService Read Key
 Read existing encryption/decryption key.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param path The full key path, for example, mykeys/key01
-@return SecretResponse
+@return DsvSecretResponse
 */
-func (a *EaaSManualApiService) ReadManualKey(ctx context.Context, path string) (SecretResponse, *http.Response, error) {
+func (a *EaaSManualApiService) ReadManualKey(ctx context.Context, path string) (DsvSecretResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SecretResponse
+		localVarReturnValue DsvSecretResponse
 	)
 
 	// create path and map variables
@@ -547,7 +547,7 @@ func (a *EaaSManualApiService) ReadManualKey(ctx context.Context, path string) (
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v SecretResponse
+			var v DsvSecretResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -557,7 +557,7 @@ func (a *EaaSManualApiService) ReadManualKey(ctx context.Context, path string) (
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -567,7 +567,7 @@ func (a *EaaSManualApiService) ReadManualKey(ctx context.Context, path string) (
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -577,7 +577,7 @@ func (a *EaaSManualApiService) ReadManualKey(ctx context.Context, path string) (
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -587,7 +587,7 @@ func (a *EaaSManualApiService) ReadManualKey(ctx context.Context, path string) (
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -678,7 +678,7 @@ func (a *EaaSManualApiService) RestoreManualKey(ctx context.Context, path string
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -688,7 +688,7 @@ func (a *EaaSManualApiService) RestoreManualKey(ctx context.Context, path string
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -698,7 +698,7 @@ func (a *EaaSManualApiService) RestoreManualKey(ctx context.Context, path string
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -708,7 +708,7 @@ func (a *EaaSManualApiService) RestoreManualKey(ctx context.Context, path string
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -728,15 +728,15 @@ Update an existing encryption/decryption key.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
  * @param path The full key path, for example, mykeys/key01
-@return SecretResponse
+@return DsvSecretResponse
 */
-func (a *EaaSManualApiService) UpdateKey(ctx context.Context, body UpdateKeyRequest, path string) (SecretResponse, *http.Response, error) {
+func (a *EaaSManualApiService) UpdateKey(ctx context.Context, body DsvUpdateKeyRequest, path string) (DsvSecretResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SecretResponse
+		localVarReturnValue DsvSecretResponse
 	)
 
 	// create path and map variables
@@ -809,7 +809,7 @@ func (a *EaaSManualApiService) UpdateKey(ctx context.Context, body UpdateKeyRequ
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v SecretResponse
+			var v DsvSecretResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -819,7 +819,7 @@ func (a *EaaSManualApiService) UpdateKey(ctx context.Context, body UpdateKeyRequ
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -829,7 +829,7 @@ func (a *EaaSManualApiService) UpdateKey(ctx context.Context, body UpdateKeyRequ
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -839,7 +839,7 @@ func (a *EaaSManualApiService) UpdateKey(ctx context.Context, body UpdateKeyRequ
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -849,7 +849,7 @@ func (a *EaaSManualApiService) UpdateKey(ctx context.Context, body UpdateKeyRequ
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -869,15 +869,15 @@ Upload a new encryption/decryption key.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
  * @param path The full key path, for example, mykeys/key01
-@return SecretResponse
+@return DsvSecretResponse
 */
-func (a *EaaSManualApiService) UploadKey(ctx context.Context, body ManualKeyData, path string) (SecretResponse, *http.Response, error) {
+func (a *EaaSManualApiService) UploadKey(ctx context.Context, body DsvManualKeyData, path string) (DsvSecretResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue SecretResponse
+		localVarReturnValue DsvSecretResponse
 	)
 
 	// create path and map variables
@@ -950,7 +950,7 @@ func (a *EaaSManualApiService) UploadKey(ctx context.Context, body ManualKeyData
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 201 {
-			var v SecretResponse
+			var v DsvSecretResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -960,7 +960,7 @@ func (a *EaaSManualApiService) UploadKey(ctx context.Context, body ManualKeyData
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -970,7 +970,7 @@ func (a *EaaSManualApiService) UploadKey(ctx context.Context, body ManualKeyData
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -980,7 +980,7 @@ func (a *EaaSManualApiService) UploadKey(ctx context.Context, body ManualKeyData
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 403 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -990,7 +990,7 @@ func (a *EaaSManualApiService) UploadKey(ctx context.Context, body ManualKeyData
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**GetTaskStatus**](TasksApi.md#GetTaskStatus) | **Get** /task/status/{id} | Get background task status
 
 # **GetTaskStatus**
-> TaskState GetTaskStatus(ctx, id)
+> DsvTaskState GetTaskStatus(ctx, id)
 Get background task status
 
 Get background task status by task uuid
@@ -21,7 +21,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TaskState**](TaskState.md)
+[**DsvTaskState**](TaskState.md)
 
 ### Authorization
 

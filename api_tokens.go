@@ -29,15 +29,15 @@ TokensApiService Initiate authentication by certificate
 Request a challenge to decrypt to prove ownership of the private key for authentication by certificate flow. Challenge id returned in response is only valid for 5 minutes.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param clientCertificate
-@return InitiateCertAuthResponse
+@return DsvInitiateCertAuthResponse
 */
-func (a *TokensApiService) InitCertAuth(ctx context.Context, clientCertificate string) (InitiateCertAuthResponse, *http.Response, error) {
+func (a *TokensApiService) InitCertAuth(ctx context.Context, clientCertificate string) (DsvInitiateCertAuthResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InitiateCertAuthResponse
+		localVarReturnValue DsvInitiateCertAuthResponse
 	)
 
 	// create path and map variables
@@ -95,7 +95,7 @@ func (a *TokensApiService) InitCertAuth(ctx context.Context, clientCertificate s
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InitiateCertAuthResponse
+			var v DsvInitiateCertAuthResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -105,7 +105,7 @@ func (a *TokensApiService) InitCertAuth(ctx context.Context, clientCertificate s
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -115,7 +115,7 @@ func (a *TokensApiService) InitCertAuth(ctx context.Context, clientCertificate s
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -193,7 +193,7 @@ func (a *TokensApiService) Revoke(ctx context.Context, refreshtoken string) (*ht
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -203,7 +203,7 @@ func (a *TokensApiService) Revoke(ctx context.Context, refreshtoken string) (*ht
 				return localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -233,15 +233,15 @@ Submit parameters to get a new access token for use on protected endpoints
  * @param refreshToken
  * @param certChallengeId
  * @param decryptedChallenge
-@return AccessTokenResponse
+@return DsvAccessTokenResponse
 */
-func (a *TokensApiService) Token(ctx context.Context, grantType string, username string, password string, provider string, awsBody string, awsHeaders string, jwt string, clientId string, clientSecret string, refreshToken string, certChallengeId string, decryptedChallenge string) (AccessTokenResponse, *http.Response, error) {
+func (a *TokensApiService) Token(ctx context.Context, grantType string, username string, password string, provider string, awsBody string, awsHeaders string, jwt string, clientId string, clientSecret string, refreshToken string, certChallengeId string, decryptedChallenge string) (DsvAccessTokenResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AccessTokenResponse
+		localVarReturnValue DsvAccessTokenResponse
 	)
 
 	// create path and map variables
@@ -310,7 +310,7 @@ func (a *TokensApiService) Token(ctx context.Context, grantType string, username
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AccessTokenResponse
+			var v DsvAccessTokenResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -320,7 +320,7 @@ func (a *TokensApiService) Token(ctx context.Context, grantType string, username
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -330,7 +330,7 @@ func (a *TokensApiService) Token(ctx context.Context, grantType string, username
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 401 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -340,7 +340,7 @@ func (a *TokensApiService) Token(ctx context.Context, grantType string, username
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 500 {
-			var v HttpError
+			var v DsvHttpError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
