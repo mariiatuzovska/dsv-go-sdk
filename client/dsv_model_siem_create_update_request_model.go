@@ -10,6 +10,8 @@
 package swagger
 
 type DsvSiemCreateUpdateRequestModel struct {
+	// Denotes whether the endpoint can use self signed root certifcate for handshake (only for https protocol)
+	AllowSelfSigned bool `json:"allowSelfSigned,omitempty"`
 	// Authentication token
 	Auth string `json:"auth"`
 	// Authentication method (token)

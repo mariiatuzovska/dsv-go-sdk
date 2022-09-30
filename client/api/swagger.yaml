@@ -156,7 +156,6 @@ paths:
         type: "array"
         items:
           type: "string"
-        minLength: 1
         x-go-name: "Shares"
         x-exportParamName: "Shares"
       security:
@@ -197,7 +196,6 @@ paths:
         type: "array"
         items:
           type: "string"
-        minLength: 1
         x-go-name: "NewAdmins"
         x-exportParamName: "NewAdmins"
       - name: "minNumberOfShares"
@@ -8288,6 +8286,11 @@ definitions:
     - "protocol"
     - "siemType"
     properties:
+      allowSelfSigned:
+        type: "boolean"
+        description: "Denotes whether the endpoint can use self signed root certifcate\
+          \ for handshake (only for https protocol)"
+        x-go-name: "AllowSelfSigned"
       auth:
         type: "string"
         description: "Authentication token"
@@ -8339,6 +8342,11 @@ definitions:
   SiemNoSensitiveResponseModel:
     type: "object"
     properties:
+      allowSelfSigned:
+        type: "boolean"
+        description: "Denotes whether the endpoint can use self signed root certifcate\
+          \ for handshake (only for https protocol)"
+        x-go-name: "AllowSelfSigned"
       authMethod:
         type: "string"
         description: "Authentication method (token)"
@@ -8399,6 +8407,7 @@ definitions:
     example:
       sendToEngine: true
       loggingFormat: "loggingFormat"
+      allowSelfSigned: true
       pool: "pool"
       failed: true
       siemType: "siemType"
@@ -8414,6 +8423,11 @@ definitions:
   SiemResponse:
     type: "object"
     properties:
+      allowSelfSigned:
+        type: "boolean"
+        description: "Denotes whether the endpoint can use self signed root certifcate\
+          \ for handshake (only for https protocol)"
+        x-go-name: "AllowSelfSigned"
       auth:
         type: "string"
         description: "Authentication token"
@@ -8478,6 +8492,7 @@ definitions:
     example:
       sendToEngine: true
       loggingFormat: "loggingFormat"
+      allowSelfSigned: true
       auth: "auth"
       pool: "pool"
       failed: true
@@ -8526,6 +8541,7 @@ definitions:
       data:
       - sendToEngine: true
         loggingFormat: "loggingFormat"
+        allowSelfSigned: true
         pool: "pool"
         failed: true
         siemType: "siemType"
@@ -8539,6 +8555,7 @@ definitions:
         authMethod: "authMethod"
       - sendToEngine: true
         loggingFormat: "loggingFormat"
+        allowSelfSigned: true
         pool: "pool"
         failed: true
         siemType: "siemType"

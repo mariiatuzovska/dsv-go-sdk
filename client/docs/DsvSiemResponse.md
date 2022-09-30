@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AllowSelfSigned** | **bool** | Denotes whether the endpoint can use self signed root certifcate for handshake (only for https protocol) | [optional] [default to null]
 **Auth** | **string** | Authentication token | [optional] [default to null]
 **AuthMethod** | **string** | Authentication method (token) | [optional] [default to null]
 **Endpoint** | **string** | Endpoint | [optional] [default to null]

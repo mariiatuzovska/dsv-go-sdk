@@ -10,6 +10,8 @@
 package swagger
 
 type DsvSiemNoSensitiveResponseModel struct {
+	// Denotes whether the endpoint can use self signed root certifcate for handshake (only for https protocol)
+	AllowSelfSigned bool `json:"allowSelfSigned,omitempty"`
 	// Authentication method (token)
 	AuthMethod string `json:"authMethod,omitempty"`
 	// Endpoint

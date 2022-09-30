@@ -48,9 +48,6 @@ func (a *BreakGlassApiService) ApplyRequest(ctx context.Context, shares []string
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if strlen(shares) < 1 {
-		return localVarReturnValue, nil, reportError("shares must have at least 1 elements")
-	}
 
 	localVarQueryParams.Add("shares", parameterToString(shares, "csv"))
 	// to determine the Content-Type header
@@ -196,9 +193,6 @@ func (a *BreakGlassApiService) GenerateRequest(ctx context.Context, newAdmins []
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if strlen(newAdmins) < 1 {
-		return localVarReturnValue, nil, reportError("newAdmins must have at least 1 elements")
-	}
 	if minNumberOfShares < 1 {
 		return localVarReturnValue, nil, reportError("minNumberOfShares must be greater than 1")
 	}
