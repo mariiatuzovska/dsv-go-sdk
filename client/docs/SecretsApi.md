@@ -1,4 +1,4 @@
-# {{classname}}
+# \SecretsApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
@@ -14,8 +14,9 @@ Method | HTTP request | Description
 [**SearchSecrets**](SecretsApi.md#SearchSecrets) | **Get** /secrets | Search for Secrets
 [**UpdateSecret**](SecretsApi.md#UpdateSecret) | **Put** /secrets/{path} | Update Secret
 
+
 # **CreateSecret**
-> DsvSecretResponse CreateSecret(ctx, body, path)
+> DsvSecretResponse CreateSecret(ctx, path, body)
 Create Secret
 
 Creates a new secret.
@@ -25,8 +26,8 @@ Creates a new secret.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**DsvSecretCreate**](DsvSecretCreate.md)|  | 
   **path** | **string**| The full secret path i.e. servers/prod/webserver-01 | 
+  **body** | [**DsvSecretCreate**](DsvSecretCreate.md)|  | 
 
 ### Return type
 
@@ -59,6 +60,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a SecretsApiDeleteSecretOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
@@ -75,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -96,6 +98,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a SecretsApiGetSecretOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
@@ -111,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -140,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -161,6 +164,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a SecretsApiGetSecretDescriptionOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
@@ -176,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -197,6 +201,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a SecretsApiListSecretPathsOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
@@ -212,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -241,7 +246,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -261,6 +266,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a SecretsApiSearchSecretsOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **searchTerm** | **optional.String**| Partial search term for search by path | 
@@ -282,13 +288,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdateSecret**
-> DsvSecretResponse UpdateSecret(ctx, body, path)
+> DsvSecretResponse UpdateSecret(ctx, path, body)
 Update Secret
 
 Updates an existing secret.
@@ -298,8 +304,8 @@ Updates an existing secret.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**DsvSecretUpdate**](DsvSecretUpdate.md)|  | 
   **path** | **string**| The full secret path i.e. servers/prod/webserver-01 | 
+  **body** | [**DsvSecretUpdate**](DsvSecretUpdate.md)|  | 
 
 ### Return type
 

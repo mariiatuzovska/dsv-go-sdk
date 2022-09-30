@@ -1,4 +1,4 @@
-# {{classname}}
+# \UsersApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
@@ -15,8 +15,9 @@ Method | HTTP request | Description
 [**SearchUsers**](UsersApi.md#SearchUsers) | **Get** /users | Search for Users
 [**UpdateUser**](UsersApi.md#UpdateUser) | **Put** /users/{name} | Update a User
 
+
 # **AddToGroups**
-> DsvAddToGroupsResponse AddToGroups(ctx, body, name)
+> DsvAddToGroupsResponse AddToGroups(ctx, name, body)
 Add Member To Groups
 
 Add a user to one or more groups.
@@ -26,8 +27,8 @@ Add a user to one or more groups.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**DsvAddToGroupsRequest**](DsvAddToGroupsRequest.md)|  | 
   **name** | **string**| Full user name to lookup user by | 
+  **body** | [**DsvAddToGroupsRequest**](DsvAddToGroupsRequest.md)|  | 
 
 ### Return type
 
@@ -45,7 +46,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ChangePassword**
-> DsvMessageResponse ChangePassword(ctx, body, name)
+> DsvMessageResponse ChangePassword(ctx, name, body)
 Change Password
 
 Allows the user to change their own password.
@@ -55,8 +56,8 @@ Allows the user to change their own password.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**DsvPasswordChangeModel**](DsvPasswordChangeModel.md)|  | 
   **name** | **string**| Full user name to lookup user by | 
+  **body** | [**DsvPasswordChangeModel**](DsvPasswordChangeModel.md)|  | 
 
 ### Return type
 
@@ -117,6 +118,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a UsersApiDeleteUserOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
@@ -132,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -160,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -188,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -217,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -245,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -265,6 +267,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a UsersApiSearchUsersOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **searchField** | **optional.String**| User field for advanced searching | 
@@ -286,13 +289,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdateUser**
-> DsvUserResponse UpdateUser(ctx, body, name)
+> DsvUserResponse UpdateUser(ctx, name, body)
 Update a User
 
 Update an existing user.
@@ -302,8 +305,8 @@ Update an existing user.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**DsvUserUpdateModel**](DsvUserUpdateModel.md)|  | 
   **name** | **string**| Full user name to lookup user by | 
+  **body** | [**DsvUserUpdateModel**](DsvUserUpdateModel.md)|  | 
 
 ### Return type
 

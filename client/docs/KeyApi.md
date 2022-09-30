@@ -1,10 +1,11 @@
-# {{classname}}
+# \KeyApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**Masterkeys**](KeyApi.md#Masterkeys) | **Put** /config/keys | Update Master Key
+
 
 # **Masterkeys**
 > Masterkeys(ctx, body)

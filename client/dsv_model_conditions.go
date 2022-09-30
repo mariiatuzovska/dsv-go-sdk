@@ -9,12 +9,5 @@
 
 package swagger
 
-// MemberResponse for member response
-type DsvMemberResponse struct {
-	// Groups information
-	Groups []DsvGroupMemberInfo `json:"groups,omitempty"`
-	// Name
-	Name string `json:"name,omitempty"`
-	// Total number of items
-	Total int64 `json:"total,omitempty"`
+type DsvConditions struct {
 }

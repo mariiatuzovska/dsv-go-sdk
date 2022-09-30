@@ -1,4 +1,4 @@
-# {{classname}}
+# \SIEMApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**SiemDelete**](SIEMApi.md#SiemDelete) | **Delete** /config/siem/{name} | Delete SIEM Endpoint
 [**SiemGet**](SIEMApi.md#SiemGet) | **Get** /config/siem/{name} | Get SIEM Endpoint
 [**SiemUpdate**](SIEMApi.md#SiemUpdate) | **Put** /config/siem/{name} | Update SIEM Endpoint
+
 
 # **SearchSiems**
 > DsvSiemSearchResponse SearchSiems(ctx, optional)
@@ -25,6 +26,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a SIEMApiSearchSiemsOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **searchTerm** | **optional.String**| Partial search term for search by name | 
@@ -42,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -98,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -126,13 +128,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SiemUpdate**
-> DsvSiemResponse SiemUpdate(ctx, body, name)
+> DsvSiemResponse SiemUpdate(ctx, name, body)
 Update SIEM Endpoint
 
 Update an existing SIEM endpoint. Update sets \"failed\" to \"false\" and \"failedEvents\" to \"0\" automatically.
@@ -142,8 +144,8 @@ Update an existing SIEM endpoint. Update sets \"failed\" to \"false\" and \"fail
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**DsvSiemCreateUpdateRequestModel**](DsvSiemCreateUpdateRequestModel.md)|  | 
   **name** | **string**|  | 
+  **body** | [**DsvSiemCreateUpdateRequestModel**](DsvSiemCreateUpdateRequestModel.md)|  | 
 
 ### Return type
 

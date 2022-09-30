@@ -1,4 +1,4 @@
-# {{classname}}
+# \PoolsApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DeletePool**](PoolsApi.md#DeletePool) | **Delete** /pools/{name} | Delete Pool
 [**GetPool**](PoolsApi.md#GetPool) | **Get** /pools/{name} | Get Pool
 [**ListPools**](PoolsApi.md#ListPools) | **Get** /pools | List Pools
+
 
 # **CreatePool**
 > DsvPool CreatePool(ctx, body)
@@ -60,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -88,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -112,7 +113,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

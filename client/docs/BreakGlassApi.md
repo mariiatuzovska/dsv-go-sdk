@@ -1,4 +1,4 @@
-# {{classname}}
+# \BreakGlassApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**ApplyRequest**](BreakGlassApi.md#ApplyRequest) | **Post** /breakglass/apply | Apply
 [**GenerateRequest**](BreakGlassApi.md#GenerateRequest) | **Post** /breakglass/generate | Generate
 [**GetStatus**](BreakGlassApi.md#GetStatus) | **Get** /breakglass | Get Status
+
 
 # **ApplyRequest**
 > DsvApplyResponse ApplyRequest(ctx, shares)
@@ -31,7 +32,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -60,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -84,7 +85,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

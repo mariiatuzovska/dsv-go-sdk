@@ -1,4 +1,4 @@
-# {{classname}}
+# \PKIApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**RootCARegistration**](PKIApi.md#RootCARegistration) | **Post** /pki/root | Generate Root Certificate
 [**SSHCertParams**](PKIApi.md#SSHCertParams) | **Post** /pki/ssh-cert | Create SSH Certificate
 [**SignCertificate**](PKIApi.md#SignCertificate) | **Post** /pki/sign | Create Signed Certificate
+
 
 # **LeafParams**
 > DsvResponseCertificate LeafParams(ctx, body)

@@ -1,4 +1,4 @@
-# {{classname}}
+# \HomeApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
@@ -14,8 +14,9 @@ Method | HTTP request | Description
 [**SearchHomeSecrets**](HomeApi.md#SearchHomeSecrets) | **Get** /home/{principalName} | Search for Home Secrets
 [**UpdateHomeSecret**](HomeApi.md#UpdateHomeSecret) | **Put** /home/{principalName}/{path} | Update home Secret
 
+
 # **CreateHomeSecret**
-> DsvSecretResponse CreateHomeSecret(ctx, body, path)
+> DsvSecretResponse CreateHomeSecret(ctx, path, body)
 Create home secrets
 
 Creates a new home secret.
@@ -25,8 +26,8 @@ Creates a new home secret.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**DsvSecretCreate**](DsvSecretCreate.md)|  | 
   **path** | **string**| The full secret path i.e. servers/prod/webserver-01 | 
+  **body** | [**DsvSecretCreate**](DsvSecretCreate.md)|  | 
 
 ### Return type
 
@@ -59,6 +60,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a HomeApiDeleteHomeSecretOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
@@ -74,13 +76,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetHomeSecret**
-> DsvSecretResponse GetHomeSecret(ctx, principalName, path, optional)
+> DsvSecretResponse GetHomeSecret(ctx, path, optional)
 Get Home
 
 Gets a full home secret by path or by id in the query.
@@ -90,15 +92,14 @@ Gets a full home secret by path or by id in the query.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **principalName** | **string**| Principal Name | 
   **path** | **string**| The full secret path i.e. servers/prod/webserver-01 | 
  **optional** | ***HomeApiGetHomeSecretOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a HomeApiGetHomeSecretOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
 
  **id** | **optional.String**| Unique uuid identifying a secret | 
 
@@ -112,13 +113,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetHomeSecretByVersion**
-> DsvSecretVersionResponse GetHomeSecretByVersion(ctx, path, principalName, version)
+> DsvSecretVersionResponse GetHomeSecretByVersion(ctx, path, version)
 Get Home Secret By Version
 
 Gets a full home secret by path and version in the query.
@@ -129,7 +130,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **path** | **string**| The full secret path i.e. servers/prod/webserver-01 | 
-  **principalName** | **string**| Principal Name | 
   **version** | **int64**| Versions to return | 
 
 ### Return type
@@ -142,13 +142,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetHomeSecretDescription**
-> DsvSecretDescription GetHomeSecretDescription(ctx, principalName, path, optional)
+> DsvSecretDescription GetHomeSecretDescription(ctx, path, optional)
 Get home Secret Description
 
 Gets a home secret's metadata without returning the sensitive data.
@@ -158,15 +158,14 @@ Gets a home secret's metadata without returning the sensitive data.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **principalName** | **string**| Principal Name | 
   **path** | **string**| The full secret path i.e. servers/prod/webserver-01 | 
  **optional** | ***HomeApiGetHomeSecretDescriptionOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a HomeApiGetHomeSecretDescriptionOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
 
  **id** | **optional.String**| Unique uuid identifying a secret | 
 
@@ -180,13 +179,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **RestoreHomeSecret**
-> RestoreHomeSecret(ctx, principalName, path, optional)
+> RestoreHomeSecret(ctx, path, optional)
 Restore home Secret
 
 Restores a home secret by path or by id in the query.
@@ -196,15 +195,14 @@ Restores a home secret by path or by id in the query.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **principalName** | **string**| Principal Name | 
   **path** | **string**| The full secret path i.e. servers/prod/webserver-01 | 
  **optional** | ***HomeApiRestoreHomeSecretOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a HomeApiRestoreHomeSecretOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
 
  **id** | **optional.String**| Unique uuid identifying a secret | 
 
@@ -218,13 +216,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **RollbackHomeSecret**
-> DsvSecretVersionResponse RollbackHomeSecret(ctx, path, principalName, version)
+> DsvSecretVersionResponse RollbackHomeSecret(ctx, path, version)
 Rollback a Home Secret
 
 Rollbacks a Home Secret to a previous version.
@@ -235,7 +233,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **path** | **string**| The full secret path i.e. servers/prod/webserver-01 | 
-  **principalName** | **string**| Principal Name | 
   **version** | **int64**| Versions to return | 
 
 ### Return type
@@ -248,13 +245,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SearchHomeSecrets**
-> DsvSecretSearch SearchHomeSecrets(ctx, principalName, optional)
+> DsvSecretSearch SearchHomeSecrets(ctx, optional)
 Search for Home Secrets
 
 Lists home secret paths that start with the path parameter.
@@ -264,14 +261,13 @@ Lists home secret paths that start with the path parameter.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **principalName** | **string**| Principal Name | 
  **optional** | ***HomeApiSearchHomeSecretsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a HomeApiSearchHomeSecretsOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **searchTerm** | **optional.String**| Partial search term for search by path | 
  **searchLinks** | **optional.Bool**| Whether to search for secrets that link to the path in the search term | 
  **searchField** | **optional.String**| Secret field for advanced searching | 
@@ -291,13 +287,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdateHomeSecret**
-> DsvSecretResponse UpdateHomeSecret(ctx, body, path)
+> DsvSecretResponse UpdateHomeSecret(ctx, path, body)
 Update home Secret
 
 Updates an existing home secret.
@@ -307,8 +303,8 @@ Updates an existing home secret.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**DsvSecretUpdate**](DsvSecretUpdate.md)|  | 
   **path** | **string**| The full secret path i.e. servers/prod/webserver-01 | 
+  **body** | [**DsvSecretUpdate**](DsvSecretUpdate.md)|  | 
 
 ### Return type
 

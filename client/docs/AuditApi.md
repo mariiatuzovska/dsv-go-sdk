@@ -1,4 +1,4 @@
-# {{classname}}
+# \AuditApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
@@ -7,8 +7,9 @@ Method | HTTP request | Description
 [**DownloadAudit**](AuditApi.md#DownloadAudit) | **Get** /download/audit | Download Audit Records
 [**FindAudit**](AuditApi.md#FindAudit) | **Get** /audit | Find Audit Records
 
+
 # **DownloadAudit**
-> *os.File DownloadAudit(ctx, startDate, endDate)
+> string DownloadAudit(ctx, startDate, endDate)
 Download Audit Records
 
 Download a zip of audit records for a time range
@@ -23,7 +24,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[***os.File**](*os.File.md)
+**string**
 
 ### Authorization
 
@@ -31,7 +32,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/zip
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -51,6 +52,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a AuditApiFindAuditOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **principal** | **optional.String**| Security principal name | 
@@ -72,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

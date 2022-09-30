@@ -1,4 +1,4 @@
-# {{classname}}
+# \GroupsApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
@@ -12,8 +12,9 @@ Method | HTTP request | Description
 [**RestoreGroup**](GroupsApi.md#RestoreGroup) | **Get** /groups/{name}/restore | Restore Group
 [**SearchGroups**](GroupsApi.md#SearchGroups) | **Get** /groups | Search Groups
 
+
 # **AddMember**
-> DsvAddMemberResponse AddMember(ctx, body, name)
+> DsvAddMemberResponse AddMember(ctx, name, body)
 Add Members To Group
 
 Add one or more members to a group.
@@ -23,8 +24,8 @@ Add one or more members to a group.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**DsvMemberRequest**](DsvMemberRequest.md)|  | 
   **name** | **string**| Group name | 
+  **body** | [**DsvMemberRequest**](DsvMemberRequest.md)|  | 
 
 ### Return type
 
@@ -85,6 +86,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a GroupsApiDeleteGroupOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
@@ -100,13 +102,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteMember**
-> DeleteMember(ctx, body, name)
+> DeleteMember(ctx, name, body)
 Delete Members From Group
 
 Delete one or more members from a group.
@@ -116,8 +118,8 @@ Delete one or more members from a group.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**DsvMemberRequest**](DsvMemberRequest.md)|  | 
   **name** | **string**| Group name | 
+  **body** | [**DsvMemberRequest**](DsvMemberRequest.md)|  | 
 
 ### Return type
 
@@ -157,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -185,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -205,6 +207,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a GroupsApiSearchGroupsOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **searchTerm** | **optional.String**| Partial search term for search by path | 
@@ -223,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

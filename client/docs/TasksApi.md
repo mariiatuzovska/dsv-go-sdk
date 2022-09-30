@@ -1,10 +1,11 @@
-# {{classname}}
+# \TasksApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetTaskStatus**](TasksApi.md#GetTaskStatus) | **Get** /task/status/{id} | Get background task status
+
 
 # **GetTaskStatus**
 > DsvTaskState GetTaskStatus(ctx, id)
@@ -29,7 +30,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

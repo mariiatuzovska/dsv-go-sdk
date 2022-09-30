@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Attributes** | [**map[string]interface{}**](interface{}.md) | The user defined metadata | [optional] [default to null]
+**Attributes** | **map[string]interface{}** | The user defined metadata | [optional] [default to null]
 **Created** | **string** | Created date | [optional] [default to null]
 **CreatedBy** | **string** | Who created | [optional] [default to null]
 **Description** | **string** | Description of secret | [optional] [default to null]
@@ -14,4 +14,5 @@ Name | Type | Description | Notes
 **Version** | **string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

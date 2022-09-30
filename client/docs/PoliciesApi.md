@@ -1,4 +1,4 @@
-# {{classname}}
+# \PoliciesApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**RollbackPolicy**](PoliciesApi.md#RollbackPolicy) | **Put** /config/policies/{path}/rollback/{version} | Rollback Policy
 [**SearchFilter**](PoliciesApi.md#SearchFilter) | **Get** /config/policies | Search Policies
 [**UpdatePolicy**](PoliciesApi.md#UpdatePolicy) | **Put** /config/policies/{path} | Update Policy
+
 
 # **CreatePolicy**
 > DsvPolicyResponse CreatePolicy(ctx, body)
@@ -57,6 +58,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a PoliciesApiDeletePolicyOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
@@ -72,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -100,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -129,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -157,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -186,7 +188,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -206,6 +208,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a PoliciesApiSearchFilterOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **searchTerm** | **optional.String**| Search term | 
@@ -222,13 +225,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdatePolicy**
-> DsvPolicyResponse UpdatePolicy(ctx, body, path)
+> DsvPolicyResponse UpdatePolicy(ctx, path, body)
 Update Policy
 
 Overwrites an existing policy with an updated permissions document.
@@ -238,8 +241,8 @@ Overwrites an existing policy with an updated permissions document.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**DsvPolicyUpdate**](DsvPolicyUpdate.md)|  | 
   **path** | **string**| Full path for policy | 
+  **body** | [**DsvPolicyUpdate**](DsvPolicyUpdate.md)|  | 
 
 ### Return type
 

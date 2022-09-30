@@ -1,4 +1,4 @@
-# {{classname}}
+# \RolesApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**RestoreRole**](RolesApi.md#RestoreRole) | **Get** /roles/{name}/restore | Restore a Role
 [**SearchRoles**](RolesApi.md#SearchRoles) | **Get** /roles | Search for Roles
 [**UpdateRole**](RolesApi.md#UpdateRole) | **Put** /roles/{name} | Update a Role
+
 
 # **CreateRole**
 > DsvRoleResponse CreateRole(ctx, body)
@@ -56,6 +57,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a RolesApiDeleteRoleOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
@@ -71,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -99,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -128,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -156,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -176,6 +178,7 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a RolesApiSearchRolesOpts struct
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **searchTerm** | **optional.String**| Search pattern for names of roles to look up | 
@@ -192,13 +195,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdateRole**
-> DsvRoleResponse UpdateRole(ctx, body, name)
+> DsvRoleResponse UpdateRole(ctx, name, role)
 Update a Role
 
 Update an existing role.
@@ -208,8 +211,8 @@ Update an existing role.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**DsvRoleDetailsModel**](DsvRoleDetailsModel.md)|  | 
   **name** | **string**| Full role name to lookup role by | 
+  **role** | [**DsvRoleDetailsModel**](DsvRoleDetailsModel.md)|  | 
 
 ### Return type
 

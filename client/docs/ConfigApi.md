@@ -1,4 +1,4 @@
-# {{classname}}
+# \ConfigApi
 
 All URIs are relative to *https://secretsvaultcloud.com/v1*
 
@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**GetConfig**](ConfigApi.md#GetConfig) | **Get** /config | Get Config
 [**GetConfigByVersion**](ConfigApi.md#GetConfigByVersion) | **Get** /config/version/{version} | Get Config By Version
 [**PostConfig**](ConfigApi.md#PostConfig) | **Post** /config | Create Config
+
 
 # **GetConfig**
 > DsvConfigResponse GetConfig(ctx, )
@@ -27,7 +28,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -55,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
