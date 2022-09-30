@@ -4,3 +4,4 @@
 * `$export DSV_USERNAME=<username>`
 * `$export DSV_PASSWORD=<password>`
 * `$export DSV_SECRET_PATH=<secret_path>`
+* `$go run ./example/main.go`
