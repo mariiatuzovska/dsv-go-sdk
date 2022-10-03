@@ -66,7 +66,7 @@ type DeleteEngineParams struct {
 	*/
 	Force *bool
 
-	/* Path.
+	/* Name.
 
 	   Name of engine
 	*/
@@ -136,15 +136,15 @@ func (o *DeleteEngineParams) SetForce(force *bool) {
 	o.Force = force
 }
 
-// WithName adds the path to the delete engine params
-func (o *DeleteEngineParams) WithName(path string) *DeleteEngineParams {
-	o.SetName(path)
+// WithName adds the name to the delete engine params
+func (o *DeleteEngineParams) WithName(name string) *DeleteEngineParams {
+	o.SetName(name)
 	return o
 }
 
-// SetName adds the path to the delete engine params
-func (o *DeleteEngineParams) SetName(path string) {
-	o.Name = path
+// SetName adds the name to the delete engine params
+func (o *DeleteEngineParams) SetName(name string) {
+	o.Name = name
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -172,8 +172,8 @@ func (o *DeleteEngineParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		}
 	}
 
-	// path param path
-	if err := r.SetPathParam("path", o.Name); err != nil {
+	// path param name
+	if err := r.SetPathParam("name", o.Name); err != nil {
 		return err
 	}
 

@@ -66,6 +66,12 @@ type RollbackHomeSecretParams struct {
 	*/
 	Path string
 
+	/* PrincipalName.
+
+	   Principal name
+	*/
+	PrincipalName string
+
 	/* Version.
 
 	   Versions to return
@@ -138,6 +144,17 @@ func (o *RollbackHomeSecretParams) SetPath(path string) {
 	o.Path = path
 }
 
+// WithPrincipalName adds the principalName to the rollback home secret params
+func (o *RollbackHomeSecretParams) WithPrincipalName(principalName string) *RollbackHomeSecretParams {
+	o.SetPrincipalName(principalName)
+	return o
+}
+
+// SetPrincipalName adds the principalName to the rollback home secret params
+func (o *RollbackHomeSecretParams) SetPrincipalName(principalName string) {
+	o.PrincipalName = principalName
+}
+
 // WithVersion adds the version to the rollback home secret params
 func (o *RollbackHomeSecretParams) WithVersion(version int64) *RollbackHomeSecretParams {
 	o.SetVersion(version)
@@ -159,6 +176,11 @@ func (o *RollbackHomeSecretParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	// path param path
 	if err := r.SetPathParam("path", o.Path); err != nil {
+		return err
+	}
+
+	// path param principalName
+	if err := r.SetPathParam("principalName", o.PrincipalName); err != nil {
 		return err
 	}
 

@@ -59,7 +59,7 @@ func NewGetEngineParamsWithHTTPClient(client *http.Client) *GetEngineParams {
 */
 type GetEngineParams struct {
 
-	/* Path.
+	/* Name.
 
 	   Name of engine
 	*/
@@ -118,15 +118,15 @@ func (o *GetEngineParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
-// WithName adds the path to the get engine params
-func (o *GetEngineParams) WithName(path string) *GetEngineParams {
-	o.SetName(path)
+// WithName adds the name to the get engine params
+func (o *GetEngineParams) WithName(name string) *GetEngineParams {
+	o.SetName(name)
 	return o
 }
 
-// SetName adds the path to the get engine params
-func (o *GetEngineParams) SetName(path string) {
-	o.Name = path
+// SetName adds the name to the get engine params
+func (o *GetEngineParams) SetName(name string) {
+	o.Name = name
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -137,8 +137,8 @@ func (o *GetEngineParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Reg
 	}
 	var res []error
 
-	// path param path
-	if err := r.SetPathParam("path", o.Name); err != nil {
+	// path param name
+	if err := r.SetPathParam("name", o.Name); err != nil {
 		return err
 	}
 

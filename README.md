@@ -22,4 +22,4 @@ $ docker run --rm -v ${PWD}/swagger-codegen:/local swaggerapi/swagger-codegen-cl
 ## Generate go-swagger
 
 1. Install swagger: `$ go install github.com/go-swagger/go-swagger/cmd/swagger@latest`
-2. Generate SDK: `$ swagger generate client -f ./path/to/swagger.json --client-package=./go-swagger/client --default-scheme=https --skip-validation --model-package=./go-swagger/models --api-package=./go-swagger/api`
+2. Generate SDK: `$ swagger generate client -f ./path/to/swagger.json --client-package=./go-swagger/client --default-scheme=https --model-package=./go-swagger/models --api-package=./go-swagger/api`

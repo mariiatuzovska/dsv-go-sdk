@@ -71,6 +71,12 @@ type DeleteHomeSecretParams struct {
 	*/
 	Path string
 
+	/* PrincipalName.
+
+	   Principal name
+	*/
+	PrincipalName string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -146,6 +152,17 @@ func (o *DeleteHomeSecretParams) SetPath(path string) {
 	o.Path = path
 }
 
+// WithPrincipalName adds the principalName to the delete home secret params
+func (o *DeleteHomeSecretParams) WithPrincipalName(principalName string) *DeleteHomeSecretParams {
+	o.SetPrincipalName(principalName)
+	return o
+}
+
+// SetPrincipalName adds the principalName to the delete home secret params
+func (o *DeleteHomeSecretParams) SetPrincipalName(principalName string) {
+	o.PrincipalName = principalName
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DeleteHomeSecretParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -173,6 +190,11 @@ func (o *DeleteHomeSecretParams) WriteToRequest(r runtime.ClientRequest, reg str
 
 	// path param path
 	if err := r.SetPathParam("path", o.Path); err != nil {
+		return err
+	}
+
+	// path param principalName
+	if err := r.SetPathParam("principalName", o.PrincipalName); err != nil {
 		return err
 	}
 

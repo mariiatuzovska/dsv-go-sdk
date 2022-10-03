@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ResponseModelSearch Client Credential search response with metadata
+// ResponseModelSearch Group search response with metadata
 //
 // swagger:model ResponseModelSearch
 type ResponseModelSearch struct {
@@ -22,14 +22,17 @@ type ResponseModelSearch struct {
 	// Cursor to next batch of results
 	Cursor string `json:"cursor,omitempty"`
 
-	// List of client credentials with a matching role
-	Data []*ClientCredentials `json:"data"`
+	// Groups that match the search term
+	Data []*GroupResponse `json:"data"`
 
 	// The number of results in this response
 	Length int64 `json:"length,omitempty"`
 
 	// The maximum number of results per cursor
 	Limit int64 `json:"limit,omitempty"`
+
+	// Sort order
+	Sort string `json:"sort,omitempty"`
 
 	// Total number of items
 	Total int64 `json:"total,omitempty"`

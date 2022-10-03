@@ -59,7 +59,7 @@ func NewPingEngineParamsWithHTTPClient(client *http.Client) *PingEngineParams {
 */
 type PingEngineParams struct {
 
-	/* Path.
+	/* Name.
 
 	   Name of engine
 	*/
@@ -118,15 +118,15 @@ func (o *PingEngineParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
-// WithName adds the path to the ping engine params
-func (o *PingEngineParams) WithName(path string) *PingEngineParams {
-	o.SetName(path)
+// WithName adds the name to the ping engine params
+func (o *PingEngineParams) WithName(name string) *PingEngineParams {
+	o.SetName(name)
 	return o
 }
 
-// SetName adds the path to the ping engine params
-func (o *PingEngineParams) SetName(path string) {
-	o.Name = path
+// SetName adds the name to the ping engine params
+func (o *PingEngineParams) SetName(name string) {
+	o.Name = name
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -137,8 +137,8 @@ func (o *PingEngineParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Re
 	}
 	var res []error
 
-	// path param path
-	if err := r.SetPathParam("path", o.Name); err != nil {
+	// path param name
+	if err := r.SetPathParam("name", o.Name); err != nil {
 		return err
 	}
 

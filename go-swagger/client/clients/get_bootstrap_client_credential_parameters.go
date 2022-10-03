@@ -58,6 +58,13 @@ func NewGetBootstrapClientCredentialParamsWithHTTPClient(client *http.Client) *G
    Typically these are written to a http.Request.
 */
 type GetBootstrapClientCredentialParams struct {
+
+	/* ClientID.
+
+	   ClientId property of the client credentials
+	*/
+	ID string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -111,6 +118,17 @@ func (o *GetBootstrapClientCredentialParams) SetHTTPClient(client *http.Client) 
 	o.HTTPClient = client
 }
 
+// WithID adds the clientID to the get bootstrap client credential params
+func (o *GetBootstrapClientCredentialParams) WithID(clientID string) *GetBootstrapClientCredentialParams {
+	o.SetID(clientID)
+	return o
+}
+
+// SetID adds the clientId to the get bootstrap client credential params
+func (o *GetBootstrapClientCredentialParams) SetID(clientID string) {
+	o.ID = clientID
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *GetBootstrapClientCredentialParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -118,6 +136,11 @@ func (o *GetBootstrapClientCredentialParams) WriteToRequest(r runtime.ClientRequ
 		return err
 	}
 	var res []error
+
+	// path param clientId
+	if err := r.SetPathParam("clientId", o.ID); err != nil {
+		return err
+	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)

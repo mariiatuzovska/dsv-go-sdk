@@ -74,6 +74,12 @@ type SearchHomeSecretsParams struct {
 	*/
 	Limit *int64
 
+	/* PrincipalName.
+
+	   Principal name
+	*/
+	PrincipalName string
+
 	/* SearchComparison.
 
 	   Comparison type (equal, contains, begins_with) for advanced searching
@@ -185,6 +191,17 @@ func (o *SearchHomeSecretsParams) SetLimit(limit *int64) {
 	o.Limit = limit
 }
 
+// WithPrincipalName adds the principalName to the search home secrets params
+func (o *SearchHomeSecretsParams) WithPrincipalName(principalName string) *SearchHomeSecretsParams {
+	o.SetPrincipalName(principalName)
+	return o
+}
+
+// SetPrincipalName adds the principalName to the search home secrets params
+func (o *SearchHomeSecretsParams) SetPrincipalName(principalName string) {
+	o.PrincipalName = principalName
+}
+
 // WithComparison adds the searchComparison to the search home secrets params
 func (o *SearchHomeSecretsParams) WithComparison(searchComparison *string) *SearchHomeSecretsParams {
 	o.SetComparison(searchComparison)
@@ -291,6 +308,11 @@ func (o *SearchHomeSecretsParams) WriteToRequest(r runtime.ClientRequest, reg st
 				return err
 			}
 		}
+	}
+
+	// path param principalName
+	if err := r.SetPathParam("principalName", o.PrincipalName); err != nil {
+		return err
 	}
 
 	if o.Comparison != nil {

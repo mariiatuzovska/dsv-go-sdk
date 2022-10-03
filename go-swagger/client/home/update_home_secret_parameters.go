@@ -70,6 +70,12 @@ type UpdateHomeSecretParams struct {
 	*/
 	Path string
 
+	/* PrincipalName.
+
+	   Principal name
+	*/
+	PrincipalName string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -145,6 +151,17 @@ func (o *UpdateHomeSecretParams) SetPath(path string) {
 	o.Path = path
 }
 
+// WithPrincipalName adds the principalName to the update home secret params
+func (o *UpdateHomeSecretParams) WithPrincipalName(principalName string) *UpdateHomeSecretParams {
+	o.SetPrincipalName(principalName)
+	return o
+}
+
+// SetPrincipalName adds the principalName to the update home secret params
+func (o *UpdateHomeSecretParams) SetPrincipalName(principalName string) {
+	o.PrincipalName = principalName
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *UpdateHomeSecretParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -160,6 +177,11 @@ func (o *UpdateHomeSecretParams) WriteToRequest(r runtime.ClientRequest, reg str
 
 	// path param path
 	if err := r.SetPathParam("path", o.Path); err != nil {
+		return err
+	}
+
+	// path param principalName
+	if err := r.SetPathParam("principalName", o.PrincipalName); err != nil {
 		return err
 	}
 

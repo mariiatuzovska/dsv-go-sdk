@@ -66,6 +66,12 @@ type GetHomeSecretByVersionParams struct {
 	*/
 	Path string
 
+	/* PrincipalName.
+
+	   Principal name
+	*/
+	PrincipalName string
+
 	/* Version.
 
 	   Versions to return
@@ -138,6 +144,17 @@ func (o *GetHomeSecretByVersionParams) SetPath(path string) {
 	o.Path = path
 }
 
+// WithPrincipalName adds the principalName to the get home secret by version params
+func (o *GetHomeSecretByVersionParams) WithPrincipalName(principalName string) *GetHomeSecretByVersionParams {
+	o.SetPrincipalName(principalName)
+	return o
+}
+
+// SetPrincipalName adds the principalName to the get home secret by version params
+func (o *GetHomeSecretByVersionParams) SetPrincipalName(principalName string) {
+	o.PrincipalName = principalName
+}
+
 // WithVersion adds the version to the get home secret by version params
 func (o *GetHomeSecretByVersionParams) WithVersion(version int64) *GetHomeSecretByVersionParams {
 	o.SetVersion(version)
@@ -159,6 +176,11 @@ func (o *GetHomeSecretByVersionParams) WriteToRequest(r runtime.ClientRequest, r
 
 	// path param path
 	if err := r.SetPathParam("path", o.Path); err != nil {
+		return err
+	}
+
+	// path param principalName
+	if err := r.SetPathParam("principalName", o.PrincipalName); err != nil {
 		return err
 	}
 
